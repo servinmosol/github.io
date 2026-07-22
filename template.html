@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="meta_title">Lanza Estudio</title>
     <meta name="description" data-i18n="meta_description" content="">
-    <link href="/output.css" rel="stylesheet">
+    <link href="{{BASE_PATH}}/output.css" rel="stylesheet">
     
-    <!-- Aquí el script inyectará automáticamente los hreflang para Google -->
+    <!-- Etiquetas hreflang para SEO -->
     {{HREFLANG_TAGS}}
 </head>
 <body class="bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100 font-sans antialiased">
@@ -16,15 +16,15 @@
         <div class="font-bold text-xl tracking-tight">LANZA</div>
         
         <div class="flex items-center gap-4">
-            <!-- Selector que redirige físicamente a la carpeta del idioma -->
+            <!-- Selector de idioma con rutas relativas calculadas -->
             <select id="lang-selector" onchange="location = this.value;" class="bg-transparent text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-700 rounded px-2 py-1 text-sm">
-                <option value="/" {{SELECTED_ES}}>ES</option>
-                <option value="/en/" {{SELECTED_EN}}>EN</option>
-                <option value="/fr/" {{SELECTED_FR}}>FR</option>
-                <option value="/de/" {{SELECTED_DE}}>DE</option>
-                <option value="/pt/" {{SELECTED_PT}}>PT</option>
-                <option value="/nl/" {{SELECTED_NL}}>NL</option>
-                <option value="/it/" {{SELECTED_IT}}>IT</option>
+                <option value="{{LANG_OPT_ES}}" {{SELECTED_ES}}>ES</option>
+                <option value="{{LANG_OPT_EN}}" {{SELECTED_EN}}>EN</option>
+                <option value="{{LANG_OPT_FR}}" {{SELECTED_FR}}>FR</option>
+                <option value="{{LANG_OPT_DE}}" {{SELECTED_DE}}>DE</option>
+                <option value="{{LANG_OPT_PT}}" {{SELECTED_PT}}>PT</option>
+                <option value="{{LANG_OPT_NL}}" {{SELECTED_NL}}>NL</option>
+                <option value="{{LANG_OPT_IT}}" {{SELECTED_IT}}>IT</option>
             </select>
 
             <button id="theme-toggle" class="p-2 rounded bg-gray-200 dark:bg-gray-800" aria-label="Cambiar tema">
@@ -47,6 +47,6 @@
         </p>
     </main>
 
-    <script src="/app.js" defer></script>
+    <script src="{{BASE_PATH}}/app.js" defer></script>
 </body>
 </html>

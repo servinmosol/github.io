@@ -7,7 +7,6 @@ const defaultLang = 'es';
 
 const templatePath = path.join(__dirname, 'template.html');
 
-// Comprobación de seguridad
 if (!fs.existsSync(templatePath)) {
     console.error('❌ ERROR: No existe el archivo template.html en la raíz.');
     process.exit(1);
@@ -28,14 +27,29 @@ langs.forEach(lang => {
     const translations = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
     let html = template;
 
-    // Inyectar idioma y hreflang
+    // Determinar la ruta relativa según la profundidad de la carpeta
+    const isDefault = lang === defaultLang;
+    const basePath = isDefault ? '.' : '..';
+
     html = html.replace('{{LANG}}', lang);
     html = html.replace('{{HREFLANG_TAGS}}', hreflangTags);
+    html = html.replaceAll('{{BASE_PATH}}', basePath);
 
-    // Marcar la opción seleccionada en el selector
+    // Calcular las URL relativas exactas para el selector de idiomas
     langs.forEach(l => {
-        const placeholder = `{{SELECTED_${l.toUpperCase()}}}`;
-        html = html.replace(placeholder, l === lang ? 'selected' : '');
+        const selectedPlaceholder = `{{SELECTED_${l.toUpperCase()}}}`;
+        html = html.replace(selectedPlaceholder, l === lang ? 'selected' : '');
+
+        const optPlaceholder = `{{LANG_OPT_${l.toUpperCase()}}}`;
+        let optUrl = '';
+        if (isDefault) {
+            optUrl = l === defaultLang ? './' : `./${l}/`;
+        } else {
+            if (l === lang) optUrl = './';
+            else if (l === defaultLang) optUrl = '../';
+            else optUrl = `../${l}/`;
+        }
+        html = html.replace(optPlaceholder, optUrl);
     });
 
     // Reemplazar textos estáticos para SEO
@@ -51,8 +65,8 @@ langs.forEach(lang => {
         }
     });
 
-    // Generar index.html principal y carpetas /en/, /fr/, etc.
-    if (lang === defaultLang) {
+    // Guardar en la raíz o en la subcarpeta correspondiente
+    if (isDefault) {
         fs.writeFileSync(path.join(__dirname, 'index.html'), html);
     } else {
         const dir = path.join(__dirname, lang);
@@ -61,4 +75,4 @@ langs.forEach(lang => {
     }
 });
 
-console.log('✅ ¡index.html y carpetas de idiomas regenerados con éxito!');
+console.log('✅ ¡HTMLs generados con rutas relativas impecables!');
