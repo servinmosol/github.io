@@ -1,12 +1,19 @@
 const fs = require('fs');
 const path = require('path');
 
-const DOMAIN = 'https://lanzaestudio.com'; // Cambiarás esto al poner el dominio
+const DOMAIN = 'https://lanzaestudio.com'; 
 const langs = ['es', 'en', 'fr', 'de', 'pt', 'nl', 'it'];
 const defaultLang = 'es';
 
-// Leer plantilla
-const template = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf-8');
+const templatePath = path.join(__dirname, 'template.html');
+
+// Comprobación de seguridad
+if (!fs.existsSync(templatePath)) {
+    console.error('❌ ERROR: No existe el archivo template.html en la raíz.');
+    process.exit(1);
+}
+
+const template = fs.readFileSync(templatePath, 'utf-8');
 
 // Generar etiquetas hreflang para SEO
 const hreflangTags = langs.map(lang => {
@@ -25,18 +32,17 @@ langs.forEach(lang => {
     html = html.replace('{{LANG}}', lang);
     html = html.replace('{{HREFLANG_TAGS}}', hreflangTags);
 
-    // Marcar la opción seleccionada en el <select>
+    // Marcar la opción seleccionada en el selector
     langs.forEach(l => {
         const placeholder = `{{SELECTED_${l.toUpperCase()}}}`;
         html = html.replace(placeholder, l === lang ? 'selected' : '');
     });
 
-    // Reemplazar los textos data-i18n directamente en el HTML estático
+    // Reemplazar textos estáticos para SEO
     Object.keys(translations).forEach(key => {
         const regex = new RegExp(`data-i18n="${key}">.*?<`, 'g');
         html = html.replace(regex, `data-i18n="${key}">${translations[key]}<`);
         
-        // Reemplazar metas si coinciden
         if (key === 'meta_title') {
             html = html.replace(/<title.*?>.*?<\/title>/, `<title>${translations[key]}</title>`);
         }
@@ -45,14 +51,14 @@ langs.forEach(lang => {
         }
     });
 
-    // Guardar en la carpeta correspondiente
+    // Generar index.html principal y carpetas /en/, /fr/, etc.
     if (lang === defaultLang) {
         fs.writeFileSync(path.join(__dirname, 'index.html'), html);
     } else {
         const dir = path.join(__dirname, lang);
-        if (!fs.existsSync(dir)) fs.mkdirSync(dir);
+        if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
         fs.writeFileSync(path.join(dir, 'index.html'), html);
     }
 });
 
-console.log('✅ Páginas HTML estáticas generadas correctamente para todos los idiomas.');
+console.log('✅ ¡index.html y carpetas de idiomas regenerados con éxito!');
