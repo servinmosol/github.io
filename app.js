@@ -1,5 +1,5 @@
 // ==========================================
-// 1. DICCIONARIO DE IDIOMAS (i18n)
+// 1. DICCIONARIO DE IDIOMAS (i18n) sdkfsdkfjsdk;jlfsd;l
 // ==========================================
 const translations = {
     es: {
