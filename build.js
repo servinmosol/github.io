@@ -27,7 +27,6 @@ langs.forEach(lang => {
     const translations = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
     let html = template;
 
-    // Determinar la ruta relativa según la profundidad de la carpeta
     const isDefault = lang === defaultLang;
     const basePath = isDefault ? '.' : '..';
 
@@ -35,7 +34,7 @@ langs.forEach(lang => {
     html = html.replace('{{HREFLANG_TAGS}}', hreflangTags);
     html = html.replaceAll('{{BASE_PATH}}', basePath);
 
-    // Calcular las URL relativas exactas para el selector de idiomas
+    // Configurar URLs del selector de idiomas
     langs.forEach(l => {
         const selectedPlaceholder = `{{SELECTED_${l.toUpperCase()}}}`;
         html = html.replace(selectedPlaceholder, l === lang ? 'selected' : '');
@@ -52,20 +51,22 @@ langs.forEach(lang => {
         html = html.replace(optPlaceholder, optUrl);
     });
 
-    // Reemplazar textos estáticos para SEO
+    // INYECCIÓN REAL DE TRADUCCIONES (Soporta clases y atributos en medio)
     Object.keys(translations).forEach(key => {
-        const regex = new RegExp(`data-i18n="${key}">.*?<`, 'g');
-        html = html.replace(regex, `data-i18n="${key}">${translations[key]}<`);
-        
-        if (key === 'meta_title') {
-            html = html.replace(/<title.*?>.*?<\/title>/, `<title>${translations[key]}</title>`);
-        }
+        const val = translations[key];
+
         if (key === 'meta_description') {
-            html = html.replace(/content=""/, `content="${translations[key]}"`);
+            // Reemplazo especial para la meta descripción en content=""
+            const metaRegex = new RegExp(`(data-i18n="${key}"[^>]*content=")[^"]*(")`);
+            html = html.replace(metaRegex, `$1${val}$2`);
+        } else {
+            // Reemplazo universal para cualquier etiqueta con data-i18n
+            const tagRegex = new RegExp(`(data-i18n="${key}"[^>]*>)[^<]*`, 'g');
+            html = html.replace(tagRegex, `$1${val}`);
         }
     });
 
-    // Guardar en la raíz o en la subcarpeta correspondiente
+    // Guardar archivo traducido en la ubicación correspondiente
     if (isDefault) {
         fs.writeFileSync(path.join(__dirname, 'index.html'), html);
     } else {
@@ -75,4 +76,4 @@ langs.forEach(lang => {
     }
 });
 
-console.log('✅ ¡HTMLs generados con rutas relativas impecables!');
+console.log('✅ ¡Traducciones inyectadas correctamente en cada idioma!');
