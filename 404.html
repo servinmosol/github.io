@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <title>Cargando...</title>
     <script>
-        // Guardar la ruta que intentaba visitar (ej: /nl)
         try {
             sessionStorage.setItem('redirect_path', window.location.pathname);
         } catch(e) {}
-        // Redirigir al index principal
-        window.location.replace('/');
+
+        // Detectar si hay subcarpeta para la redirección
+        const validLangs = ['es', 'en', 'fr', 'de', 'pt', 'nl', 'it'];
+        const parts = window.location.pathname.split('/').filter(Boolean);
+        
+        let target = '/';
+        if (parts.length > 0 && !validLangs.includes(parts[0])) {
+            target = '/' + parts[0] + '/'; // Mantiene la subcarpeta ej: /github.io/
+        }
+
+        window.location.replace(target);
     </script>
 </head>
 <body>

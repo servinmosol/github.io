@@ -1,9 +1,19 @@
-/// ==========================================
-// 1. CARGA DE IDIOMAS CON RUTAS LIMPIAS (/es, /en, /nl...)
+// ==========================================
+// 1. CARGA DE IDIOMAS (Compatible con subcarpetas y dominio propio)
 // ==========================================
 const langSelector = document.getElementById('lang-selector');
 let currentTranslations = {};
 const validLangs = ['es', 'en', 'fr', 'de', 'pt', 'nl', 'it'];
+
+// Detecta automáticamente si hay una subcarpeta (ej: /github.io) o si es dominio propio
+function getBasePath() {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    // Si la primera parte de la URL NO es un idioma, es el nombre del repositorio
+    if (parts.length > 0 && !validLangs.includes(parts[0])) {
+        return '/' + parts[0];
+    }
+    return '';
+}
 
 async function loadLanguage(lang) {
     try {
@@ -11,7 +21,6 @@ async function loadLanguage(lang) {
         if (!response.ok) throw new Error(`No se pudo cargar locales/${lang}.json`);
         
         currentTranslations = await response.json();
-        
         document.documentElement.lang = lang;
         
         document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -24,8 +33,10 @@ async function loadLanguage(lang) {
         // Guardar preferencia
         try { localStorage.setItem('user_lang', lang); } catch(e) {}
 
-        // Actualizar la URL a ruta limpia (ej: /nl, /en) sin recargar
-        const cleanPath = lang === 'es' ? '/' : `/${lang}`;
+        // Construir la URL respetando la subcarpeta si existe
+        const basePath = getBasePath();
+        const cleanPath = lang === 'es' ? (basePath || '/') : `${basePath}/${lang}`;
+        
         if (window.location.pathname !== cleanPath) {
             window.history.pushState({}, '', cleanPath);
         }
@@ -49,30 +60,26 @@ function initLanguage() {
         if (redirectPath) sessionStorage.removeItem('redirect_path');
     } catch(e) {}
 
-    // Extraer idioma de la URL (ej: /fr -> fr)
+    // Extraer el idioma de la URL actual
     const currentPath = redirectPath || window.location.pathname;
-    const urlLang = currentPath.split('/').filter(Boolean).pop();
+    const parts = currentPath.split('/').filter(Boolean);
+    const urlLang = parts.find(part => validLangs.includes(part));
 
-    // 2. Idioma guardado previamente por el usuario
+    // Idioma guardado o del navegador
     let savedLang;
     try { savedLang = localStorage.getItem('user_lang'); } catch(e) {}
+    const userBrowserLang = (navigator.language || '').slice(0, 2);
 
-    // 3. Detección automática del Idioma del Navegador / Sistema Operativo
-    // navigator.language devuelve algo como "es-ES", "de-DE", "fr-FR". Cogemos los 2 primeros caracteres.
-    const userBrowserLang = (navigator.language || (navigator.languages && navigator.languages[0]) || '').slice(0, 2);
-
-    // Determinar el idioma final por orden estricto de prioridad
-    let initialLang = 'es'; // Fallback por defecto
-
+    // Prioridad: URL > LocalStorage > Navegador > 'es'
+    let initialLang = 'es';
     if (urlLang && validLangs.includes(urlLang)) {
         initialLang = urlLang;
     } else if (savedLang && validLangs.includes(savedLang)) {
         initialLang = savedLang;
     } else if (userBrowserLang && validLangs.includes(userBrowserLang)) {
-        initialLang = userBrowserLang; // <--- Detecta el idioma de su SO/Navegador
+        initialLang = userBrowserLang;
     }
 
-    // Aplicar al selector y cargar la traducción
     if (langSelector) langSelector.value = initialLang;
     loadLanguage(initialLang);
 }
