@@ -1,14 +1,13 @@
 // ==========================================
-// 1. CARGA DE IDIOMAS (Compatible con subcarpetas y dominio propio)
+// 1. CARGA DE IDIOMAS (Rutas absolutas anti-bloqueo)
 // ==========================================
 const langSelector = document.getElementById('lang-selector');
 let currentTranslations = {};
 const validLangs = ['es', 'en', 'fr', 'de', 'pt', 'nl', 'it'];
 
-// Detecta automáticamente si hay una subcarpeta (ej: /github.io) o si es dominio propio
-function getBasePath() {
+// Detecta el nombre de la subcarpeta del repo (ej: /github.io) o vacío si es dominio propio
+function getRepoBase() {
     const parts = window.location.pathname.split('/').filter(Boolean);
-    // Si la primera parte de la URL NO es un idioma, es el nombre del repositorio
     if (parts.length > 0 && !validLangs.includes(parts[0])) {
         return '/' + parts[0];
     }
@@ -16,9 +15,13 @@ function getBasePath() {
 }
 
 async function loadLanguage(lang) {
+    const repoBase = getRepoBase();
+    // Petición absoluta para que nunca falle el fetch sin importar la URL actual
+    const fetchUrl = `${repoBase}/locales/${lang}.json`;
+
     try {
-        const response = await fetch(`./locales/${lang}.json`);
-        if (!response.ok) throw new Error(`No se pudo cargar locales/${lang}.json`);
+        const response = await fetch(fetchUrl);
+        if (!response.ok) throw new Error(`No se pudo cargar ${fetchUrl}`);
         
         currentTranslations = await response.json();
         document.documentElement.lang = lang;
@@ -33,9 +36,8 @@ async function loadLanguage(lang) {
         // Guardar preferencia
         try { localStorage.setItem('user_lang', lang); } catch(e) {}
 
-        // Construir la URL respetando la subcarpeta si existe
-        const basePath = getBasePath();
-        const cleanPath = lang === 'es' ? (basePath || '/') : `${basePath}/${lang}`;
+        // Construir la URL limpia respetando la barra final en la raíz
+        const cleanPath = lang === 'es' ? (repoBase ? `${repoBase}/` : '/') : `${repoBase}/${lang}`;
         
         if (window.location.pathname !== cleanPath) {
             window.history.pushState({}, '', cleanPath);
@@ -53,24 +55,20 @@ if (langSelector) {
 }
 
 function initLanguage() {
-    // 1. Comprobar si venimos de la redirección 404
     let redirectPath = null;
     try {
         redirectPath = sessionStorage.getItem('redirect_path');
         if (redirectPath) sessionStorage.removeItem('redirect_path');
     } catch(e) {}
 
-    // Extraer el idioma de la URL actual
     const currentPath = redirectPath || window.location.pathname;
     const parts = currentPath.split('/').filter(Boolean);
     const urlLang = parts.find(part => validLangs.includes(part));
 
-    // Idioma guardado o del navegador
     let savedLang;
     try { savedLang = localStorage.getItem('user_lang'); } catch(e) {}
     const userBrowserLang = (navigator.language || '').slice(0, 2);
 
-    // Prioridad: URL > LocalStorage > Navegador > 'es'
     let initialLang = 'es';
     if (urlLang && validLangs.includes(urlLang)) {
         initialLang = urlLang;

@@ -8,13 +8,12 @@
             sessionStorage.setItem('redirect_path', window.location.pathname);
         } catch(e) {}
 
-        // Detectar si hay subcarpeta para la redirección
         const validLangs = ['es', 'en', 'fr', 'de', 'pt', 'nl', 'it'];
         const parts = window.location.pathname.split('/').filter(Boolean);
         
         let target = '/';
         if (parts.length > 0 && !validLangs.includes(parts[0])) {
-            target = '/' + parts[0] + '/'; // Mantiene la subcarpeta ej: /github.io/
+            target = '/' + parts[0] + '/';
         }
 
         window.location.replace(target);
