@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="meta_title">Lanza Estudio</title>
-    <meta name="description" data-i18n="meta_description" content="">
+    <title data-i18n="meta_title">Lanza Estudio | KI-Automatisierung</title>
+    <meta name="description" data-i18n="meta_description" content="Maßgeschneiderte Entwicklung von Automatisierung und KI für Unternehmen.">
     <link href="../output.css" rel="stylesheet">
     
     <!-- Etiquetas hreflang para SEO -->
@@ -22,18 +22,18 @@
         <div class="font-bold text-xl tracking-tight">LANZA</div>
         
         <div class="flex items-center gap-4">
-            <!-- Selector de idioma con rutas relativas calculadas -->
-            <select id="lang-selector" onchange="location = this.value;" class="bg-transparent text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-700 rounded px-2 py-1 text-sm">
-                <option value="../" >ES</option>
-                <option value="../en/" >EN</option>
-                <option value="../fr/" >FR</option>
-                <option value="./" selected>DE</option>
-                <option value="../pt/" >PT</option>
-                <option value="../nl/" >NL</option>
-                <option value="../it/" >IT</option>
+            <!-- Selector con colores oscuros forzados en cada option -->
+            <select id="lang-selector" onchange="location = this.value;" class="bg-transparent text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-700 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                <option value="../"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">ES</option>
+                <option value="../en/"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">EN</option>
+                <option value="../fr/"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">FR</option>
+                <option value="./" selected class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">DE</option>
+                <option value="../pt/"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">PT</option>
+                <option value="../nl/"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">NL</option>
+                <option value="../it/"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">IT</option>
             </select>
 
-            <button id="theme-toggle" class="p-2 rounded bg-gray-200 dark:bg-gray-800" aria-label="Cambiar tema">
+            <button id="theme-toggle" class="p-2 rounded bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition" aria-label="Cambiar tema">
                 <span id="theme-icon">🌙</span>
             </button>
         </div>

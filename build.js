@@ -51,22 +51,21 @@ langs.forEach(lang => {
         html = html.replace(optPlaceholder, optUrl);
     });
 
-    // INYECCIÓN REAL DE TRADUCCIONES (Soporta clases y atributos en medio)
+    // REEMPLAZO BLINDADO MULTILÍNEA
     Object.keys(translations).forEach(key => {
         const val = translations[key];
 
         if (key === 'meta_description') {
-            // Reemplazo especial para la meta descripción en content=""
             const metaRegex = new RegExp(`(data-i18n="${key}"[^>]*content=")[^"]*(")`);
             html = html.replace(metaRegex, `$1${val}$2`);
         } else {
-            // Reemplazo universal para cualquier etiqueta con data-i18n
-            const tagRegex = new RegExp(`(data-i18n="${key}"[^>]*>)[^<]*`, 'g');
+            // Reemplaza todo el contenido entre > y </ de la etiqueta data-i18n sin importar saltos de línea
+            const tagRegex = new RegExp(`(data-i18n="${key}"[^>]*>)[\\s\\S]*?(?=<\\/)`, 'g');
             html = html.replace(tagRegex, `$1${val}`);
         }
     });
 
-    // Guardar archivo traducido en la ubicación correspondiente
+    // Guardar archivo traducido
     if (isDefault) {
         fs.writeFileSync(path.join(__dirname, 'index.html'), html);
     } else {
@@ -76,4 +75,4 @@ langs.forEach(lang => {
     }
 });
 
-console.log('✅ ¡Traducciones inyectadas correctamente en cada idioma!');
+console.log('✅ ¡Páginas generadas sin restos en español y con modo oscuro corregido!');
