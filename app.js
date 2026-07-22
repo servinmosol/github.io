@@ -1,112 +1,84 @@
-const canvas = document.getElementById('neural-canvas');
-const ctx = canvas.getContext('2d');
+// ==========================================
+// 1. DICCIONARIO DE IDIOMAS (i18n)
+// ==========================================
+const translations = {
+    es: {
+        hero_badge: "Sistemas a medida",
+        hero_title: "Automatización real para empresas que valoran su tiempo.",
+        hero_subtitle: "Desarrollamos e integramos IA directamente en tu infraestructura. Sin cuotas mensuales por software, sin intermediarios."
+    },
+    en: {
+        hero_badge: "Custom Systems",
+        hero_title: "Real automation for companies that value their time.",
+        hero_subtitle: "We develop and integrate AI directly into your infrastructure. No monthly software fees, no middlemen."
+    },
+    fr: {
+        hero_badge: "Systèmes sur mesure",
+        hero_title: "Une véritable automatisation pour les entreprises qui valorisent leur temps.",
+        hero_subtitle: "Nous développons et intégrons l'IA directement dans votre infrastructure. Pas de frais mensuels, pas d'intermédiaires."
+    },
+    de: {
+        hero_badge: "Maßgeschneiderte Systeme",
+        hero_title: "Echte Automatisierung für Unternehmen, die ihre Zeit schätzen.",
+        hero_subtitle: "Wir entwickeln und integrieren KI direkt in Ihre Infrastruktur. Keine monatlichen Softwaregebühren, keine Vermittler."
+    },
+    pt: {
+        hero_badge: "Sistemas sob medida",
+        hero_title: "Automação real para empresas que valorizam seu tempo.",
+        hero_subtitle: "Desenvolvemos e integramos IA diretamente na sua infraestrutura. Sem taxas mensais de software, sem intermediários."
+    }
+};
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// Lógica de cambio de idioma
+const langSelector = document.getElementById('lang-selector');
 
-let particlesArray = [];
-// Detectar el ratón
-let mouse = {
-    x: null,
-    y: null,
-    radius: 150
+function setLanguage(lang) {
+    document.documentElement.lang = lang; // Cambia el atributo lang del HTML para SEO
+    
+    // Busca todas las etiquetas con data-i18n y reemplaza el texto
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
 }
 
-window.addEventListener('mousemove', function(event) {
-    mouse.x = event.x;
-    mouse.y = event.y;
+langSelector.addEventListener('change', (e) => {
+    setLanguage(e.target.value);
 });
 
-// Mantener tamaño al redimensionar
-window.addEventListener('resize', function() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    init();
+
+// ==========================================
+// 2. GESTOR DE MODO OSCURO / CLARO
+// ==========================================
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const htmlElement = document.documentElement;
+
+// Comprobar si hay preferencia guardada o usar la del sistema operativo
+function initTheme() {
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+        themeIcon.textContent = '☀️';
+    } else {
+        htmlElement.classList.remove('dark');
+        themeIcon.textContent = '🌙';
+    }
+}
+
+// Alternar el tema al hacer clic
+themeToggleBtn.addEventListener('click', () => {
+    htmlElement.classList.toggle('dark');
+    
+    if (htmlElement.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        themeIcon.textContent = '☀️';
+    } else {
+        localStorage.setItem('theme', 'light');
+        themeIcon.textContent = '🌙';
+    }
 });
 
-class Particle {
-    constructor(x, y, directionX, directionY, size, color) {
-        this.x = x;
-        this.y = y;
-        this.directionX = directionX;
-        this.directionY = directionY;
-        this.size = size;
-        this.color = color;
-    }
-    // Dibujar punto
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = '#3b82f6'; // Azul tipo tecnología
-        ctx.fill();
-    }
-    // Comprobar posición, ratón, mover el punto
-    update() {
-        if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
-        if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
-
-        // Interacción sutil con el ratón
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx*dx + dy*dy);
-        if (distance < mouse.radius + this.size){
-            if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 1;
-            if (mouse.x > this.x && this.x > this.size * 10) this.x -= 1;
-            if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 1;
-            if (mouse.y > this.y && this.y > this.size * 10) this.y -= 1;
-        }
-        this.x += this.directionX;
-        this.y += this.directionY;
-        this.draw();
-    }
-}
-
-// Llenar el array
-function init() {
-    particlesArray = [];
-    let numberOfParticles = (canvas.height * canvas.width) / 9000;
-    for (let i = 0; i < numberOfParticles; i++) {
-        let size = (Math.random() * 2) + 1;
-        let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-        let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-        let directionX = (Math.random() * 1) - 0.5;
-        let directionY = (Math.random() * 1) - 0.5;
-        let color = '#3b82f6';
-
-        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-    }
-}
-
-// Conectar nodos cercanos
-function connect() {
-    let opacityValue = 1;
-    for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
-            let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + 
-                           ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-            if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                opacityValue = 1 - (distance / 20000);
-                ctx.strokeStyle = 'rgba(59, 130, 246,' + opacityValue + ')';
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                ctx.stroke();
-            }
-        }
-    }
-}
-
-// Bucle de animación
-function animate() {
-    requestAnimationFrame(animate);
-    ctx.clearRect(0, 0, innerWidth, innerHeight);
-    for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-    }
-    connect();
-}
-
-// Ejecutar
-init();
-animate();
+// Arrancar el tema al cargar
+initTheme();
