@@ -1,5 +1,5 @@
 // ==========================================
-// 1. DICCIONARIO DE IDIOMAS (i18n) sdkfsdkfjsdk;jlfsd;l
+// 1. DICCIONARIO DE IDIOMAS (i18n)
 // ==========================================
 const translations = {
     es: {
@@ -29,13 +29,10 @@ const translations = {
     }
 };
 
-// Lógica de cambio de idioma
 const langSelector = document.getElementById('lang-selector');
 
 function setLanguage(lang) {
-    document.documentElement.lang = lang; // Cambia el atributo lang del HTML para SEO
-    
-    // Busca todas las etiquetas con data-i18n y reemplaza el texto
+    document.documentElement.lang = lang;
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -44,41 +41,48 @@ function setLanguage(lang) {
     });
 }
 
-langSelector.addEventListener('change', (e) => {
-    setLanguage(e.target.value);
-});
-
+if (langSelector) {
+    langSelector.addEventListener('change', (e) => setLanguage(e.target.value));
+}
 
 // ==========================================
-// 2. GESTOR DE MODO OSCURO / CLARO
+// 2. GESTOR DE MODO OSCURO / CLARO BLINDADO
 // ==========================================
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 const htmlElement = document.documentElement;
 
-// Comprobar si hay preferencia guardada o usar la del sistema operativo
+// Funciones con try/catch para evitar bloqueos del navegador en local
+function getSavedTheme() {
+    try { return localStorage.getItem('theme'); } catch(e) { return null; }
+}
+function saveTheme(theme) {
+    try { localStorage.setItem('theme', theme); } catch(e) { console.warn("Modo local: no se puede guardar el tema"); }
+}
+
 function initTheme() {
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    const saved = getSavedTheme();
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         htmlElement.classList.add('dark');
-        themeIcon.textContent = '☀️';
+        if(themeIcon) themeIcon.textContent = '☀️';
     } else {
         htmlElement.classList.remove('dark');
-        themeIcon.textContent = '🌙';
+        if(themeIcon) themeIcon.textContent = '🌙';
     }
 }
 
-// Alternar el tema al hacer clic
-themeToggleBtn.addEventListener('click', () => {
-    htmlElement.classList.toggle('dark');
-    
-    if (htmlElement.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-        themeIcon.textContent = '☀️';
-    } else {
-        localStorage.setItem('theme', 'light');
-        themeIcon.textContent = '🌙';
-    }
-});
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        htmlElement.classList.toggle('dark');
+        
+        if (htmlElement.classList.contains('dark')) {
+            saveTheme('dark');
+            if(themeIcon) themeIcon.textContent = '☀️';
+        } else {
+            saveTheme('light');
+            if(themeIcon) themeIcon.textContent = '🌙';
+        }
+    });
+}
 
-// Arrancar el tema al cargar
 initTheme();
