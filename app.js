@@ -1,21 +1,19 @@
-// ==========================================
-// 1. CARGA DINÁMICA DE IDIOMAS (i18n Asíncrono)
+/// ==========================================
+// 1. CARGA DE IDIOMAS CON RUTAS LIMPIAS (/es, /en, /nl...)
 // ==========================================
 const langSelector = document.getElementById('lang-selector');
 let currentTranslations = {};
+const validLangs = ['es', 'en', 'fr', 'de', 'pt', 'nl', 'it'];
 
-// Función para cargar el archivo JSON del idioma seleccionado
 async function loadLanguage(lang) {
     try {
         const response = await fetch(`./locales/${lang}.json`);
-        if (!response.ok) throw new Error(`No se pudo cargar el archivo locales/${lang}.json`);
+        if (!response.ok) throw new Error(`No se pudo cargar locales/${lang}.json`);
         
         currentTranslations = await response.json();
         
-        // Actualizar el atributo HTML
         document.documentElement.lang = lang;
         
-        // Reemplazar textos en el HTML
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (currentTranslations[key]) {
@@ -26,31 +24,58 @@ async function loadLanguage(lang) {
         // Guardar preferencia
         try { localStorage.setItem('user_lang', lang); } catch(e) {}
 
+        // Actualizar la URL a ruta limpia (ej: /nl, /en) sin recargar
+        const cleanPath = lang === 'es' ? '/' : `/${lang}`;
+        if (window.location.pathname !== cleanPath) {
+            window.history.pushState({}, '', cleanPath);
+        }
+
     } catch (error) {
         console.error("Error cargando el idioma:", error);
     }
 }
 
-// Escuchar cambios en el desplegable
 if (langSelector) {
     langSelector.addEventListener('change', (e) => {
         loadLanguage(e.target.value);
     });
 }
 
-// Detectar idioma inicial (Guardado > Navegador > Español por defecto)
 function initLanguage() {
+    // 1. Comprobar si venimos de la redirección 404
+    let redirectPath = null;
+    try {
+        redirectPath = sessionStorage.getItem('redirect_path');
+        if (redirectPath) sessionStorage.removeItem('redirect_path');
+    } catch(e) {}
+
+    // Extraer idioma de la URL (ej: /fr -> fr)
+    const currentPath = redirectPath || window.location.pathname;
+    const urlLang = currentPath.split('/').filter(Boolean).pop();
+
+    // 2. Idioma guardado previamente por el usuario
     let savedLang;
     try { savedLang = localStorage.getItem('user_lang'); } catch(e) {}
-    
-    const browserLang = navigator.language.slice(0, 2);
-   // Cambia esta línea en initLanguage():
-const initialLang = savedLang || (['es', 'en', 'fr', 'de', 'pt', 'nl', 'it'].includes(browserLang) ? browserLang : 'es');
 
+    // 3. Detección automática del Idioma del Navegador / Sistema Operativo
+    // navigator.language devuelve algo como "es-ES", "de-DE", "fr-FR". Cogemos los 2 primeros caracteres.
+    const userBrowserLang = (navigator.language || (navigator.languages && navigator.languages[0]) || '').slice(0, 2);
+
+    // Determinar el idioma final por orden estricto de prioridad
+    let initialLang = 'es'; // Fallback por defecto
+
+    if (urlLang && validLangs.includes(urlLang)) {
+        initialLang = urlLang;
+    } else if (savedLang && validLangs.includes(savedLang)) {
+        initialLang = savedLang;
+    } else if (userBrowserLang && validLangs.includes(userBrowserLang)) {
+        initialLang = userBrowserLang; // <--- Detecta el idioma de su SO/Navegador
+    }
+
+    // Aplicar al selector y cargar la traducción
     if (langSelector) langSelector.value = initialLang;
     loadLanguage(initialLang);
 }
-
 
 // ==========================================
 // 2. GESTOR DE MODO OSCURO / CLARO

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cargando...</title>
+    <script>
+        // Guardar la ruta que intentaba visitar (ej: /nl)
+        try {
+            sessionStorage.setItem('redirect_path', window.location.pathname);
+        } catch(e) {}
+        // Redirigir al index principal
+        window.location.replace('/');
+    </script>
+</head>
+<body>
+</body>
+</html>
