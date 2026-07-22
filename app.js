@@ -44,7 +44,8 @@ function initLanguage() {
     try { savedLang = localStorage.getItem('user_lang'); } catch(e) {}
     
     const browserLang = navigator.language.slice(0, 2);
-    const initialLang = savedLang || (['es', 'en', 'fr', 'de', 'pt'].includes(browserLang) ? browserLang : 'es');
+   // Cambia esta línea en initLanguage():
+const initialLang = savedLang || (['es', 'en', 'fr', 'de', 'pt', 'nl', 'it'].includes(browserLang) ? browserLang : 'es');
 
     if (langSelector) langSelector.value = initialLang;
     loadLanguage(initialLang);
