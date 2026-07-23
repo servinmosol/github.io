@@ -92,11 +92,10 @@
   "api_row_4": "Analizar un Excel de 1.000 filas",
   "api_row_5": "Reconocimiento visual de 1 Imagen (gemini-3.1-flash-image)",
   "api_note": "*Estimación basada en los precios de Google Gemini 3.1 Flash y gemini-3.1-flash-image. Necesitarías automatizar miles de operaciones al mes para llegar a gastar 1 euro.",
-  "cta_title": "¿Listo para recuperar tu tiempo?",
-  "cta_subtitle": "Deja de hacer el trabajo de un robot. Escríbenos hoy y veamos qué tareas podemos delegar a la IA esta misma semana.",
-  "cta_btn_wa": "Hablar por WhatsApp",
-  "cta_btn_email": "Enviar un Email",
   "footer_copy": "© 2026 Lanza Estudio. Todos los derechos reservados.",
   "footer_legal": "Aviso Legal",
-  "footer_privacy": "Política de Privacidad"
+  "footer_privacy": "Política de Privacidad",
+  "price_1_cta": "Desde 195 €",
+  "price_2_cta": "Desde 395 €",
+  "price_3_cta": "Desde 995 €"
 }
