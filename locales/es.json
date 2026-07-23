@@ -82,7 +82,7 @@
   "price_disclaimer": "*Los precios incluyen el desarrollo e integración de los sistemas por parte de Lanza Estudio. Los costes externos de infraestructura (registro de dominios, hosting avanzado o consumo de APIs de IA) no están incluidos y se abonan a precio de coste directamente al proveedor.",
   
   "api_table_title": "¿Cuánto cuesta realmente mantener la IA?",
-  "api_table_sub": "La gente cree que las APIs de IA son caras. Trabajamos con modelos ultraligeros de última generación como Gemini 3.1 Flash. Esto es lo que pagarías de consumo API estimado (en céntimos):",
+  "api_table_sub": "La gente cree que las APIs de IA son caras. Trabajamos con modelos ultraligeros de última generación como <strong>Gemini 3.1 Flash</strong>. Esto es lo que pagarías de consumo API estimado (en céntimos):",
   "api_col_1": "Acción a automatizar",
   "api_col_2": "Tokens aprox.",
   "api_col_3": "Coste en Euros (€)",
