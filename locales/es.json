@@ -82,7 +82,7 @@
   "price_disclaimer": "*Los precios incluyen el desarrollo e integración de los sistemas por parte de Lanza Estudio. Los costes externos de infraestructura (registro de dominios, hosting avanzado o consumo de APIs de IA) no están incluidos y se abonan a precio de coste directamente al proveedor.",
   
   "api_table_title": "¿Cuánto cuesta realmente mantener la IA?",
-  "api_table_sub": "La gente cree que las APIs de IA son caras. Trabajamos con modelos ultraligeros como Gemini 1.5 Flash. Esto es lo que pagarías de consumo API estimado (en céntimos):",
+  "api_table_sub": "La gente cree que las APIs de IA son caras. Trabajamos con modelos ultraligeros de última generación como Gemini 3.1 Flash. Esto es lo que pagarías de consumo API estimado (en céntimos):",
   "api_col_1": "Acción a automatizar",
   "api_col_2": "Tokens aprox.",
   "api_col_3": "Coste en Euros (€)",
@@ -90,6 +90,13 @@
   "api_row_2": "Conversación completa de Bot (10 mensajes)",
   "api_row_3": "Leer y extraer datos de un PDF de 10 páginas",
   "api_row_4": "Analizar un Excel de 1.000 filas",
-  "api_row_5": "Reconocimiento visual de 1 Imagen (factura/plano)",
-  "api_note": "*Estimación basada en los precios de Google Gemini 1.5 Flash. Necesitarías automatizar miles de operaciones al mes para llegar a gastar 1 euro."
+  "api_row_5": "Reconocimiento visual de 1 Imagen (gemini-3.1-flash-image)",
+  "api_note": "*Estimación basada en los precios de Google Gemini 3.1 Flash y gemini-3.1-flash-image. Necesitarías automatizar miles de operaciones al mes para llegar a gastar 1 euro.",
+  "cta_title": "¿Listo para recuperar tu tiempo?",
+  "cta_subtitle": "Deja de hacer el trabajo de un robot. Escríbenos hoy y veamos qué tareas podemos delegar a la IA esta misma semana.",
+  "cta_btn_wa": "Hablar por WhatsApp",
+  "cta_btn_email": "Enviar un Email",
+  "footer_copy": "© 2026 Lanza Estudio. Todos los derechos reservados.",
+  "footer_legal": "Aviso Legal",
+  "footer_privacy": "Política de Privacidad"
 }
