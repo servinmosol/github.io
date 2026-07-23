@@ -1,7 +1,7 @@
 {
   "meta_title": "Lanza Estudio | Automatización con IA",
   "meta_description": "Desarrollo de automatizaciones e IA para empresas a medida.",
-  "hero_badge": "Sistemas a medida",
+  "hero_badge": "Servicios",
   "hero_title": "Automatización real para empresas que valoran su tiempo.",
   "hero_subtitle": "Desarrollamos e integramos IA directamente en tu infraestructura.",
   "services_badge": "Soluciones a medida",
@@ -20,7 +20,7 @@
   "srv_2_feat_3": "Agendado sin llamadas intermedias",
   "srv_3_tag": "Escala & Integración",
   "srv_3_title": "PYMEs",
-  "srv_3_desc": "Conectamos tus sistemas existentes (CRM, ERP, Web) e integramos IA directamente en tu servidor sin cuotas de terceros.",
+  "srv_3_desc": "Conectamos tus sistemas existentes (CRM, ERP, Web) e integramos IA directamente en tu servidor.",
   "srv_3_feat_1": "Conexión de APIs e infraestructura Serverless",
   "srv_3_feat_2": "Agentes IA sobre datos privados de empresa",
   "srv_3_feat_3": "Procesamiento automático de documentos"
