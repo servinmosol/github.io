@@ -129,6 +129,63 @@
     </div>
 </section>
 
+<!-- SECCIÓN CALCULADORA DE AHORRO -->
+<section class="w-full max-w-7xl mx-auto px-6 py-16 border-t border-gray-200 dark:border-gray-800">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Columna Izquierda: Sliders / Controles -->
+        <div class="flex flex-col gap-8">
+            <div>
+                <span data-i18n="calc_badge" class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">Diagnóstico Rápido</span>
+                <h2 data-i18n="calc_title" class="text-3xl md:text-4xl font-extrabold tracking-tight mt-3">Calcula cuánto tiempo y dinero estás perdiendo.</h2>
+                <p data-i18n="calc_subtitle" class="text-gray-600 dark:text-gray-400 text-sm mt-2">Ajusta los valores para estimar el impacto de la automatización en tu equipo.</p>
+            </div>
+
+            <!-- Slider 1: Empleados -->
+            <div class="flex flex-col gap-2">
+                <div class="flex justify-between items-center text-sm font-semibold">
+                    <label for="slider-employees" data-i18n="calc_label_emp">Personas en tareas manuales:</label>
+                    <span id="val-employees" class="text-emerald-600 dark:text-emerald-400 font-bold text-base">3</span>
+                </div>
+                <input type="range" id="slider-employees" min="1" max="30" value="3" class="w-full h-2 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+            </div>
+
+            <!-- Slider 2: Horas perdidas -->
+            <div class="flex flex-col gap-2">
+                <div class="flex justify-between items-center text-sm font-semibold">
+                    <label for="slider-hours" data-i18n="calc_label_hours">Horas perdidas/semana por persona:</label>
+                    <span id="val-hours" class="text-emerald-600 dark:text-emerald-400 font-bold text-base">5h</span>
+                </div>
+                <input type="range" id="slider-hours" min="1" max="20" value="5" class="w-full h-2 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+            </div>
+        </div>
+
+        <!-- Columna Derecha: Tarjeta de Resultados -->
+        <div class="p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-xl flex flex-col justify-between gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 border-b border-gray-200 dark:border-gray-800 pb-6">
+                <div>
+                    <span data-i18n="calc_res_hours_label" class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 font-bold">Tiempo gastado/año</span>
+                    <div id="res-annual-hours" class="text-3xl font-black text-gray-900 dark:text-gray-100 mt-1">720 hrs</div>
+                </div>
+                <div>
+                    <span data-i18n="calc_res_money_label" class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 font-bold">Coste improductivo/año</span>
+                    <div id="res-annual-cost" class="text-3xl font-black text-emerald-600 dark:text-emerald-400 mt-1">18.000 €</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <p id="calc-advice" class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                    *Estimación calculada a 25€/hora de coste medio. Podríamos automatizar más del 70% de este trabajo.
+                </p>
+                <a id="btn-calc-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-center text-sm transition shadow-lg shadow-emerald-500/25">
+                    Solicitar diagnóstico para mi caso →
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
     <script src="./app.js" defer></script>
 </body>
 </html>
