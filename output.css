@@ -247,6 +247,9 @@
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
@@ -390,6 +393,9 @@
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
   }
   .p-8 {
     padding: calc(var(--spacing) * 8);
@@ -640,6 +646,9 @@
     }
     .lg\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .lg\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
     .lg\:text-7xl {
       font-size: var(--text-7xl);

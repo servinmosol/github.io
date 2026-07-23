@@ -30,5 +30,16 @@
   "calc_label_emp": "Personas en tareas manuales:",
   "calc_label_hours": "Horas perdidas/semana por persona:",
   "calc_res_hours_label": "Tiempo gastado/año",
-  "calc_res_money_label": "Coste improductivo/año"
+  "calc_res_money_label": "Coste improductivo/año",
+  "step_badge": "Metodología",
+  "step_title": "De la idea al sistema funcionando en 4 pasos.",
+  "step_subtitle": "Sin proyectos eternos ni tecnicismos innecesarios. Un proceso transparente enfocado en resultados.",
+  "step_1_title": "Diagnóstico",
+  "step_1_desc": "Reunión de 20 minutos para analizar tus flujos de trabajo e identificar qué tareas manuales te están costando dinero.",
+  "step_2_title": "Propuesta Cerrada",
+  "step_2_desc": "Te presentamos el diseño de la arquitectura, el tiempo de entrega exacto y un presupuesto fijo sin costes ocultos.",
+  "step_3_title": "Desarrollo e Integración",
+  "step_3_desc": "Construimos la solución y la conectamos a tus herramientas o servidores con impacto cero en tu operativa diaria.",
+  "step_4_title": "Puesta en Marcha",
+  "step_4_desc": "Desplegamos el sistema, realizamos pruebas reales, formamos a tu equipo y dejamos la infraestructura lista."
 }
