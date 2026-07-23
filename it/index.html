@@ -16,42 +16,55 @@
     <link rel="alternate" hreflang="nl" href="https://lanzaestudio.com/nl/" />
     <link rel="alternate" hreflang="it" href="https://lanzaestudio.com/it/" />
 </head>
-<body class="bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100 font-sans antialiased">
+<body class="bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100 font-sans antialiased relative">
 
-    <header class="w-full px-6 py-4 flex justify-between items-center border-b border-gray-200 dark:border-gray-800">
-        <!-- LOGO RESPONSIVE -->
-        <a href="./" class="flex items-center gap-3 font-bold text-xl tracking-tight focus:outline-none">
-            <img src="../img/web/ico.png" alt="Lanza Estudio" class="h-8 w-auto object-contain">
-            <!-- Texto para PC -->
-            <span class="hidden lg:inline">Lanza Estudio</span>
-            <!-- Texto para Tablet -->
-            <span class="hidden md:inline lg:hidden">LE</span>
-        </a>
-        
-        <div class="flex items-center gap-4">
-            <!-- Selector de idioma -->
-            <select id="lang-selector" onchange="location = this.value;" class="bg-transparent text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-700 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                <option value="../"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">ES</option>
-                <option value="../en/"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">EN</option>
-                <option value="../fr/"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">FR</option>
-                <option value="../de/"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">DE</option>
-                <option value="../pt/"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">PT</option>
-                <option value="../nl/"  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">NL</option>
-                <option value="./" selected class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">IT</option>
-            </select>
+    <!-- HEADER FLOTANTE TIPO "GLASS" -->
+    <div class="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 pt-4 sm:pt-6 pointer-events-none">
+        <header class="w-full max-w-5xl mx-auto flex justify-between items-center px-5 py-3 md:px-6 md:py-4 rounded-2xl md:rounded-full bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-lg shadow-gray-200/20 dark:shadow-black/20 pointer-events-auto transition-all duration-300">
+            
+            <!-- LOGO PREMIUM -->
+            <a href="./" class="flex items-center gap-3 font-bold text-lg md:text-xl tracking-tight focus:outline-none group">
+                <img src="../img/web/ico.png" alt="Lanza Estudio" class="h-8 md:h-9 w-auto object-contain group-hover:scale-110 transition-transform duration-300">
+                <span class="hidden md:block bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
+                    Lanza Estudio
+                </span>
+            </a>
+            
+            <!-- CONTROLES -->
+            <div class="flex items-center gap-3 md:gap-5">
+                
+                <!-- Selector de Idioma Customizado -->
+                <div class="relative group">
+                    <select id="lang-selector" onchange="location = this.value;" class="appearance-none bg-gray-100/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 font-semibold border border-transparent hover:border-emerald-400/50 dark:hover:border-emerald-500/50 rounded-full pl-4 pr-10 py-2 text-xs md:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all cursor-pointer shadow-sm">
+                        <option value="../"  class="bg-white dark:bg-gray-900">ES</option>
+                        <option value="../en/"  class="bg-white dark:bg-gray-900">EN</option>
+                        <option value="../fr/"  class="bg-white dark:bg-gray-900">FR</option>
+                        <option value="../de/"  class="bg-white dark:bg-gray-900">DE</option>
+                        <option value="../pt/"  class="bg-white dark:bg-gray-900">PT</option>
+                        <option value="../nl/"  class="bg-white dark:bg-gray-900">NL</option>
+                        <option value="./" selected class="bg-white dark:bg-gray-900">IT</option>
+                    </select>
+                    <!-- Flecha vectorizada elegante -->
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 dark:text-gray-400 group-hover:text-emerald-500 transition-colors">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                </div>
 
-            <button id="theme-toggle" class="p-2 rounded bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition" aria-label="Cambiar tema">
-                <span id="theme-icon">🌙</span>
-            </button>
-        </div>
-    </header>
+                <!-- Botón de Tema Oscuro/Claro -->
+                <button id="theme-toggle" class="p-2.5 rounded-full bg-gray-100/80 dark:bg-gray-800/80 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-gray-800 dark:text-gray-200 border border-transparent hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-300 shadow-sm" aria-label="Cambiar tema">
+                    <span id="theme-icon" class="block transition-transform duration-300 hover:rotate-12 text-sm md:text-base">🌙</span>
+                </button>
+            </div>
+        </header>
+    </div>
 
-    <main class="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex flex-col items-start gap-8">
-        <span data-i18n="hero_badge" class="px-3 py-1 text-sm font-semibold rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">Sistemi su misura</span>
+    <!-- MAIN HERO (Ajustado con pt-32 para compensar el header flotante) -->
+    <main class="w-full max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-48 md:pb-24 flex flex-col items-center text-center gap-8 relative z-10">
+        <span data-i18n="hero_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm">Sistemi su misura</span>
 
-        <h1 data-i18n="hero_title" class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight max-w-4xl">Vera automazione per le aziende che danno valore al proprio tempo.</h1>
+        <h1 data-i18n="hero_title" class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-tight max-w-5xl bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">Vera automazione per le aziende che danno valore al proprio tempo.</h1>
 
-        <p data-i18n="hero_subtitle" class="text-lg md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl">Sviluppiamo e integriamo l'IA direttamente nella tua infrastruttura.</p>
+        <p data-i18n="hero_subtitle" class="text-lg md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl leading-relaxed">Sviluppiamo e integriamo l'IA direttamente nella tua infrastruttura.</p>
     </main>
 
     <!-- SECCIÓN SERVICIOS -->
