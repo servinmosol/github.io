@@ -67,481 +67,367 @@
         <p data-i18n="hero_subtitle" class="text-lg md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl leading-relaxed">Nous développons et intégrons l'IA directement dans votre infrastructure.</p>
     </main>
 
-    <!-- SECCIÓN SERVICIOS -->
-<section class="w-full max-w-7xl mx-auto px-6 py-16 border-t border-gray-200 dark:border-gray-800">
-    
-    <!-- Cabecera de Sección -->
-    <div class="flex flex-col items-start gap-3 mb-12">
-        <span data-i18n="services_badge" class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
-            Soluciones a medida
-        </span>
-        <h2 data-i18n="services_title" class="text-3xl md:text-5xl font-extrabold tracking-tight">
-            Diseñado para el punto exacto donde está tu empresa.
-        </h2>
-    </div>
-
-    <!-- Grid 3 Módulos: 1 col (Móvil) | 2 cols (Tablet) | 3 cols (PC) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- SECCIÓN SERVICIOS -->
+    <section class="w-full max-w-7xl mx-auto px-6 py-20 relative z-10">
         
-        <!-- Módulo 1: Emprendedor -->
-        <div class="flex flex-col justify-between p-8 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-emerald-500/50 transition duration-300">
-            <div>
-                <div class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2" data-i18n="srv_1_tag">Fase Inicial</div>
-                <h3 class="text-2xl font-bold mb-3" data-i18n="srv_1_title">Emprendedores</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed" data-i18n="srv_1_desc">
-                    Lanza tu idea al mercado sin arruinarte en software. Validamos tu proyecto con infraestructura mínima y máxima captación.
-                </p>
-                <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-500">✓</span> <span data-i18n="srv_1_feat_1">Landing page de alta conversión</span>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-500">✓</span> <span data-i18n="srv_1_feat_2">Captación y CRM sin licencias</span>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-500">✓</span> <span data-i18n="srv_1_feat_3">Cualificación automática de leads</span>
-                    </li>
-                </ul>
-            </div>
+        <!-- Cabecera Centrada -->
+        <div class="flex flex-col items-center text-center gap-4 mb-16">
+            <span data-i18n="services_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm">
+                Servicios
+            </span>
+            <h2 data-i18n="services_title" class="text-4xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
+                Diseñado para el punto exacto donde está tu empresa.
+            </h2>
         </div>
 
-        <!-- Módulo 2: Autónomo -->
-        <div class="flex flex-col justify-between p-8 rounded-2xl border-2 border-emerald-500/80 bg-white dark:bg-gray-900/80 relative shadow-lg shadow-emerald-500/5">
-            <div>
-                <div class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2" data-i18n="srv_2_tag">Eficiencia Individual</div>
-                <h3 class="text-2xl font-bold mb-3" data-i18n="srv_2_title">Autónomos</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed" data-i18n="srv_2_desc">
-                    Recupera tu tiempo libre. Automatizamos tus tareas repetitivas, la atención al cliente y la gestión de cobros.
-                </p>
-                <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-500">✓</span> <span data-i18n="srv_2_feat_1">Bots de atención en WhatsApp 24/7</span>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-500">✓</span> <span data-i18n="srv_2_feat_2">Facturación y cobros automáticos</span>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-500">✓</span> <span data-i18n="srv_2_feat_3">Agendado sin llamadas intermedias</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Módulo 3: PYME (Ocupa 2 cols en tablet para cuadrar, o 1 en PC) -->
-        <div class="md:col-span-2 lg:col-span-1 flex flex-col justify-between p-8 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-emerald-500/50 transition duration-300">
-            <div>
-                <div class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2" data-i18n="srv_3_tag">Escala & Integración</div>
-                <h3 class="text-2xl font-bold mb-3" data-i18n="srv_3_title">PYMEs</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed" data-i18n="srv_3_desc">
-                    Conectamos tus sistemas existentes (CRM, ERP, Web) e integramos IA directamente en tu servidor sin cuotas de terceros.
-                </p>
-                <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-500">✓</span> <span data-i18n="srv_3_feat_1">Conexión de APIs e infraestructura Serverless</span>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-500">✓</span> <span data-i18n="srv_3_feat_2">Agentes IA sobre datos privados de empresa</span>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-500">✓</span> <span data-i18n="srv_3_feat_3">Procesamiento automático de documentos</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- SECCIÓN CALCULADORA DE AHORRO -->
-<section class="w-full max-w-7xl mx-auto px-6 py-16 border-t border-gray-200 dark:border-gray-800">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
-        <!-- Columna Izquierda: Sliders / Controles -->
-        <div class="flex flex-col gap-8">
-            <div>
-                <span data-i18n="calc_badge" class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
-                    Diagnóstico Rápido
-                </span>
-                <h2 data-i18n="calc_title" class="text-3xl md:text-4xl font-extrabold tracking-tight mt-3">
-                    Calcula cuánto tiempo y dinero estás perdiendo.
-                </h2>
-                <p data-i18n="calc_subtitle" class="text-gray-600 dark:text-gray-400 text-sm mt-2">
-                    Ajusta los valores para estimar el impacto de la automatización en tu equipo.
-                </p>
-            </div>
-
-            <!-- Slider 1: Empleados -->
-            <div class="flex flex-col gap-2">
-                <div class="flex justify-between items-center text-sm font-semibold">
-                    <label for="slider-employees" data-i18n="calc_label_emp">Personas en tareas manuales:</label>
-                    <span id="val-employees" class="text-emerald-600 dark:text-emerald-400 font-bold text-base">3</span>
-                </div>
-                <input type="range" id="slider-employees" min="1" max="30" value="3" class="w-full h-2 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-emerald-500">
-            </div>
-
-            <!-- Slider 2: Horas perdidas -->
-            <div class="flex flex-col gap-2">
-                <div class="flex justify-between items-center text-sm font-semibold">
-                    <label for="slider-hours" data-i18n="calc_label_hours">Horas perdidas/semana por persona:</label>
-                    <span id="val-hours" class="text-emerald-600 dark:text-emerald-400 font-bold text-base">5h</span>
-                </div>
-                <input type="range" id="slider-hours" min="1" max="20" value="5" class="w-full h-2 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-emerald-500">
-            </div>
-        </div>
-
-        <!-- Columna Derecha: Tarjeta de Resultados -->
-        <div class="p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-xl flex flex-col justify-between gap-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 border-b border-gray-200 dark:border-gray-800 pb-6">
+        <!-- Grid 3 Módulos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Tarjeta 1: Emprendedor -->
+            <div class="group flex flex-col justify-between p-8 rounded-3xl border border-gray-200/80 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
                 <div>
-                    <span data-i18n="calc_res_hours_label" class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 font-bold">Tiempo gastado/año</span>
-                    <div id="res-annual-hours" class="text-3xl font-black text-gray-900 dark:text-gray-100 mt-1">720 hrs</div>
+                    <div class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3" data-i18n="srv_1_tag">Fase Inicial</div>
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="srv_1_title">Emprendedores</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed" data-i18n="srv_1_desc">
+                        Lanza tu idea al mercado sin arruinarte en software. Validamos tu proyecto con infraestructura mínima y máxima captación.
+                    </p>
+                    <ul class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold">✓</span> <span data-i18n="srv_1_feat_1">Landing page de alta conversión</span></li>
+                        <li class="flex items-center gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold">✓</span> <span data-i18n="srv_1_feat_2">Captación y CRM sin licencias</span></li>
+                        <li class="flex items-center gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold">✓</span> <span data-i18n="srv_1_feat_3">Cualificación automática de leads</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Autónomo (Destacada) -->
+            <div class="group flex flex-col justify-between p-8 rounded-3xl border-2 border-emerald-500/80 bg-white dark:bg-gray-900 shadow-xl shadow-emerald-500/10 hover:shadow-2xl hover:shadow-emerald-500/20 hover:-translate-y-2 transition-all duration-300 relative">
+                <div class="absolute -top-3 left-8 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider shadow-sm">
+                    Recomendado
                 </div>
                 <div>
-                    <span data-i18n="calc_res_money_label" class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 font-bold">Coste improductivo/año</span>
-                    <div id="res-annual-cost" class="text-3xl font-black text-emerald-600 dark:text-emerald-400 mt-1">18.000 €</div>
+                    <div class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3 mt-2" data-i18n="srv_2_tag">Eficiencia Individual</div>
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="srv_2_title">Autónomos</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed" data-i18n="srv_2_desc">
+                        Recupera tu tiempo libre. Automatizamos tus tareas repetitivas, la atención al cliente y la gestión de cobros.
+                    </p>
+                    <ul class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shadow-sm shadow-emerald-500/50">✓</span> <span data-i18n="srv_2_feat_1">Bots de atención en WhatsApp 24/7</span></li>
+                        <li class="flex items-center gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shadow-sm shadow-emerald-500/50">✓</span> <span data-i18n="srv_2_feat_2">Facturación y cobros automáticos</span></li>
+                        <li class="flex items-center gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shadow-sm shadow-emerald-500/50">✓</span> <span data-i18n="srv_2_feat_3">Agendado sin llamadas intermedias</span></li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="flex flex-col gap-4">
-                <p id="calc-advice" class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                    *Estimación calculada a 25€/hora de coste medio. Podríamos automatizar más del 70% de este trabajo.
-                </p>
-                <a id="btn-calc-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-center text-sm transition shadow-lg shadow-emerald-500/25">
-                    Solicitar diagnóstico para mi caso →
-                </a>
+            <!-- Tarjeta 3: PYME -->
+            <div class="md:col-span-2 lg:col-span-1 group flex flex-col justify-between p-8 rounded-3xl border border-gray-200/80 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
+                <div>
+                    <div class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3" data-i18n="srv_3_tag">Escala & Integración</div>
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="srv_3_title">PYMEs</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed" data-i18n="srv_3_desc">
+                        Conectamos tus sistemas existentes (CRM, ERP, Web) e integramos IA directamente en tu servidor.
+                    </p>
+                    <ul class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold">✓</span> <span data-i18n="srv_3_feat_1">Conexión de APIs e infraestructura Serverless</span></li>
+                        <li class="flex items-center gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold">✓</span> <span data-i18n="srv_3_feat_2">Agentes IA sobre datos privados de empresa</span></li>
+                        <li class="flex items-center gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold">✓</span> <span data-i18n="srv_3_feat_3">Procesamiento automático de documentos</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- SECCIÓN CALCULADORA DE AHORRO -->
+    <section class="w-full max-w-7xl mx-auto px-6 py-20 border-t border-gray-200/50 dark:border-gray-800/50">
+        <div class="flex flex-col items-center text-center gap-4 mb-16">
+            <span data-i18n="calc_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm">
+                Diagnóstico Rápido
+            </span>
+            <h2 data-i18n="calc_title" class="text-3xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
+                Calcula cuánto tiempo y dinero estás perdiendo.
+            </h2>
+            <p data-i18n="calc_subtitle" class="text-gray-600 dark:text-gray-400 text-base max-w-2xl mt-2">
+                Ajusta los valores para estimar el impacto de la automatización en tu equipo.
+            </p>
+        </div>
 
-<!-- SECCIÓN METODOLOGÍA / PROCESO -->
-<section class="w-full max-w-7xl mx-auto px-6 py-16 border-t border-gray-200 dark:border-gray-800">
-    
-    <!-- Cabecera de Sección -->
-    <div class="flex flex-col items-start gap-3 mb-12">
-        <span data-i18n="step_badge" class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
-            Metodología
-        </span>
-        <h2 data-i18n="step_title" class="text-3xl md:text-5xl font-extrabold tracking-tight">
-            De la idea al sistema funcionando en 4 pasos.
-        </h2>
-        <p data-i18n="step_subtitle" class="text-gray-600 dark:text-gray-400 text-base max-w-2xl">
-            Sin proyectos eternos ni tecnicismos innecesarios. Un proceso transparente enfocado en resultados.
-        </p>
-    </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+            
+            <!-- Controles (Izquierda) -->
+            <div class="flex flex-col gap-10 p-8 md:p-10 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md shadow-lg">
+                <div class="flex flex-col gap-4">
+                    <div class="flex justify-between items-center font-bold">
+                        <label for="slider-employees" data-i18n="calc_label_emp" class="text-gray-700 dark:text-gray-300">Personas en tareas manuales:</label>
+                        <span id="val-employees" class="text-emerald-600 dark:text-emerald-400 text-xl">3</span>
+                    </div>
+                    <input type="range" id="slider-employees" min="1" max="30" value="3" class="w-full h-3 bg-gray-200 dark:bg-gray-800 rounded-full appearance-none cursor-pointer accent-emerald-500 shadow-inner">
+                </div>
 
-    <!-- Grid 4 Pasos: 1 col (Móvil) | 2 cols (Tablet) | 4 cols (PC) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- Paso 1 -->
-        <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 flex flex-col justify-between gap-6">
-            <div>
-                <span class="text-4xl font-black text-emerald-500 block mb-3">01</span>
-                <h3 class="text-xl font-bold mb-2" data-i18n="step_1_title">Diagnóstico</h3>
+                <div class="flex flex-col gap-4">
+                    <div class="flex justify-between items-center font-bold">
+                        <label for="slider-hours" data-i18n="calc_label_hours" class="text-gray-700 dark:text-gray-300">Horas perdidas/semana por persona:</label>
+                        <span id="val-hours" class="text-emerald-600 dark:text-emerald-400 text-xl">5h</span>
+                    </div>
+                    <input type="range" id="slider-hours" min="1" max="20" value="5" class="w-full h-3 bg-gray-200 dark:bg-gray-800 rounded-full appearance-none cursor-pointer accent-emerald-500 shadow-inner">
+                </div>
+            </div>
+
+            <!-- Tarjeta Dashboard de Resultados (Derecha - Diseño Tech Oscuro) -->
+            <div class="p-10 rounded-3xl bg-gradient-to-br from-gray-900 to-black text-white shadow-2xl shadow-emerald-500/10 border border-gray-800 relative overflow-hidden group">
+                <!-- Efecto de brillo de fondo -->
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/20 blur-3xl rounded-full pointer-events-none group-hover:bg-emerald-500/30 transition-all duration-700"></div>
+                
+                <div class="relative z-10 flex flex-col justify-between gap-10">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 border-b border-gray-800 pb-8">
+                        <div>
+                            <span data-i18n="calc_res_hours_label" class="text-xs font-bold uppercase tracking-widest text-gray-400">Tiempo gastado/año</span>
+                            <div id="res-annual-hours" class="text-4xl font-black mt-2 text-white tracking-tight">720 hrs</div>
+                        </div>
+                        <div>
+                            <span data-i18n="calc_res_money_label" class="text-xs font-bold uppercase tracking-widest text-emerald-400">Coste improductivo/año</span>
+                            <div id="res-annual-cost" class="text-4xl font-black mt-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-300 tracking-tight">18.000 €</div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-5">
+                        <p id="calc-advice" class="text-sm text-gray-400 leading-relaxed font-medium">
+                            *Estimación calculada a 25€/hora. Podríamos automatizar más del 70% de este trabajo.
+                        </p>
+                        <a id="btn-calc-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-gray-900 font-black text-center text-sm md:text-base transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]">
+                            Solicitar diagnóstico para mi caso →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN METODOLOGÍA / PROCESO -->
+    <section class="w-full max-w-7xl mx-auto px-6 py-20 border-t border-gray-200/50 dark:border-gray-800/50">
+        <div class="flex flex-col items-center text-center gap-4 mb-16">
+            <span data-i18n="step_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm">
+                Metodología
+            </span>
+            <h2 data-i18n="step_title" class="text-3xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
+                De la idea al sistema funcionando en 4 pasos.
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Pasos con hover sutil -->
+            <div class="group p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:border-emerald-500/30 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-all duration-300">
+                <span class="text-5xl font-black block mb-4 bg-clip-text text-transparent bg-gradient-to-br from-emerald-400 to-emerald-600 group-hover:scale-110 transition-transform origin-left">01</span>
+                <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100" data-i18n="step_1_title">Diagnóstico</h3>
                 <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="step_1_desc">
-                    Reunión de 20 minutos para analizar tus flujos de trabajo e identificar qué tareas manuales te están costando dinero.
+                    Reunión de 20 min para analizar tus flujos de trabajo e identificar tareas manuales costosas.
                 </p>
             </div>
-        </div>
-
-        <!-- Paso 2 -->
-        <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 flex flex-col justify-between gap-6">
-            <div>
-                <span class="text-4xl font-black text-emerald-500 block mb-3">02</span>
-                <h3 class="text-xl font-bold mb-2" data-i18n="step_2_title">Propuesta Cerrada</h3>
+            
+            <div class="group p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:border-emerald-500/30 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-all duration-300">
+                <span class="text-5xl font-black block mb-4 bg-clip-text text-transparent bg-gradient-to-br from-emerald-400 to-emerald-600 group-hover:scale-110 transition-transform origin-left">02</span>
+                <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100" data-i18n="step_2_title">Propuesta Cerrada</h3>
                 <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="step_2_desc">
-                    Te presentamos el diseño de la arquitectura, el tiempo de entrega exacto y un presupuesto fijo sin costes ocultos.
+                    Diseño de arquitectura, tiempo de entrega y presupuesto fijo sin costes ocultos.
                 </p>
             </div>
-        </div>
 
-        <!-- Paso 3 -->
-        <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 flex flex-col justify-between gap-6">
-            <div>
-                <span class="text-4xl font-black text-emerald-500 block mb-3">03</span>
-                <h3 class="text-xl font-bold mb-2" data-i18n="step_3_title">Desarrollo e Integración</h3>
+            <div class="group p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:border-emerald-500/30 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-all duration-300">
+                <span class="text-5xl font-black block mb-4 bg-clip-text text-transparent bg-gradient-to-br from-emerald-400 to-emerald-600 group-hover:scale-110 transition-transform origin-left">03</span>
+                <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100" data-i18n="step_3_title">Desarrollo</h3>
                 <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="step_3_desc">
-                    Construimos la solución y la conectamos a tus herramientas o servidores con impacto cero en tu operativa diaria.
+                    Construimos la solución y la conectamos a tus herramientas con impacto cero.
                 </p>
             </div>
-        </div>
 
-        <!-- Paso 4 -->
-        <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 flex flex-col justify-between gap-6">
-            <div>
-                <span class="text-4xl font-black text-emerald-500 block mb-3">04</span>
-                <h3 class="text-xl font-bold mb-2" data-i18n="step_4_title">Puesta en Marcha</h3>
+            <div class="group p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:border-emerald-500/30 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-all duration-300">
+                <span class="text-5xl font-black block mb-4 bg-clip-text text-transparent bg-gradient-to-br from-emerald-400 to-emerald-600 group-hover:scale-110 transition-transform origin-left">04</span>
+                <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100" data-i18n="step_4_title">Puesta en Marcha</h3>
                 <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="step_4_desc">
-                    Desplegamos el sistema, realizamos pruebas reales, formamos a tu equipo y dejamos la infraestructura lista.
+                    Desplegamos el sistema, realizamos pruebas reales y formamos a tu equipo.
                 </p>
             </div>
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
+    <section class="w-full max-w-4xl mx-auto px-6 py-20 border-t border-gray-200/50 dark:border-gray-800/50">
+        <div class="flex flex-col items-center text-center gap-4 mb-12">
+            <span data-i18n="faq_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm">
+                Dudas Resueltas
+            </span>
+            <h2 data-i18n="faq_title" class="text-3xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
+                Todo claro antes de empezar.
+            </h2>
+        </div>
 
-<!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
-<section class="w-full max-w-7xl mx-auto px-6 py-16 border-t border-gray-200 dark:border-gray-800">
-    
-    <!-- Cabecera de Sección -->
-    <div class="flex flex-col items-start gap-3 mb-12">
-        <span data-i18n="faq_badge" class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
-            Dudas Resueltas
-        </span>
-        <h2 data-i18n="faq_title" class="text-3xl md:text-5xl font-extrabold tracking-tight">
-            Todo claro antes de empezar. Sin sorpresas.
-        </h2>
-        <p data-i18n="faq_subtitle" class="text-gray-600 dark:text-gray-400 text-base max-w-2xl">
-            Respondemos a las preguntas clave sobre seguridad, costes, propiedad del software y funcionamiento técnico.
-        </p>
-    </div>
-
-    <!-- Lista de Acordeones: 1 columna en móvil/tablet, 2 columnas en PC -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full items-start">
-        
-        <!-- FAQ 1: Seguridad y Datos -->
-        <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
-                <span data-i18n="faq_1_q">¿Mis datos de empresa o clientes están seguros? ¿La IA aprende de mi información?</span>
-                <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
-            </summary>
-            <p data-i18n="faq_1_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
-                Absolutamente protegidos. Trabajamos con APIs empresariales privadas que cumplen estrictamente el RGPD europeo. Tu información NUNCA se utiliza para entrenar modelos públicos de inteligencia artificial ni se comparte con terceros. Todo el procesamiento de datos se realiza bajo protocolos cifrados y entornos controlados.
-            </p>
-        </details>
-
-        <!-- FAQ 2: Integración con Software Actual -->
-        <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
-                <span data-i18n="faq_2_q">¿Tengo que cambiar el CRM, ERP o herramientas que ya utiliza mi empresa?</span>
-                <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
-            </summary>
-            <p data-i18n="faq_2_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
-                No. Nos adaptamos a tu infraestructura existente. Siempre que tus herramientas dispongan de API, base de datos o capacidades de exportación/importación, nos conectamos directamente a ellas. El objetivo es eliminar el trabajo manual de tu equipo sin forzarles a aprender a usar programas nuevos.
-            </p>
-        </details>
-
-        <!-- FAQ 3: Propiedad del Código -->
-        <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
-                <span data-i18n="faq_3_q">¿De quién es la propiedad del código y de los sistemas desarrollados?</span>
-                <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
-            </summary>
-            <p data-i18n="faq_3_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
-                Tuya al 100%. No creemos en el "secuestro de clientes" ni en dependencias artificiales. Al finalizar el proyecto te entregamos todo el código fuente, la documentación técnica y las credenciales de acceso a tu propia infraestructura. Eres el dueño absoluto de tu sistema.
-            </p>
-        </details>
-
-        <!-- FAQ 4: Costes Ocultos y Mantenimiento -->
-        <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
-                <span data-i18n="faq_4_q">¿Hay cuotas fijas mensuales obligatorias o costes ocultos?</span>
-                <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
-            </summary>
-            <p data-i18n="faq_4_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
-                Ninguno por nuestra parte. Trabajas a presupuesto cerrado por el desarrollo e integración. Los únicos costes recurrentes serán los consumos directos de los proveedores de infraestructura que utilices (por ejemplo, tus propios servidores cloud o el consumo exacto de tokens de IA/WhatsApp), pagados a precio de coste directamente a ellos. Si en el futuro deseas mantenimiento o nuevas funciones, lo contratas bajo demanda.
-            </p>
-        </details>
-
-        <!-- FAQ 5: Gestión de Fallos de APIs -->
-        <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
-                <span data-i18n="faq_5_q">¿Qué ocurre si falla la conexión de un servidor o una API externa?</span>
-                <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
-            </summary>
-            <p data-i18n="faq_5_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
-                Diseñamos las automatizaciones con arquitectura resiliente: incluyen colas de reintento automático, registros de auditoría (logs) y un sistema de alertas en tiempo real que te notifica si un proceso se interrumpe por causa externa. Ningún dato se pierde durante una caída temporal de un proveedor.
-            </p>
-        </details>
-
-        <!-- FAQ 6: Bloqueos en WhatsApp -->
-        <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
-                <span data-i18n="faq_6_q">¿Pueden bloquear mi número de teléfono al automatizar WhatsApp?</span>
-                <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
-            </summary>
-            <p data-i18n="faq_6_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
-                No, porque trabajamos exclusivamente con la API Oficial de WhatsApp Business de Meta. A diferencia de las herramientas no oficiales de spam o "scraping" que provocan bloqueos inmediatos, nuestras integraciones cumplen al 100% las normativas comerciales oficiales de Meta, garantizando la seguridad total de tu número de empresa.
-            </p>
-        </details>
-
-        <!-- FAQ 7: Tiempo de dedicación del cliente -->
-        <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden lg:col-span-2">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
-                <span data-i18n="faq_7_q">¿Cuánto tiempo tendrá que dedicar mi equipo durante el desarrollo?</span>
-                <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
-            </summary>
-            <p data-i18n="faq_7_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
-                Mínimo. Tu único trabajo consiste en una sesión inicial de diagnóstico de 20-30 minutos y facilitarnos los accesos necesarios. A partir de ahí nosotros nos encargamos de todo el desarrollo, pruebas y puesta a punto. Solo nos volveremos a reunir para la demostración final y la formación de tu personal.
-            </p>
-        </details>
-
-    </div>
-</section>
-<!-- SECCIÓN DE PRECIOS -->
-<section class="w-full max-w-7xl mx-auto px-6 py-16 border-t border-gray-200 dark:border-gray-800">
-    
-    <!-- Cabecera -->
-    <div class="flex flex-col items-center text-center gap-3 mb-12">
-        <span data-i18n="price_badge" class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
-            Inversión
-        </span>
-        <h2 data-i18n="price_title" class="text-3xl md:text-5xl font-extrabold tracking-tight">
-            Precios diseñados para que no tengas excusa.
-        </h2>
-        <p data-i18n="price_subtitle" class="text-gray-600 dark:text-gray-400 text-base max-w-2xl mt-2">
-            Eliminamos la barrera de entrada. Empieza a automatizar hoy mismo con una oferta irrechazable y escala solo cuando veas resultados.
-        </p>
-    </div>
-
-    <!-- Grid de 3 Precios -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
-        
-        <!-- Tarjeta 1: Emprendedor -->
-        <div class="p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex flex-col hover:border-emerald-500 transition duration-300">
-            <h3 data-i18n="price_1_title" class="text-xl font-bold">Landing Page Rápida</h3>
-            <p data-i18n="price_1_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para emprendedores</p>
+        <div class="flex flex-col gap-4 w-full">
+            <!-- Detalles limpios con hover -->
+            <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 hover:bg-gray-50 dark:hover:bg-gray-800/80 transition-colors [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                <summary class="flex items-center justify-between font-bold text-lg text-gray-900 dark:text-gray-100 select-none group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    <span data-i18n="faq_1_q">¿Mis datos están seguros?</span>
+                    <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
+                </summary>
+                <p data-i18n="faq_1_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-200 dark:border-gray-700 pt-4">
+                    Absolutamente protegidos. Trabajamos con APIs empresariales privadas (RGPD). Tu información NUNCA entrena modelos públicos.
+                </p>
+            </details>
             
-            <!-- Botón CTA WhatsApp -->
-            <div class="my-6">
-                <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20la%20Landing%20Page." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-500 hover:text-white dark:hover:text-white font-bold transition-all shadow-md">
-                    <span data-i18n="price_1_cta">Desde 195 €</span>
-                    <span class="text-lg">💬</span>
-                </a>
+            <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 hover:bg-gray-50 dark:hover:bg-gray-800/80 transition-colors [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                <summary class="flex items-center justify-between font-bold text-lg text-gray-900 dark:text-gray-100 select-none group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    <span data-i18n="faq_2_q">¿Tengo que cambiar mi CRM actual?</span>
+                    <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
+                </summary>
+                <p data-i18n="faq_2_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-200 dark:border-gray-700 pt-4">
+                    No. Nos adaptamos a tu infraestructura existente. Nos conectamos directamente a tus herramientas por API.
+                </p>
+            </details>
+
+            <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 hover:bg-gray-50 dark:hover:bg-gray-800/80 transition-colors [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                <summary class="flex items-center justify-between font-bold text-lg text-gray-900 dark:text-gray-100 select-none group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    <span data-i18n="faq_3_q">¿De quién es la propiedad del código?</span>
+                    <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
+                </summary>
+                <p data-i18n="faq_3_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-200 dark:border-gray-700 pt-4">
+                    Tuya al 100%. Te entregamos todo el código fuente y credenciales. Eres el dueño absoluto de tu sistema.
+                </p>
+            </details>
+
+            <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 hover:bg-gray-50 dark:hover:bg-gray-800/80 transition-colors [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                <summary class="flex items-center justify-between font-bold text-lg text-gray-900 dark:text-gray-100 select-none group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    <span data-i18n="faq_4_q">¿Hay cuotas mensuales obligatorias?</span>
+                    <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
+                </summary>
+                <p data-i18n="faq_4_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-200 dark:border-gray-700 pt-4">
+                    Ninguna por nuestra parte. Solo pagas a precio de coste directo los consumos mínimos de tu propio servidor o API.
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PRECIOS -->
+    <section class="w-full max-w-7xl mx-auto px-6 py-20 border-t border-gray-200/50 dark:border-gray-800/50">
+        <div class="flex flex-col items-center text-center gap-4 mb-16">
+            <span data-i18n="price_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm">
+                Inversión
+            </span>
+            <h2 data-i18n="price_title" class="text-3xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
+                Precios diseñados para que no tengas excusa.
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+            <!-- Tarjeta 1 -->
+            <div class="p-8 rounded-[2rem] border border-gray-200/80 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm flex flex-col hover:border-emerald-500/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <h3 data-i18n="price_1_title" class="text-2xl font-bold">Landing Page Rápida</h3>
+                <p data-i18n="price_1_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para emprendedores</p>
+                <div class="my-8">
+                    <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20la%20Landing%20Page." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 font-bold transition-all shadow-md">
+                        <span data-i18n="price_1_cta" class="text-xl tracking-tight">Desde 49 €</span>
+                        <span class="text-xl">💬</span>
+                    </a>
+                </div>
+                <ul class="space-y-4 text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">
+                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_1_feat1">Diseño web de alta conversión y SEO</span></li>
+                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_1_feat2">Optimización de velocidad (100/100)</span></li>
+                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_1_feat3">🎁 BONUS: Hosting gratis sin backend</span></li>
+                </ul>
             </div>
 
-            <ul class="space-y-4 text-sm text-gray-700 dark:text-gray-300 flex-1">
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_1_feat1">Diseño web de alta conversión y SEO</span></li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_1_feat2">Botón de WhatsApp integrado</span></li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_1_feat3">🎁 BONUS: Optimización de velocidad (100/100 Google)</span></li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_support">6 meses de soporte técnico incluido</span></li>
-            </ul>
-        </div>
-
-        <!-- Tarjeta 2: Autónomo (Destacada) -->
-        <div class="p-8 rounded-3xl border-2 border-emerald-500 bg-emerald-50/50 dark:bg-emerald-900/10 flex flex-col relative shadow-xl shadow-emerald-500/10 transform md:-translate-y-4">
-            <div data-i18n="price_2_badge" class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
-                Más popular
-            </div>
-            <h3 data-i18n="price_2_title" class="text-xl font-bold">Bot IA para Web/WhatsApp</h3>
-            <p data-i18n="price_2_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para autónomos</p>
-            
-            <!-- Botón CTA WhatsApp Destacado -->
-            <div class="my-6">
-                <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20el%20Bot%20IA." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-black transition-all shadow-lg shadow-emerald-500/30 hover:scale-105">
-                    <span data-i18n="price_2_cta">Desde 395 €</span>
-                    <span class="text-xl">💬</span>
-                </a>
+            <!-- Tarjeta 2 (Destacada) -->
+            <div class="p-8 rounded-[2rem] border-2 border-emerald-500 bg-emerald-50/50 dark:bg-emerald-900/20 flex flex-col relative shadow-2xl shadow-emerald-500/10 transform md:-translate-y-4 hover:-translate-y-6 transition-transform duration-300">
+                <div data-i18n="price_2_badge" class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-emerald-500 to-teal-400 text-white px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-md">
+                    Más popular
+                </div>
+                <h3 data-i18n="price_2_title" class="text-2xl font-bold mt-2">Bot IA para Web/WhatsApp</h3>
+                <p data-i18n="price_2_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para autónomos</p>
+                <div class="my-8">
+                    <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20el%20Bot%20IA." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-white dark:text-gray-900 font-black transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]">
+                        <span data-i18n="price_2_cta" class="text-xl tracking-tight">Desde 99 €</span>
+                        <span class="text-xl">💬</span>
+                    </a>
+                </div>
+                <ul class="space-y-4 text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">
+                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_2_feat1">Asistente entrenado con tu negocio</span></li>
+                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_2_feat2">Respuestas 24/7 a clientes</span></li>
+                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_2_feat3">Filtrado automático de curiosos</span></li>
+                </ul>
             </div>
 
-            <ul class="space-y-4 text-sm text-gray-700 dark:text-gray-300 flex-1">
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_2_feat1">Asistente entrenado con tu negocio</span></li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_2_feat2">Respuestas 24/7 a clientes</span></li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_2_feat3">Filtrado automático de curiosos</span></li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_support">6 meses de soporte técnico incluido</span></li>
-            </ul>
+            <!-- Tarjeta 3 -->
+            <div class="p-8 rounded-[2rem] border border-gray-200/80 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm flex flex-col hover:border-emerald-500/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <h3 data-i18n="price_3_title" class="text-2xl font-bold">Agente IA Multimodal</h3>
+                <p data-i18n="price_3_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para PYMEs</p>
+                <div class="my-8">
+                    <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20el%20Agente%20IA%20Multimodal." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 font-bold transition-all shadow-md">
+                        <span data-i18n="price_3_cta" class="text-xl tracking-tight">Desde 199 €</span>
+                        <span class="text-xl">💬</span>
+                    </a>
+                </div>
+                <ul class="space-y-4 text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">
+                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_3_feat1">Lectura inteligente de PDFs y Excel</span></li>
+                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_3_feat2">Conexión a tu Base de Datos (SQL/CRM)</span></li>
+                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_3_feat3">Automatización de tareas complejas</span></li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Tarjeta 3: PYME -->
-        <div class="p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex flex-col hover:border-emerald-500 transition duration-300">
-            <h3 data-i18n="price_3_title" class="text-xl font-bold">Agente IA Multimodal</h3>
-            <p data-i18n="price_3_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para PYMEs</p>
-            
-            <!-- Botón CTA WhatsApp -->
-            <div class="my-6">
-                <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20el%20Agente%20IA%20Multimodal." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-500 hover:text-white dark:hover:text-white font-bold transition-all shadow-md">
-                    <span data-i18n="price_3_cta">Desde 995 €</span>
-                    <span class="text-lg">💬</span>
-                </a>
+        <!-- Tabla de Costes Reales -->
+        <div class="mt-24 max-w-4xl mx-auto bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-gray-200 dark:border-gray-800 shadow-xl">
+            <div class="text-center mb-10">
+                <h4 data-i18n="api_table_title" class="text-2xl md:text-3xl font-black mb-3">¿Cuánto cuesta mantener la IA?</h4>
+                <p data-i18n="api_table_sub" class="text-sm md:text-base text-gray-600 dark:text-gray-400">
+                    Trabajamos con <strong>Gemini 3.1 Flash</strong>. Esto es lo que pagarías de consumo estimado (en céntimos):
+                </p>
             </div>
 
-            <ul class="space-y-4 text-sm text-gray-700 dark:text-gray-300 flex-1">
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_3_feat1">Lectura inteligente de PDFs, Excel e Imágenes</span></li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_3_feat2">Conexión a tu Base de Datos (SQL/CRM)</span></li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_3_feat3">Automatización de tareas complejas</span></li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✓</span> <span data-i18n="price_support">6 meses de soporte técnico incluido</span></li>
-            </ul>
+            <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+                <table class="w-full text-sm text-left whitespace-nowrap">
+                    <thead class="text-xs font-bold text-gray-500 uppercase bg-gray-100 dark:bg-gray-950/50">
+                        <tr>
+                            <th data-i18n="api_col_1" class="px-6 py-4">Acción a automatizar</th>
+                            <th data-i18n="api_col_2" class="px-6 py-4">Tokens aprox.</th>
+                            <th data-i18n="api_col_3" class="px-6 py-4 text-right">Coste en Euros (€)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 dark:divide-gray-800 font-medium text-gray-700 dark:text-gray-300">
+                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                            <td data-i18n="api_row_1" class="px-6 py-4">Analizar 1 ticket o email largo</td>
+                            <td class="px-6 py-4 text-gray-400">~ 200</td>
+                            <td class="px-6 py-4 text-emerald-600 dark:text-emerald-400 font-bold text-right">0,000015 €</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                            <td data-i18n="api_row_2" class="px-6 py-4">Conversación de Bot (10 mensajes)</td>
+                            <td class="px-6 py-4 text-gray-400">~ 2.000</td>
+                            <td class="px-6 py-4 text-emerald-600 dark:text-emerald-400 font-bold text-right">0,000150 €</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                            <td data-i18n="api_row_5" class="px-6 py-4">Visión de 1 Imagen (gemini-3.1-flash-image)</td>
+                            <td class="px-6 py-4 text-gray-400">~ 260</td>
+                            <td class="px-6 py-4 text-emerald-600 dark:text-emerald-400 font-bold text-right">0,000020 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    
-    <p data-i18n="price_disclaimer" class="text-center text-xs text-gray-500 mt-6 max-w-3xl mx-auto">
-        *Los precios incluyen el desarrollo e integración de los sistemas por parte de Lanza Estudio. Los costes externos de infraestructura (registro de dominios, hosting avanzado o consumo de APIs de IA) no están incluidos y se abonan a precio de coste directamente al proveedor.
-    </p>
+    </section>
 
-    <!-- Tabla de Costes Reales de IA (Gemini) -->
-    <div class="mt-20 max-w-4xl mx-auto bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
-        <div class="text-center mb-8">
-            <h4 data-i18n="api_table_title" class="text-2xl font-bold mb-2">¿Cuánto cuesta realmente mantener la IA?</h4>
-            <p data-i18n="api_table_sub" class="text-sm text-gray-600 dark:text-gray-400">
-                La gente cree que las APIs de IA son caras. Trabajamos con modelos ultraligeros de última generación como <strong>Gemini 3.1 Flash</strong>. Esto es lo que pagarías de consumo API estimado (en céntimos):
-            </p>
+    <!-- FOOTER -->
+    <footer class="w-full bg-gray-950 text-gray-400 py-10 px-6 border-t border-gray-900 mt-10 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                <img src="../img/web/ico.png" alt="Lanza Estudio" class="h-6 w-auto">
+                <span class="font-bold text-lg tracking-tight text-white">LANZA</span>
+            </div>
+            <div class="text-xs text-center md:text-left font-medium" data-i18n="footer_copy">
+                &copy; 2026 Lanza Estudio. Todos los derechos reservados.
+            </div>
+            <div class="flex gap-6 text-xs font-bold uppercase tracking-wider">
+                <a href="#" class="hover:text-emerald-400 transition-colors" data-i18n="footer_legal">Legal</a>
+                <a href="#" class="hover:text-emerald-400 transition-colors" data-i18n="footer_privacy">Privacidad</a>
+            </div>
         </div>
+    </footer>
 
-        <div class="overflow-x-auto">
-            <table class="w-full text-sm text-left">
-                <thead class="text-xs text-gray-500 uppercase bg-gray-200 dark:bg-gray-900/50">
-                    <tr>
-                        <th data-i18n="api_col_1" class="px-6 py-4 rounded-tl-lg">Acción a automatizar</th>
-                        <th data-i18n="api_col_2" class="px-6 py-4">Tokens aprox.</th>
-                        <th data-i18n="api_col_3" class="px-6 py-4 rounded-tr-lg">Coste en Euros (€)</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-200 dark:divide-gray-700 text-gray-800 dark:text-gray-200">
-                    <tr>
-                        <td data-i18n="api_row_1" class="px-6 py-4 font-medium">Analizar 1 ticket de soporte o email largo</td>
-                        <td class="px-6 py-4 text-gray-500">~ 200</td>
-                        <td class="px-6 py-4 text-emerald-600 font-bold">0,000015 €</td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="api_row_2" class="px-6 py-4 font-medium">Conversación completa de Bot (10 mensajes)</td>
-                        <td class="px-6 py-4 text-gray-500">~ 2.000</td>
-                        <td class="px-6 py-4 text-emerald-600 font-bold">0,000150 €</td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="api_row_3" class="px-6 py-4 font-medium">Leer y extraer datos de un PDF de 10 páginas</td>
-                        <td class="px-6 py-4 text-gray-500">~ 5.000</td>
-                        <td class="px-6 py-4 text-emerald-600 font-bold">0,000350 €</td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="api_row_4" class="px-6 py-4 font-medium">Analizar un Excel de 1.000 filas</td>
-                        <td class="px-6 py-4 text-gray-500">~ 10.000</td>
-                        <td class="px-6 py-4 text-emerald-600 font-bold">0,000750 €</td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="api_row_5" class="px-6 py-4 font-medium">Reconocimiento visual de 1 Imagen (gemini-3.1-flash-image)</td>
-                        <td class="px-6 py-4 text-gray-500">~ 260</td>
-                        <td class="px-6 py-4 text-emerald-600 font-bold">0,000020 €</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="mt-4 text-xs text-center text-gray-500">
-            <span data-i18n="api_note">*Estimación basada en los precios de Google Gemini 3.1 Flash y gemini-3.1-flash-image. Necesitarías automatizar miles de operaciones al mes para llegar a gastar 1 euro.</span>
-        </div>
-    </div>
-</section>
-<!-- FOOTER -->
-<footer class="w-full bg-gray-950 text-gray-400 py-12 px-6 border-t border-gray-900">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        <!-- Logo pie de página -->
-        <div class="flex items-center gap-3">
-            <img src="../img/web/ico.png" alt="Lanza Estudio" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-            <span class="font-bold text-xl tracking-tight text-gray-300">LANZA</span>
-        </div>
-        
-        <!-- Copyright (Usando el año actual real: 2026) -->
-        <div class="text-sm text-center md:text-left" data-i18n="footer_copy">
-            &copy; 2026 Lanza Estudio. Todos los derechos reservados.
-        </div>
-        
-        <!-- Enlaces Legales pendientes de hacer -->
-        <div class="flex gap-6 text-sm">
-            <a href="#" class="hover:text-emerald-400 transition" data-i18n="footer_legal">Aviso Legal</a>
-            <a href="#" class="hover:text-emerald-400 transition" data-i18n="footer_privacy">Privacidad</a>
-        </div>
-    </div>
-</footer>
+    <!-- SCRIPT PRINCIPAL -->
     <script src="../app.js" defer></script>
 </body>
 </html>
