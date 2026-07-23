@@ -88,3 +88,53 @@ function initCalculator() {
 
 // Ejecutar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', initCalculator);
+
+// ==========================================
+// GESTOR DE MODAL LEGAL Y PRIVACIDAD
+// ==========================================
+function initModals() {
+    const modal = document.getElementById('legal-modal');
+    const modalContainer = document.getElementById('modal-container');
+    const btnClose = document.getElementById('close-modal');
+    const linkLegal = document.getElementById('link-legal');
+    const linkPrivacy = document.getElementById('link-privacy');
+    const contentLegal = document.getElementById('content-legal');
+    const contentPrivacy = document.getElementById('content-privacy');
+    const modalTitle = document.getElementById('modal-title');
+
+    if (!modal) return;
+
+    function openModal(type) {
+        modal.classList.remove('hidden');
+        // Pequeño timeout para que la transición de opacidad/escala funcione en Tailwind
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modalContainer.classList.remove('scale-95');
+        }, 10);
+        
+        if (type === 'legal') {
+            modalTitle.textContent = "Aviso Legal";
+            contentLegal.classList.remove('hidden');
+            contentPrivacy.classList.add('hidden');
+        } else {
+            modalTitle.textContent = "Política de Privacidad";
+            contentPrivacy.classList.remove('hidden');
+            contentLegal.classList.add('hidden');
+        }
+    }
+
+    function closeModal() {
+        modal.classList.add('opacity-0');
+        modalContainer.classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300); // Espera a que termine la animación
+    }
+
+    if (linkLegal) linkLegal.addEventListener('click', (e) => { e.preventDefault(); openModal('legal'); });
+    if (linkPrivacy) linkPrivacy.addEventListener('click', (e) => { e.preventDefault(); openModal('privacy'); });
+    if (btnClose) btnClose.addEventListener('click', closeModal);
+    if (modal) modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+}
+
+document.addEventListener('DOMContentLoaded', initModals);

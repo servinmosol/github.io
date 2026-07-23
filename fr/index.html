@@ -210,6 +210,7 @@
             <h2 data-i18n="step_title" class="text-3xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
                 De la idea al sistema funcionando en 4 pasos.
             </h2>
+            <p data-i18n="step_subtitle" class="text-gray-600 dark:text-gray-400 text-base max-w-2xl mt-4">Cargando...</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -257,6 +258,7 @@
             <h2 data-i18n="faq_title" class="text-3xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
                 Todo claro antes de empezar.
             </h2>
+            <p data-i18n="faq_subtitle" class="text-gray-600 dark:text-gray-400 text-base max-w-2xl mt-4">Cargando...</p>
         </div>
 
         <div class="flex flex-col gap-4 w-full">
@@ -312,6 +314,7 @@
             <h2 data-i18n="price_title" class="text-3xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
                 Precios diseñados para que no tengas excusa.
             </h2>
+            <p data-i18n="price_subtitle" class="text-gray-600 dark:text-gray-400 text-base max-w-2xl mt-4">Cargando...</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
@@ -369,7 +372,7 @@
                 </ul>
             </div>
         </div>
-
+<p data-i18n="price_disclaimer" class="text-center text-xs text-gray-500 mt-8 max-w-3xl mx-auto">Cargando...</p>
         <!-- Tabla de Costes Reales -->
         <div class="mt-24 max-w-4xl mx-auto bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-gray-200 dark:border-gray-800 shadow-xl">
             <div class="text-center mb-10">
@@ -400,6 +403,16 @@
                             <td class="px-6 py-4 text-emerald-600 dark:text-emerald-400 font-bold text-right">0,000150 €</td>
                         </tr>
                         <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                            <td data-i18n="api_row_3" class="px-6 py-4">Leer y extraer datos de un PDF de 10 páginas</td>
+                            <td class="px-6 py-4 text-gray-400">~ 5.000</td>
+                            <td class="px-6 py-4 text-emerald-600 dark:text-emerald-400 font-bold text-right">0,000350 €</td>
+                       </tr>
+                      <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                           <td data-i18n="api_row_4" class="px-6 py-4">Analizar un Excel de 1.000 filas</td>
+                           <td class="px-6 py-4 text-gray-400">~ 10.000</td>
+                           <td class="px-6 py-4 text-emerald-600 dark:text-emerald-400 font-bold text-right">0,000750 €</td>
+                      </tr>
+                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
                             <td data-i18n="api_row_5" class="px-6 py-4">Visión de 1 Imagen (gemini-3.1-flash-image)</td>
                             <td class="px-6 py-4 text-gray-400">~ 260</td>
                             <td class="px-6 py-4 text-emerald-600 dark:text-emerald-400 font-bold text-right">0,000020 €</td>
@@ -407,6 +420,9 @@
                     </tbody>
                 </table>
             </div>
+            <div class="mt-4 text-xs text-center text-gray-500">
+    <span data-i18n="api_note">Cargando...</span>
+</div>
         </div>
     </section>
 
@@ -421,12 +437,31 @@
                 &copy; 2026 Lanza Estudio. Todos los derechos reservados.
             </div>
             <div class="flex gap-6 text-xs font-bold uppercase tracking-wider">
-                <a href="#" class="hover:text-emerald-400 transition-colors" data-i18n="footer_legal">Legal</a>
-                <a href="#" class="hover:text-emerald-400 transition-colors" data-i18n="footer_privacy">Privacidad</a>
-            </div>
+    <a href="#" id="link-legal" class="hover:text-emerald-400 transition-colors" data-i18n="footer_legal">Legal</a>
+    <a href="#" id="link-privacy" class="hover:text-emerald-400 transition-colors" data-i18n="footer_privacy">Privacidad</a>
+</div>
         </div>
     </footer>
-
+<!-- MODAL LEGAL / PRIVACIDAD -->
+    <div id="legal-modal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-black/60 backdrop-blur-sm px-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-8 md:p-10 max-w-lg w-full shadow-2xl relative transform scale-95 transition-transform duration-300" id="modal-container">
+            <!-- Botón de cerrar -->
+            <button id="close-modal" class="absolute top-5 right-5 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors bg-gray-100 dark:bg-gray-800 p-2 rounded-full">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h3 id="modal-title" class="text-2xl font-black mb-6 text-gray-900 dark:text-gray-100 border-b border-gray-100 dark:border-gray-800 pb-4">Título</h3>
+            
+            <div id="modal-content" class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
+                <!-- Textos Inyectados -->
+                <div id="content-legal" class="hidden">
+                    <p data-i18n="modal_legal_text">Cargando...</p>
+                </div>
+                <div id="content-privacy" class="hidden">
+                    <p data-i18n="modal_privacy_text">Cargando...</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- SCRIPT PRINCIPAL -->
     <script src="../app.js" defer></script>
 </body>

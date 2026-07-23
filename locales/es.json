@@ -97,5 +97,7 @@
   "footer_privacy": "Política de Privacidad",
   "price_1_cta": "Desde 49 €",
   "price_2_cta": "Desde 99 €",
-  "price_3_cta": "Desde 199 €"
+  "price_3_cta": "Desde 199 €",
+  "modal_legal_text": "Este sitio web es meramente informativo. Lanza Estudio ofrece servicios de consultoría, programación y desarrollo de automatizaciones B2B. Al tratarse de un sitio estático, no realizamos comercio electrónico ni recabamos datos de transacción directamente a través de esta plataforma.",
+  "modal_privacy_text": "<strong>Cero Cookies, Cero Rastreo.</strong><br><br>En Lanza Estudio respetamos tu privacidad al máximo. Esta página web es completamente estática y no instala ninguna cookie en tu navegador.<br><br>No usamos rastreadores, ni guardamos direcciones IP, ni utilizamos Google Analytics, ni píxeles de Facebook o similares.<br><br>Si decides contactarnos a través de los enlaces de WhatsApp o Email, la información que nos proporciones será tratada de manera estrictamente confidencial y exclusivamente para gestionar tu solicitud de diagnóstico. Nunca cederemos tus datos a terceros ni te enviaremos publicidad no solicitada."
 }
