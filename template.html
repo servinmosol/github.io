@@ -284,82 +284,82 @@
         </p>
     </div>
 
-    <!-- Lista de Acordeones -->
-    <div class="flex flex-col gap-4 max-w-4xl">
+    <!-- Lista de Acordeones: 1 columna en móvil/tablet, 2 columnas en PC -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full items-start">
         
         <!-- FAQ 1: Seguridad y Datos -->
         <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg md:text-xl text-gray-900 dark:text-gray-100 select-none">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
                 <span data-i18n="faq_1_q">¿Mis datos de empresa o clientes están seguros? ¿La IA aprende de mi información?</span>
                 <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
             </summary>
-            <p data-i18n="faq_1_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
+            <p data-i18n="faq_1_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
                 Absolutamente protegidos. Trabajamos con APIs empresariales privadas que cumplen estrictamente el RGPD europeo. Tu información NUNCA se utiliza para entrenar modelos públicos de inteligencia artificial ni se comparte con terceros. Todo el procesamiento de datos se realiza bajo protocolos cifrados y entornos controlados.
             </p>
         </details>
 
         <!-- FAQ 2: Integración con Software Actual -->
         <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg md:text-xl text-gray-900 dark:text-gray-100 select-none">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
                 <span data-i18n="faq_2_q">¿Tengo que cambiar el CRM, ERP o herramientas que ya utiliza mi empresa?</span>
                 <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
             </summary>
-            <p data-i18n="faq_2_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
+            <p data-i18n="faq_2_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
                 No. Nos adaptamos a tu infraestructura existente. Siempre que tus herramientas dispongan de API, base de datos o capacidades de exportación/importación, nos conectamos directamente a ellas. El objetivo es eliminar el trabajo manual de tu equipo sin forzarles a aprender a usar programas nuevos.
             </p>
         </details>
 
         <!-- FAQ 3: Propiedad del Código -->
         <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg md:text-xl text-gray-900 dark:text-gray-100 select-none">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
                 <span data-i18n="faq_3_q">¿De quién es la propiedad del código y de los sistemas desarrollados?</span>
                 <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
             </summary>
-            <p data-i18n="faq_3_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
+            <p data-i18n="faq_3_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
                 Tuya al 100%. No creemos en el "secuestro de clientes" ni en dependencias artificiales. Al finalizar el proyecto te entregamos todo el código fuente, la documentación técnica y las credenciales de acceso a tu propia infraestructura. Eres el dueño absoluto de tu sistema.
             </p>
         </details>
 
         <!-- FAQ 4: Costes Ocultos y Mantenimiento -->
         <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg md:text-xl text-gray-900 dark:text-gray-100 select-none">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
                 <span data-i18n="faq_4_q">¿Hay cuotas fijas mensuales obligatorias o costes ocultos?</span>
                 <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
             </summary>
-            <p data-i18n="faq_4_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
+            <p data-i18n="faq_4_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
                 Ninguno por nuestra parte. Trabajas a presupuesto cerrado por el desarrollo e integración. Los únicos costes recurrentes serán los consumos directos de los proveedores de infraestructura que utilices (por ejemplo, tus propios servidores cloud o el consumo exacto de tokens de IA/WhatsApp), pagados a precio de coste directamente a ellos. Si en el futuro deseas mantenimiento o nuevas funciones, lo contratas bajo demanda.
             </p>
         </details>
 
         <!-- FAQ 5: Gestión de Fallos de APIs -->
         <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg md:text-xl text-gray-900 dark:text-gray-100 select-none">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
                 <span data-i18n="faq_5_q">¿Qué ocurre si falla la conexión de un servidor o una API externa?</span>
                 <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
             </summary>
-            <p data-i18n="faq_5_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
+            <p data-i18n="faq_5_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
                 Diseñamos las automatizaciones con arquitectura resiliente: incluyen colas de reintento automático, registros de auditoría (logs) y un sistema de alertas en tiempo real que te notifica si un proceso se interrumpe por causa externa. Ningún dato se pierde durante una caída temporal de un proveedor.
             </p>
         </details>
 
         <!-- FAQ 6: Bloqueos en WhatsApp -->
         <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg md:text-xl text-gray-900 dark:text-gray-100 select-none">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
                 <span data-i18n="faq_6_q">¿Pueden bloquear mi número de teléfono al automatizar WhatsApp?</span>
                 <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
             </summary>
-            <p data-i18n="faq_6_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
+            <p data-i18n="faq_6_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
                 No, porque trabajamos exclusivamente con la API Oficial de WhatsApp Business de Meta. A diferencia de las herramientas no oficiales de spam o "scraping" que provocan bloqueos inmediatos, nuestras integraciones cumplen al 100% las normativas comerciales oficiales de Meta, garantizando la seguridad total de tu número de empresa.
             </p>
         </details>
 
         <!-- FAQ 7: Tiempo de dedicación del cliente -->
-        <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg md:text-xl text-gray-900 dark:text-gray-100 select-none">
+        <details class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 [&_summary::-webkit-details-marker]:hidden lg:col-span-2">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-gray-900 dark:text-gray-100 select-none">
                 <span data-i18n="faq_7_q">¿Cuánto tiempo tendrá que dedicar mi equipo durante el desarrollo?</span>
                 <span class="ml-4 transition-transform duration-300 group-open:rotate-180 text-emerald-500 font-black">↓</span>
             </summary>
-            <p data-i18n="faq_7_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
+            <p data-i18n="faq_7_a" class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/60 pt-4">
                 Mínimo. Tu único trabajo consiste en una sesión inicial de diagnóstico de 20-30 minutos y facilitarnos los accesos necesarios. A partir de ahí nosotros nos encargamos de todo el desarrollo, pruebas y puesta a punto. Solo nos volveremos a reunir para la demostración final y la formación de tu personal.
             </p>
         </details>
