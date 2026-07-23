@@ -52,14 +52,14 @@
   "faq_badge": "Dudas Resueltas",
   "faq_title": "Todo claro antes de empezar.",
   "faq_1_q": "¿Mis datos están seguros?",
-  "faq_1_a": "Absolutamente protegidos. Trabajamos con APIs empresariales privadas (RGPD). Tu información NUNCA entrena modelos públicos.",
   "faq_2_q": "¿Tengo que cambiar mi CRM actual?",
-  "faq_2_a": "No. Nos adaptamos a tu infraestructura existente. Nos conectamos directamente a tus herramientas por API.",
   "faq_3_q": "¿De quién es la propiedad del código?",
-  "faq_3_a": "Tuya al 100%. Te entregamos todo el código fuente y credenciales. Eres el dueño absoluto de tu sistema.",
   "faq_4_q": "¿Hay cuotas mensuales obligatorias?",
-  "faq_4_a": "Ninguna por nuestra parte. Solo pagas a precio de coste directo los consumos mínimos de tu propio servidor o API.",
-  
+  "faq_1_a": "Tus datos están absolutamente protegidos. Trabajamos de forma exclusiva con APIs empresariales privadas que cumplen estrictamente con el RGPD y la normativa europea (retención cero). Tu información NUNCA se utiliza para entrenar modelos públicos de inteligencia artificial.",
+  "faq_2_a": "No tienes que cambiar absolutamente nada de tu forma de trabajar. Nos adaptamos a tu infraestructura actual y nos conectamos directamente a tus herramientas (CRM, ERP, web) a través de API, garantizando una integración fluida y sin curvas de aprendizaje para tu equipo.",
+  "faq_3_a": "La propiedad del desarrollo es 100% tuya. Al finalizar el proyecto, te entregamos todo el código fuente, la arquitectura del sistema y las credenciales de acceso. Eres el dueño absoluto de tu herramienta, sin bloqueos técnicos ni dependencias de ningún proveedor (Vendor Lock-in).",
+  "faq_4_a": "No existen cuotas mensuales obligatorias por nuestro software. Nuestro modelo es de pago único por el desarrollo. A partir de ahí, solo asumes el coste directo a precio de proveedor de tu propio servidor o de los consumos mínimos de la API (generalmente unos pocos céntimos al mes), sin ningún margen oculto por nuestra parte.",
+
   "price_badge": "Inversión",
   "price_title": "Precios diseñados para que no tengas excusa.",
   
@@ -93,6 +93,13 @@
   "api_row_1": "Analizar 1 ticket o email largo",
   "api_row_2": "Conversación de Bot (10 mensajes)",
   "api_row_5": "Visión de 1 Imagen (gemini-3.1-flash-image)",
+  "step_subtitle": "Cero humo. Ejecución directa para que veas el retorno de inversión desde el primer mes.",
+  "faq_subtitle": "Transparencia absoluta. Resolvemos tus dudas antes de escribir una sola línea de código.",
+  "price_subtitle": "Transparencia desde el primer minuto. Sin costes ocultos ni sorpresas a final de mes.",
+  "price_disclaimer": "* Precios sin IVA. El pago de las licencias de servidores o APIs de IA correrá a cargo del cliente (a precio de proveedor).",
+  "api_row_3": "Leer y extraer datos de un PDF de 10 páginas",
+  "api_row_4": "Analizar un Excel de 1.000 filas",
+  "api_note": "* Los precios mostrados son estimaciones basadas en las tarifas públicas de los proveedores de IA.",
   
   "footer_copy": "© 2026 Lanza Estudio. Todos los derechos reservados.",
   "footer_legal": "Legal",
