@@ -58,56 +58,52 @@
         </header>
     </div>
 
-  <!-- MAIN HERO (Diseño Asimétrico Premium) -->
-    <main class="w-full max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-24 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            
-            <!-- Columna Izquierda: Mensaje Principal -->
-            <div class="lg:col-span-5 flex flex-col items-start text-left gap-6">
-                <span data-i18n="hero_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm border border-emerald-200 dark:border-emerald-800/50">Custom Systems</span>
+<!-- MAIN HERO (Centrado + Grid de Características) -->
+    <main class="w-full max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-24 relative z-10 flex flex-col gap-16 md:gap-24">
+        
+        <!-- Bloque Superior: Mensaje Principal Centrado -->
+        <div class="flex flex-col items-center text-center gap-6 max-w-5xl mx-auto">
+            <span data-i18n="hero_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm border border-emerald-200 dark:border-emerald-800/50">Custom Systems</span>
 
-                <h1 data-i18n="hero_title" class="text-5xl md:text-6xl font-black tracking-tight leading-[1.1] bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">Real automation for companies that value their time.</h1>
+            <!-- Solución de scroll móvil: Escalado desde text-4xl y break-words -->
+            <h1 data-i18n="hero_title" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] break-words hyphens-auto bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 w-full">Real automation for companies that value their time.</h1>
 
-                <p data-i18n="hero_subtitle" class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed font-medium">We develop and integrate AI directly into your infrastructure.</p>
-            </div>
+            <p data-i18n="hero_subtitle" class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed font-medium max-w-3xl">We develop and integrate AI directly into your infrastructure.</p>
+        </div>
 
-            <!-- Columna Derecha: ¿Por qué elegirnos? (Stack de 3 Tarjetas) -->
-            <div class="lg:col-span-7 flex flex-col gap-4 relative">
-                <!-- Título discreto encima de las tarjetas -->
-                <h2 data-i18n="hero_why_title" class="text-sm font-black uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2 ml-2">
-                    Cargando...
-                </h2>
+        <!-- Bloque Inferior: ¿Por qué elegirnos? (Grid de 3 Columnas en PC) -->
+        <div class="flex flex-col gap-8">
+            <!-- Título discreto centrado -->
+            <h2 data-i18n="hero_why_title" class="text-sm font-black uppercase tracking-widest text-center text-gray-400 dark:text-gray-500">
+                Cargando...
+            </h2>
 
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                
                 <!-- Tarjeta 1: Stack Tecnológico -->
-                <div class="group p-6 md:p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md hover:border-emerald-500/50 hover:bg-white dark:hover:bg-gray-900 transition-all duration-300 shadow-lg shadow-gray-200/20 dark:shadow-none">
-                    <div class="flex items-start gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">💻</div>
-                        <div>
-                            <h3 data-i18n="hero_why_1_title" class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">Cargando...</h3>
-                            <p data-i18n="hero_why_1_desc" class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Cargando...</p>
-                        </div>
+                <div class="group p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md hover:border-emerald-500/50 hover:bg-white dark:hover:bg-gray-900 transition-all duration-300 shadow-lg shadow-gray-200/20 dark:shadow-none flex flex-col gap-5">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-3xl group-hover:scale-110 group-hover:-rotate-3 transition-transform">💻</div>
+                    <div>
+                        <h3 data-i18n="hero_why_1_title" class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Cargando...</h3>
+                        <p data-i18n="hero_why_1_desc" class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Cargando...</p>
                     </div>
                 </div>
 
                 <!-- Tarjeta 2: Rentabilidad -->
-                <div class="group p-6 md:p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md hover:border-emerald-500/50 hover:bg-white dark:hover:bg-gray-900 transition-all duration-300 shadow-lg shadow-gray-200/20 dark:shadow-none ml-0 lg:ml-6">
-                    <div class="flex items-start gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">📈</div>
-                        <div>
-                            <h3 data-i18n="hero_why_2_title" class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">Cargando...</h3>
-                            <p data-i18n="hero_why_2_desc" class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Cargando...</p>
-                        </div>
+                <div class="group p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md hover:border-emerald-500/50 hover:bg-white dark:hover:bg-gray-900 transition-all duration-300 shadow-lg shadow-gray-200/20 dark:shadow-none flex flex-col gap-5">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-3 transition-transform">📈</div>
+                    <div>
+                        <h3 data-i18n="hero_why_2_title" class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Cargando...</h3>
+                        <p data-i18n="hero_why_2_desc" class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Cargando...</p>
                     </div>
                 </div>
 
                 <!-- Tarjeta 3: Escalabilidad -->
-                <div class="group p-6 md:p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md hover:border-emerald-500/50 hover:bg-white dark:hover:bg-gray-900 transition-all duration-300 shadow-lg shadow-gray-200/20 dark:shadow-none ml-0 lg:ml-12">
-                    <div class="flex items-start gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">🚀</div>
-                        <div>
-                            <h3 data-i18n="hero_why_3_title" class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">Cargando...</h3>
-                            <p data-i18n="hero_why_3_desc" class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Cargando...</p>
-                        </div>
+                <div class="group p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md hover:border-emerald-500/50 hover:bg-white dark:hover:bg-gray-900 transition-all duration-300 shadow-lg shadow-gray-200/20 dark:shadow-none flex flex-col gap-5">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-3xl group-hover:scale-110 group-hover:-rotate-3 transition-transform">🚀</div>
+                    <div>
+                        <h3 data-i18n="hero_why_3_title" class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Cargando...</h3>
+                        <p data-i18n="hero_why_3_desc" class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Cargando...</p>
                     </div>
                 </div>
 
