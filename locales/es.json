@@ -86,7 +86,7 @@
   "price_3_feat3": "Automatización de tareas complejas",
   
   "api_table_title": "¿Cuánto cuesta mantener la IA?",
-  "api_table_sub": "Trabajamos con <strong>Gemini y openIA</strong>. Esto es un ejemplo de lo que pagarías de consumo estimado con Gemini (en céntimos):",
+  "api_table_sub": "Trabajamos con <strong>Gemini y openAI</strong>. Esto es un ejemplo de lo que pagarías de consumo estimado con Gemini (en céntimos):",
   "api_col_1": "Acción a automatizar",
   "api_col_2": "Tokens aprox.",
   "api_col_3": "Coste en Euros (€)",
@@ -99,7 +99,7 @@
   "price_disclaimer": "* Los precios incluyen el desarrollo e integración de los sistemas por parte de Lanza Estudio. Los costes externos de infraestructura (registro de dominios, hosting avanzado o consumo de APIs de IA) no están incluidos y se abonan a precio de coste directamente al proveedor.",
   "api_row_3": "Leer y extraer datos de un PDF de 10 páginas",
   "api_row_4": "Analizar un Excel de 1.000 filas",
-  "api_note": "* Los precios mostrados son estimaciones basadas en las tarifas públicas de los proveedores de IA. *Estimación basada en los precios de Google Gemini 3.1 Flash y gemini-3.1-flash-image. Necesitarías automatizar miles de operaciones al mes para llegar a gastar 1 euro.",
+  "api_note": "* Los precios mostrados son estimaciones de 07/26 basadas en las tarifas públicas de los proveedores de IA. *Estimación basada en los precios de Google Gemini 3.1 Flash y gemini-3.1-flash-image. Necesitarías automatizar miles de operaciones al mes para llegar a gastar 1 euro.",
   
   "footer_copy": "© 2026 Lanza Estudio. Todos los derechos reservados.",
   "footer_legal": "Legal",
