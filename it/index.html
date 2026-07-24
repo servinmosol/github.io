@@ -143,9 +143,12 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <!-- Tarjeta 1: Emprendedor -->
-        <div class="group flex flex-col justify-between p-8 rounded-3xl border border-gray-200/80 dark:border-gray-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
+        <div class="relative group flex flex-col justify-between p-8 rounded-3xl border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
+            <div class="absolute -top-3 left-8 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider shadow-sm" data-i18n="srv_1_badge">
+                Cargando...
+            </div>
             <div>
-                <div class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3" data-i18n="srv_1_tag">Cargando...</div>
+                <div class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3 mt-2" data-i18n="srv_1_tag">Cargando...</div>
                 <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white" data-i18n="srv_1_title">Cargando...</h3>
                 <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed" data-i18n="srv_1_desc">
                     Cargando...
@@ -158,10 +161,10 @@
             </div>
         </div>
 
-        <!-- Tarjeta 2: Autónomo (Destacada) -->
-        <div class="group flex flex-col justify-between p-8 rounded-3xl border-2 border-emerald-500/80 bg-white dark:bg-gray-900 shadow-xl shadow-emerald-500/10 hover:shadow-2xl hover:shadow-emerald-500/20 hover:-translate-y-2 transition-all duration-300 relative">
-            <div class="absolute -top-3 left-8 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider shadow-sm">
-                Recomendado
+        <!-- Tarjeta 2: Autónomo -->
+        <div class="relative group flex flex-col justify-between p-8 rounded-3xl border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
+            <div class="absolute -top-3 left-8 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider shadow-sm" data-i18n="srv_2_badge">
+                Cargando...
             </div>
             <div>
                 <div class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3 mt-2" data-i18n="srv_2_tag">Cargando...</div>
@@ -170,17 +173,20 @@
                     Cargando...
                 </p>
                 <ul class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
-                    <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shadow-sm shadow-emerald-500/50 mt-0.5">✓</span> <span data-i18n="srv_2_feat_1">Cargando...</span></li>
-                    <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shadow-sm shadow-emerald-500/50 mt-0.5">✓</span> <span data-i18n="srv_2_feat_2">Cargando...</span></li>
-                    <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shadow-sm shadow-emerald-500/50 mt-0.5">✓</span> <span data-i18n="srv_2_feat_3">Cargando...</span></li>
+                    <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold mt-0.5">✓</span> <span data-i18n="srv_2_feat_1">Cargando...</span></li>
+                    <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold mt-0.5">✓</span> <span data-i18n="srv_2_feat_2">Cargando...</span></li>
+                    <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold mt-0.5">✓</span> <span data-i18n="srv_2_feat_3">Cargando...</span></li>
                 </ul>
             </div>
         </div>
 
         <!-- Tarjeta 3: PYME -->
-        <div class="md:col-span-2 lg:col-span-1 group flex flex-col justify-between p-8 rounded-3xl border border-gray-200/80 dark:border-gray-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
+        <div class="relative md:col-span-2 lg:col-span-1 group flex flex-col justify-between p-8 rounded-3xl border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
+            <div class="absolute -top-3 left-8 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider shadow-sm" data-i18n="srv_3_badge">
+                Cargando...
+            </div>
             <div>
-                <div class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3" data-i18n="srv_3_tag">Cargando...</div>
+                <div class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3 mt-2" data-i18n="srv_3_tag">Cargando...</div>
                 <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white" data-i18n="srv_3_title">Cargando...</h3>
                 <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed" data-i18n="srv_3_desc">
                     Cargando...
@@ -194,11 +200,16 @@
         </div>
 
         <!-- Tarjeta 4: Corporaciones (Full Width / Panorámica) -->
-        <div class="md:col-span-2 lg:col-span-3 group flex flex-col md:flex-row items-start justify-between p-8 md:p-10 rounded-3xl border border-gray-200/80 dark:border-gray-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300 gap-8 lg:gap-16 relative overflow-hidden">
-            <!-- Brillo de fondo para la tarjeta grande -->
-            <div class="absolute right-0 top-0 w-full md:w-1/2 h-full bg-gradient-to-l from-emerald-500/5 dark:from-emerald-500/10 to-transparent pointer-events-none"></div>
+        <div class="relative md:col-span-2 lg:col-span-3 group flex flex-col md:flex-row items-start justify-between p-8 md:p-10 rounded-3xl border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300 gap-8 lg:gap-16 overflow-visible">
+            
+            <div class="absolute -top-3 left-8 md:left-10 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider shadow-sm z-20" data-i18n="srv_4_badge">
+                Cargando...
+            </div>
 
-            <div class="w-full md:w-1/2 relative z-10 flex flex-col justify-center">
+            <!-- Brillo de fondo para la tarjeta grande -->
+            <div class="absolute right-0 top-0 w-full md:w-1/2 h-full bg-gradient-to-l from-emerald-500/5 dark:from-emerald-500/10 to-transparent pointer-events-none rounded-3xl overflow-hidden"></div>
+
+            <div class="w-full md:w-1/2 relative z-10 flex flex-col justify-center mt-2 md:mt-0">
                 <div class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3" data-i18n="srv_4_tag">Cargando...</div>
                 <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white" data-i18n="srv_4_title">Cargando...</h3>
                 <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed" data-i18n="srv_4_desc">
@@ -206,7 +217,7 @@
                 </p>
             </div>
             
-            <div class="w-full md:w-1/2 relative z-10 flex flex-col justify-center border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-800 pt-6 md:pt-0 md:pl-8 lg:pl-16">
+            <div class="w-full md:w-1/2 relative z-10 flex flex-col justify-center border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-800 pt-6 md:pt-0 md:pl-8 lg:pl-16 mt-2 md:mt-0">
                 <ul class="space-y-5 text-sm md:text-base text-gray-700 dark:text-gray-300">
                     <li class="flex items-start gap-4">
                         <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold mt-0.5">✓</span> 
