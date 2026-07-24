@@ -106,5 +106,15 @@
   "footer_privacy": "Privacidad",
   
   "modal_legal_text": "Este sitio web es meramente informativo. Lanza Estudio ofrece servicios de consultoría, programación y desarrollo de automatizaciones B2B. Al tratarse de un sitio estático, no realizamos comercio electrónico ni recabamos datos de transacción directamente a través de esta plataforma.",
-  "modal_privacy_text": "<strong>Cero Cookies, Cero Rastreo.</strong><br><br>En Lanza Estudio respetamos tu privacidad al máximo. Esta página web es completamente estática y no instala ninguna cookie en tu navegador.<br><br>No usamos rastreadores, ni guardamos direcciones IP, ni utilizamos Google Analytics, ni píxeles de Facebook o similares.<br><br>Si decides contactarnos a través de los enlaces de WhatsApp o Email, la información que nos proporciones será tratada de manera estrictamente confidencial y exclusivamente para gestionar tu solicitud de diagnóstico. Nunca cederemos tus datos a terceros ni te enviaremos publicidad no solicitada."
+  "modal_privacy_text": "<strong>Cero Cookies, Cero Rastreo.</strong><br><br>En Lanza Estudio respetamos tu privacidad al máximo. Esta página web es completamente estática y no instala ninguna cookie en tu navegador.<br><br>No usamos rastreadores, ni guardamos direcciones IP, ni utilizamos Google Analytics, ni píxeles de Facebook o similares.<br><br>Si decides contactarnos a través de los enlaces de WhatsApp o Email, la información que nos proporciones será tratada de manera estrictamente confidencial y exclusivamente para gestionar tu solicitud de diagnóstico. Nunca cederemos tus datos a terceros ni te enviaremos publicidad no solicitada.",
+  "hero_why_title": "¿Por qué elegirnos?",
+  
+  "hero_why_1_title": "Desarrollo y Stack Tecnológico Total",
+  "hero_why_1_desc": "Somos expertos en SEO y Posicionamiento, integraciones de APIs & arquitecturas Cloud, desarrollo de Inteligencia Artificial y Bots. Creamos sistemas a medida sin depender de plantillas cerradas dominando el código nativo (PHP, MySQL, HTML, CSS, JavaScript, Python, C++...).",
+  
+  "hero_why_2_title": "Rentabilidad: Ingeniería financiera aplicada",
+  "hero_why_2_desc": "Nuestro objetivo es rentabilizar tu negocio, no solo integrar IA por moda. Analizamos la vía más económica y escalable. Un ejemplo real: si el consumo de una API de IA externa dispara tus costes y prefieres tener supervisión manual, te desarrollamos un generador de prompts inteligente (conectado a tu propia base de datos) para que explotes modelos de suscripción mensuales por una fracción del precio.",
+  
+  "hero_why_3_title": "Sistemas escalables en cualquier fase",
+  "hero_why_3_desc": "Si empiezas de cero y no tienes volumen, construimos la infraestructura digital para crear y captar esa cartera de clientes desde la primera visita. Y si ya gestionas un volumen alto de negocio, desarrollamos las herramientas de gestión necesarias para atenderlos como se merecen, optimizar el servicio y convertirlos en clientes recurrentes."
 }
