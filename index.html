@@ -355,69 +355,127 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE PRECIOS -->
-    <section class="w-full max-w-7xl mx-auto px-6 py-20 border-t border-gray-200/50 dark:border-gray-800/50">
-        <div class="flex flex-col items-center text-center gap-4 mb-16">
-            <span data-i18n="price_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm">Inversión</span>
-            <h2 data-i18n="price_title" class="text-3xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">Precios diseñados para que no tengas excusa.</h2>
-            <p data-i18n="price_subtitle" class="text-gray-600 dark:text-gray-400 text-base max-w-2xl mt-4">Eliminamos la barrera de entrada. Empieza a automatizar hoy mismo con una oferta irrechazable y escala solo cuando veas resultados.</p>
+<!-- SECCIÓN DE PRECIOS -->
+<section class="w-full max-w-7xl mx-auto px-6 py-20 border-t border-gray-200/50 dark:border-gray-800/50">
+    <div class="flex flex-col items-center text-center gap-4 mb-16">
+        <span data-i18n="price_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm border border-emerald-200 dark:border-emerald-800/50">Inversión</span>
+        <h2 data-i18n="price_title" class="text-3xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">Precios diseñados para que no tengas excusa.</h2>
+        <p data-i18n="price_subtitle" class="text-gray-600 dark:text-gray-400 text-base max-w-2xl mt-2">Eliminamos la barrera de entrada. Empieza a automatizar hoy mismo con una oferta irrechazable y escala solo cuando veas resultados.</p>
+    </div>
+
+    <!-- Grid de 4 Precios -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto items-stretch">
+        
+        <!-- Tarjeta 1: Emprendedor -->
+        <div class="relative group p-6 lg:p-8 rounded-[2rem] border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm flex flex-col hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md whitespace-nowrap" data-i18n="price_1_badge">Menor Inversión</div>
+            
+            <h3 data-i18n="price_1_title" class="text-2xl font-bold mt-2">Landing Page Rápida</h3>
+            <p data-i18n="price_1_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para emprendedores</p>
+            
+            <!-- Precio Competencia y CTA -->
+            <div class="my-8 flex flex-col gap-2">
+                <div class="text-center">
+                    <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Agencias: </span>
+                    <span class="text-sm md:text-base text-red-500 dark:text-red-400 font-black line-through" data-i18n="price_1_comp">500 € a 900 €</span>
+                </div>
+                <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20la%20Landing%20Page." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 font-bold transition-all shadow-md">
+                    <span data-i18n="price_1_cta" class="text-lg xl:text-xl tracking-tight">Desde 49 €</span>
+                    <span class="text-xl">💬</span>
+                </a>
+            </div>
+
+            <ul class="space-y-4 text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_1_feat1">Diseño web de alta conversión y SEO</span></li>
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_1_feat2">Optimización de velocidad (100/100)</span></li>
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_1_feat3">🎁 BONUS: Si no necesita backend, Hosting gratis!</span></li>
+            </ul>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
-            <!-- Tarjeta 1 -->
-            <div class="p-8 rounded-[2rem] border border-gray-200/80 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm flex flex-col hover:border-emerald-500/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                <h3 data-i18n="price_1_title" class="text-2xl font-bold">Landing Page Rápida</h3>
-                <p data-i18n="price_1_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para emprendedores</p>
-                <div class="my-8">
-                    <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20la%20Landing%20Page." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 font-bold transition-all shadow-md">
-                        <span data-i18n="price_1_cta" class="text-xl tracking-tight">Desde 49 €</span>
-                        <span class="text-xl">💬</span>
-                    </a>
+        <!-- Tarjeta 2: Autónomo -->
+        <div class="relative group p-6 lg:p-8 rounded-[2rem] border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm flex flex-col hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md whitespace-nowrap" data-i18n="price_2_badge">Más Popular</div>
+
+            <h3 data-i18n="price_2_title" class="text-2xl font-bold mt-2">Bot IA para WhatsApp</h3>
+            <p data-i18n="price_2_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para autónomos</p>
+            
+            <!-- Precio Competencia y CTA -->
+            <div class="my-8 flex flex-col gap-2">
+                <div class="text-center">
+                    <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Agencias: </span>
+                    <span class="text-sm md:text-base text-red-500 dark:text-red-400 font-black line-through" data-i18n="price_2_comp">800 € a 1.500 €</span>
                 </div>
-                <ul class="space-y-4 text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">
-                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_1_feat1">Diseño web de alta conversión y SEO</span></li>
-                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_1_feat2">Optimización de velocidad (100/100 Posicionamiento)</span></li>
-                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_1_feat3">🎁 BONUS: Si no necesita backend, Hosting gratis!</span></li>
-                </ul>
+                <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20el%20Bot%20IA." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-white dark:text-gray-900 font-black transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]">
+                    <span data-i18n="price_2_cta" class="text-lg xl:text-xl tracking-tight">Desde 99 €</span>
+                    <span class="text-xl">💬</span>
+                </a>
             </div>
 
-            <!-- Tarjeta 2 (Destacada) -->
-            <div class="p-8 rounded-[2rem] border-2 border-emerald-500 bg-emerald-50/50 dark:bg-emerald-900/20 flex flex-col relative shadow-2xl shadow-emerald-500/10 transform md:-translate-y-4 hover:-translate-y-6 transition-transform duration-300">
-                <div data-i18n="price_2_badge" class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-emerald-500 to-teal-400 text-white px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-md">Más popular</div>
-                <h3 data-i18n="price_2_title" class="text-2xl font-bold mt-2">Bot IA para Web/WhatsApp</h3>
-                <p data-i18n="price_2_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para autónomos</p>
-                <div class="my-8">
-                    <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20el%20Bot%20IA." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-white dark:text-gray-900 font-black transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]">
-                        <span data-i18n="price_2_cta" class="text-xl tracking-tight">Desde 99 €</span>
-                        <span class="text-xl">💬</span>
-                    </a>
-                </div>
-                <ul class="space-y-4 text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">
-                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_2_feat1">Asistente entrenado con tu negocio</span></li>
-                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_2_feat2">Respuestas 24/7 a clientes</span></li>
-                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_2_feat3">Filtrado automático de curiosos</span></li>
-                </ul>
-            </div>
-
-            <!-- Tarjeta 3 -->
-            <div class="p-8 rounded-[2rem] border border-gray-200/80 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm flex flex-col hover:border-emerald-500/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                <h3 data-i18n="price_3_title" class="text-2xl font-bold">Agente IA Multimodal</h3>
-                <p data-i18n="price_3_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para PYMEs</p>
-                <div class="my-8">
-                    <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20el%20Agente%20IA%20Multimodal." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 font-bold transition-all shadow-md">
-                        <span data-i18n="price_3_cta" class="text-xl tracking-tight">Desde 199 €</span>
-                        <span class="text-xl">💬</span>
-                    </a>
-                </div>
-                <ul class="space-y-4 text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">
-                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_3_feat1">Lectura inteligente de PDFs y Excel</span></li>
-                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_3_feat2">Conexión a tu Base de Datos (SQL/CRM)</span></li>
-                    <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_3_feat3">Automatización de tareas complejas</span></li>
-                </ul>
-            </div>
+            <ul class="space-y-4 text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_2_feat1">Asistente entrenado con tu negocio</span></li>
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_2_feat2">Respuestas 24/7 a clientes</span></li>
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_2_feat3">Filtrado automático de curiosos</span></li>
+            </ul>
         </div>
-<p data-i18n="price_disclaimer" class="text-center text-xs text-gray-500 mt-8 max-w-3xl mx-auto">* Los precios incluyen el desarrollo e integración de los sistemas por parte de Lanza Estudio. Los costes externos de infraestructura (registro de dominios, hosting avanzado o consumo de APIs de IA) no están incluidos y se abonan a precio de coste directamente al proveedor.</p>
-        <!-- Tabla de Costes Reales -->
+
+        <!-- Tarjeta 3: PYME -->
+        <div class="relative group p-6 lg:p-8 rounded-[2rem] border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm flex flex-col hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md whitespace-nowrap" data-i18n="price_3_badge">Mayor Retorno</div>
+
+            <h3 data-i18n="price_3_title" class="text-2xl font-bold mt-2">Generador Inteligente</h3>
+            <p data-i18n="price_3_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para PYMEs</p>
+            
+            <!-- Precio Competencia y CTA -->
+            <div class="my-8 flex flex-col gap-2">
+                <div class="text-center">
+                    <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Agencias: </span>
+                    <span class="text-sm md:text-base text-red-500 dark:text-red-400 font-black line-through" data-i18n="price_3_comp">2.000 € a 4.000 €</span>
+                </div>
+                <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20el%20Generador%20de%20Prompts." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 font-bold transition-all shadow-md">
+                    <span data-i18n="price_3_cta" class="text-lg xl:text-xl tracking-tight">Desde 199 €</span>
+                    <span class="text-xl">💬</span>
+                </a>
+            </div>
+
+            <ul class="space-y-4 text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_3_feat1">Generador de Prompts conectado a tu Base de Datos</span></li>
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_3_feat2">Ahorro total: explota tu suscripción IA al máximo sin pagar consumos API</span></li>
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_3_feat3">A medida y 100% escalable. Adiós a las plantillas genéricas.</span></li>
+            </ul>
+        </div>
+
+        <!-- Tarjeta 4: Corporaciones -->
+        <div class="relative group p-6 lg:p-8 rounded-[2rem] border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm flex flex-col hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md whitespace-nowrap" data-i18n="price_4_badge">Máxima Escala</div>
+
+            <h3 data-i18n="price_4_title" class="text-2xl font-bold mt-2">Aplicación Web PWA</h3>
+            <p data-i18n="price_4_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para Corporaciones</p>
+            
+            <!-- Precio Competencia y CTA -->
+            <div class="my-8 flex flex-col gap-2">
+                <div class="text-center">
+                    <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Agencias: </span>
+                    <span class="text-sm md:text-base text-red-500 dark:text-red-400 font-black line-through" data-i18n="price_4_comp">6.000 € a 15.000+ €</span>
+                </div>
+                <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20la%20App%20Web%20PWA." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 font-bold transition-all shadow-md">
+                    <span data-i18n="price_4_cta" class="text-lg xl:text-xl tracking-tight">Desde 999 €</span>
+                    <span class="text-xl">💬</span>
+                </a>
+            </div>
+
+            <ul class="space-y-4 text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_4_feat1">App Web Nativa con múltiples conexiones API integradas</span></li>
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_4_feat2">Gestión de roles avanzada (Admin, Trabajador, Cliente, etc.)</span></li>
+                <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_4_feat3">Automatización en la nube de tareas corporativas complejas</span></li>
+            </ul>
+        </div>
+
+    </div>
+    
+    <p data-i18n="price_disclaimer" class="text-center text-xs text-gray-500 mt-8 max-w-3xl mx-auto">* Los precios incluyen el desarrollo e integración de los sistemas por parte de Lanza Estudio. Los costes externos de infraestructura (registro de dominios, hosting avanzado o consumo de APIs de IA) no están incluidos y se abonan a precio de coste directamente al proveedor.</p>
+    
+    <!-- Tabla de Costes Reales -->
+
         <div class="mt-24 max-w-4xl mx-auto bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-gray-200 dark:border-gray-800 shadow-xl">
             <div class="text-center mb-10">
                 <h4 data-i18n="api_table_title" class="text-2xl md:text-3xl font-black mb-3">¿Cuánto cuesta mantener la IA?</h4>
