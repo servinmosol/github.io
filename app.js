@@ -155,3 +155,100 @@ function initModals() {
 }
 
 document.addEventListener('DOMContentLoaded', initModals);
+
+// ==========================================
+// LÓGICA SIMULACIÓN HERO (DASHBOARD)
+// ==========================================
+function initHeroInteractive() {
+    const btn = document.getElementById('hero-btn');
+    if (!btn) return;
+
+    const progress = document.getElementById('hero-progress');
+    const step1 = document.getElementById('step-1');
+    const step2 = document.getElementById('step-2');
+    const step3 = document.getElementById('step-3');
+    const aura = document.getElementById('hero-aura');
+
+    let isRunning = false;
+
+    function markDone(stepEl) {
+        stepEl.classList.add('border-emerald-400', 'bg-emerald-50', 'dark:bg-emerald-900/20');
+        const icon = stepEl.querySelector('.status-icon');
+        icon.textContent = '✓';
+        icon.classList.remove('text-gray-300', 'dark:text-gray-600');
+        icon.classList.add('text-emerald-500', 'dark:text-emerald-400', 'font-black');
+    }
+
+    function resetUI() {
+        isRunning = false;
+        progress.style.width = '0%';
+        btn.innerHTML = '▶ Ejecutar Simulación';
+        btn.classList.remove('bg-emerald-500', 'text-white', 'dark:bg-emerald-500', 'dark:text-white', 'shadow-[0_0_20px_rgba(16,185,129,0.4)]', 'cursor-not-allowed', 'opacity-80');
+        btn.classList.add('bg-gray-900', 'dark:bg-white', 'text-white', 'dark:text-gray-900', 'hover:bg-emerald-500', 'dark:hover:bg-emerald-400');
+        
+        aura.classList.remove('bg-emerald-500/40', 'bg-amber-500/20');
+        aura.classList.add('bg-emerald-500/20');
+
+        const steps = [step1, step2, step3];
+        steps.forEach(s => {
+            const icon = s.querySelector('.status-icon');
+            icon.textContent = '⏳';
+            icon.className = 'status-icon text-gray-300 dark:text-gray-600 text-sm';
+            s.classList.remove('border-emerald-400', 'bg-emerald-50', 'dark:bg-emerald-900/20');
+        });
+    }
+
+    btn.addEventListener('click', () => {
+        if (isRunning) return;
+        isRunning = true;
+
+        // 1. Estado "Procesando"
+        btn.innerHTML = 'Procesando Flujo...';
+        btn.classList.remove('hover:bg-emerald-500', 'dark:hover:bg-emerald-400');
+        btn.classList.add('opacity-80', 'cursor-not-allowed');
+        
+        aura.classList.remove('bg-emerald-500/20');
+        aura.classList.add('bg-amber-500/20'); // Luz de proceso (naranja)
+
+        // 2. Ejecutar Paso 1 (WhatsApp)
+        setTimeout(() => {
+            progress.style.width = '33%';
+            markDone(step1);
+        }, 800);
+
+        // 3. Ejecutar Paso 2 (IA)
+        setTimeout(() => {
+            progress.style.width = '66%';
+            markDone(step2);
+        }, 1800);
+
+        // 4. Ejecutar Paso 3 (CRM) y Finalizar
+        setTimeout(() => {
+            progress.style.width = '100%';
+            markDone(step3);
+            
+            // Botón verde de éxito
+            btn.innerHTML = '✨ ¡Automatización Completada!';
+            btn.classList.remove('bg-gray-900', 'dark:bg-white', 'opacity-80', 'cursor-not-allowed');
+            btn.classList.add('bg-emerald-500', 'text-white', 'dark:bg-emerald-500', 'dark:text-white', 'shadow-[0_0_20px_rgba(16,185,129,0.4)]');
+            
+            aura.classList.remove('bg-amber-500/20');
+            aura.classList.add('bg-emerald-500/40'); // Luz de éxito intensa
+
+            // 5. Reiniciar después de 4 segundos
+            setTimeout(() => {
+                resetUI();
+            }, 4000);
+        }, 2800);
+    });
+}
+
+// ==========================================
+// INICIALIZACIÓN GLOBAL
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    initCalculator();
+    initWhatsAppPricingLinks();
+    initModals(); // Aseguramos que los modales también se inician aquí
+    initHeroInteractive(); // <-- NUESTRA NUEVA FUNCIÓN
+});
