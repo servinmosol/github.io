@@ -72,11 +72,12 @@ function initCalculator() {
 
         // Traducción dinámica de la calculadora
         if (btnWhatsapp) {
-            const part1 = document.getElementById('wa-calc-1')?.textContent.trim() || 'Hola, somos ';
-            const part2 = document.getElementById('wa-calc-2')?.textContent.trim() || ' personas y perdemos ';
+            const part1 = document.getElementById('wa-calc-1')?.textContent.trim() || 'Hola, somos';
+            const part2 = document.getElementById('wa-calc-2')?.textContent.trim() || 'personas y perdemos unas';
             const part3 = document.getElementById('wa-calc-3')?.textContent.trim() || 'h a la semana.';
             
-            const message = `${part1}${emp}${part2}${hours}${part3}`;
+            // Forzamos los espacios de separación aquí para evitar problemas con el HTML
+            const message = `${part1} ${emp} ${part2} ${hours}${part3}`;
             btnWhatsapp.href = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
         }
     }
