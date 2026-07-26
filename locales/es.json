@@ -151,5 +151,21 @@
   "hero_why_2_desc": "Nuestro objetivo es rentabilizar tu negocio, no solo integrar IA por moda. Analizamos la vía más económica y escalable. Un ejemplo real: si el consumo de una API de IA externa dispara tus costes y prefieres tener supervisión manual, te desarrollamos un generador de prompts inteligente (conectado a tu propia base de datos) para que explotes modelos de suscripción mensuales por una fracción del precio.",
   
   "hero_why_3_title": "Sistemas escalables en cualquier fase",
-  "hero_why_3_desc": "Si empiezas de cero y no tienes volumen, construimos la infraestructura digital para crear y captar esa cartera de clientes desde la primera visita. Y si ya gestionas un volumen alto de negocio, desarrollamos las herramientas de gestión necesarias para atenderlos como se merecen, optimizar el servicio y convertirlos en clientes recurrentes."
+  "hero_why_3_desc": "Si empiezas de cero y no tienes volumen, construimos la infraestructura digital para crear y captar esa cartera de clientes desde la primera visita. Y si ya gestionas un volumen alto de negocio, desarrollamos las herramientas de gestión necesarias para atenderlos como se merecen, optimizar el servicio y convertirlos en clientes recurrentes.",
+  "push_1_app": "WhatsApp",
+  "push_1_time": "Ahora",
+  "push_1_sender": "Pepe (Nuevo Cliente)",
+  "push_1_tag": "IA:",
+  "push_1_msg": "He respondido a Pepe. Ha solicitado un presupuesto de consultoría.",
+
+  "push_2_app": "Gmail",
+  "push_2_time": "Hace 2 min",
+  "push_2_sender": "Javier",
+  "push_2_tag": "IA Resumen:",
+  "push_2_msg": "He hablado con él y me ha propuesto una colaboración B2B. Borrador listo.",
+
+  "push_3_app": "Sistema",
+  "push_3_time": "Hace 5 min",
+  "push_3_sender": "Sincronización Completada",
+  "push_3_msg": "He actualizado la base de datos de la empresa con dos artículos que acaban de llegar nuevos."
 }
