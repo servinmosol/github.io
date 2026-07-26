@@ -11,7 +11,7 @@
 
   "srv_1_badge": "Menor Inversión",
   "srv_2_badge": "Más Popular",
-  "srv_3_badge": "Mayor Retorno",
+  "srv_3_badge": "Sinergia Total",
   "srv_4_badge": "Máxima Escala",
   
   "srv_1_tag": "Fase Inicial",
@@ -127,6 +127,15 @@
   "api_row_4": "Analizar un Excel de 1.000 filas",
   "api_note": "* Los precios mostrados son estimaciones de 07/26 basadas en las tarifas públicas de los proveedores de IA. *Estimación basada en los precios de Google Gemini 3.1 Flash y gemini-3.1-flash-image. Necesitarías automatizar miles de operaciones al mes para llegar a gastar 1 euro.",
   
+  "calc_wa_1": "Hola, he probado la calculadora de la web. Somos ",
+  "calc_wa_2": " persona(s) y perdemos unas ",
+  "calc_wa_3": "h a la semana cada uno en tareas repetitivas. Me gustaría evaluar opciones de automatización.",
+  
+  "wa_msg_price_1": "Hola, me interesa la Landing Page Rápida. Me gustaría recibir más información.",
+  "wa_msg_price_2": "Hola, me interesa el Bot IA para WhatsApp. Me gustaría recibir más información.",
+  "wa_msg_price_3": "Hola, me interesa el Generador Inteligente de Prompts. Me gustaría recibir más información.",
+  "wa_msg_price_4": "Hola, me interesa la Aplicación Web PWA para Corporaciones. Me gustaría recibir más información.",
+
   "footer_copy": "© 2026 Lanza Estudio. Todos los derechos reservados.",
   "footer_legal": "Legal",
   "footer_privacy": "Privacidad",
