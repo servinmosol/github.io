@@ -846,17 +846,8 @@
   .bg-gray-950 {
     background-color: var(--color-gray-950);
   }
-  .bg-indigo-100 {
-    background-color: var(--color-indigo-100);
-  }
-  .bg-orange-100 {
-    background-color: var(--color-orange-100);
-  }
   .bg-purple-100 {
     background-color: var(--color-purple-100);
-  }
-  .bg-rose-100 {
-    background-color: var(--color-rose-100);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -1180,14 +1171,8 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
-  .text-amber-600 {
-    color: var(--color-amber-600);
-  }
   .text-amber-700 {
     color: var(--color-amber-700);
-  }
-  .text-blue-600 {
-    color: var(--color-blue-600);
   }
   .text-blue-700 {
     color: var(--color-blue-700);
@@ -1225,23 +1210,11 @@
   .text-gray-900 {
     color: var(--color-gray-900);
   }
-  .text-indigo-600 {
-    color: var(--color-indigo-600);
-  }
-  .text-orange-600 {
-    color: var(--color-orange-600);
-  }
-  .text-purple-600 {
-    color: var(--color-purple-600);
-  }
   .text-purple-700 {
     color: var(--color-purple-700);
   }
   .text-red-500 {
     color: var(--color-red-500);
-  }
-  .text-rose-600 {
-    color: var(--color-rose-600);
   }
   .text-transparent {
     color: transparent;
@@ -1856,12 +1829,6 @@
       background-color: color-mix(in oklab, var(--color-amber-900) 30%, transparent);
     }
   }
-  .dark\:bg-amber-900\/50:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(41.4% 0.112 45.904) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-amber-900) 50%, transparent);
-    }
-  }
   .dark\:bg-black:where(.dark, .dark *) {
     background-color: var(--color-black);
   }
@@ -1869,12 +1836,6 @@
     background-color: color-mix(in srgb, oklch(37.9% 0.146 265.522) 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-blue-900) 30%, transparent);
-    }
-  }
-  .dark\:bg-blue-900\/50:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(37.9% 0.146 265.522) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-blue-900) 50%, transparent);
     }
   }
   .dark\:bg-emerald-500\/15:where(.dark, .dark *) {
@@ -1961,34 +1922,10 @@
       background-color: color-mix(in oklab, var(--color-gray-950) 50%, transparent);
     }
   }
-  .dark\:bg-indigo-900\/50:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(35.9% 0.144 278.697) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-indigo-900) 50%, transparent);
-    }
-  }
-  .dark\:bg-orange-900\/50:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(40.8% 0.123 38.172) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-orange-900) 50%, transparent);
-    }
-  }
   .dark\:bg-purple-900\/30:where(.dark, .dark *) {
     background-color: color-mix(in srgb, oklch(38.1% 0.176 304.987) 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-purple-900) 30%, transparent);
-    }
-  }
-  .dark\:bg-purple-900\/50:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(38.1% 0.176 304.987) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-purple-900) 50%, transparent);
-    }
-  }
-  .dark\:bg-rose-900\/50:where(.dark, .dark *) {
-    background-color: color-mix(in srgb, oklch(41% 0.159 10.272) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-rose-900) 50%, transparent);
     }
   }
   .dark\:bg-white:where(.dark, .dark *) {
@@ -2059,20 +1996,11 @@
   .dark\:text-gray-900:where(.dark, .dark *) {
     color: var(--color-gray-900);
   }
-  .dark\:text-indigo-400:where(.dark, .dark *) {
-    color: var(--color-indigo-400);
-  }
-  .dark\:text-orange-400:where(.dark, .dark *) {
-    color: var(--color-orange-400);
-  }
   .dark\:text-purple-400:where(.dark, .dark *) {
     color: var(--color-purple-400);
   }
   .dark\:text-red-400:where(.dark, .dark *) {
     color: var(--color-red-400);
-  }
-  .dark\:text-rose-400:where(.dark, .dark *) {
-    color: var(--color-rose-400);
   }
   .dark\:text-white:where(.dark, .dark *) {
     color: var(--color-white);
