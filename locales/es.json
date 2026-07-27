@@ -4,7 +4,7 @@
   
   "hero_badge": "Soluciones a medida",
   "hero_title": "Automatización real para empresas que valoran su tiempo.",
-  "hero_subtitle": "Desarrollamos e integramos IA directamente en tu infraestructura.",
+  "hero_subtitle": "Integramos Inteligencia Artificial en tus procesos actuales y construimos la infraestructura necesaria para que exprimas al máximo los modelos de IA del mercado.",
   
   "services_badge": "Servicios",
   "services_title": "Diseñado para el punto exacto donde está tu empresa.",
@@ -145,13 +145,17 @@
   "hero_why_title": "¿Por qué elegirnos?",
   
   "hero_why_1_title": "Desarrollo y Stack Tecnológico Total",
-  "hero_why_1_desc": "Somos expertos en SEO y Posicionamiento, integraciones de APIs & arquitecturas Cloud, desarrollo de Inteligencia Artificial y Bots. Creamos sistemas a medida sin depender de plantillas cerradas dominando el código nativo (PHP, MySQL, HTML, CSS, JavaScript, Python, C++...).",
-  
+  "hero_why_1_desc": "Somos expertos en SEO, Posicionamiento, integraciones de APIs, arquitecturas Cloud, desarrollo de Inteligencia Artificial y Bots. Creamos sistemas a medida sin depender de plantillas cerradas dominando el código nativo (HTML, CSS, JavaScript, PHP, MySQL, Python, C++, etc...).",
+  "hero_why_1_tag": "Full Stack",
+
   "hero_why_2_title": "Rentabilidad: Ingeniería financiera aplicada",
   "hero_why_2_desc": "Nuestro objetivo es rentabilizar tu negocio, no solo integrar IA por moda. Analizamos la vía más económica y escalable. Un ejemplo real: si el consumo de una API de IA externa dispara tus costes y prefieres tener supervisión manual, te desarrollamos un generador de prompts inteligente (conectado a tu propia base de datos) para que explotes modelos de suscripción mensuales por una fracción del precio.",
-  
+  "hero_why_2_tag": "Rentable",
+
   "hero_why_3_title": "Sistemas escalables en cualquier fase",
   "hero_why_3_desc": "Si empiezas de cero y no tienes volumen, construimos la infraestructura digital para crear y captar esa cartera de clientes desde la primera visita. Y si ya gestionas un volumen alto de negocio, desarrollamos las herramientas de gestión necesarias para atenderlos como se merecen, optimizar el servicio y convertirlos en clientes recurrentes.",
+  "hero_why_3_tag": "Escalable",
+  
   "push_1_app": "WhatsApp",
   "push_1_time": "Ahora",
   "push_1_sender": "Pepe (Nuevo Cliente)",
