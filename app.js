@@ -197,3 +197,155 @@ document.addEventListener('DOMContentLoaded', () => {
     initModals(); 
     initHeroPhone(); // <-- Arrancamos el móvil aquí
 });
+
+// ==========================================
+// LÓGICA DEL CATÁLOGO DE SOLUCIONES (FILTROS)
+// ==========================================
+function initSolutionsCatalog() {
+    const grid = document.getElementById('solutions-grid');
+    const emptyState = document.getElementById('empty-state');
+    const searchInput = document.getElementById('search-input');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    if (!grid) return; // Si no estamos en la página del catálogo, abortamos
+
+    // DUMMY DATA: Simulamos el índice JSON que generará tu script build.js
+    const solutions = [
+        {
+            service_tag: "abismo-checkout-dinamico",
+            category: "SEO y Posicionamiento",
+            title: "El Abismo del Checkout Dinámico: Cuando tu SEO Atrae Clientes pero tu Código Bloquea la Venta",
+            author_name: "Jacinto",
+            author_role: "CEO & Fundador",
+            author_image: "./img/avatar-jac.webp" // Cambiarás esto a tu ruta real
+        },
+        {
+            service_tag: "automatizacion-facturas",
+            category: "IA & Bots",
+            title: "Extracción automática de datos en facturas PDF con LLMs",
+            author_name: "Laura",
+            author_role: "Lead Developer",
+            author_image: ""
+        },
+        {
+            service_tag: "migracion-aws-zero-downtime",
+            category: "APIs & Cloud",
+            title: "Sincronización masiva de inventarios B2B sin tiempos de caída",
+            author_name: "Jacinto",
+            author_role: "CEO & Fundador",
+            author_image: "./img/avatar-jac.webp"
+        },
+        {
+            service_tag: "dashboard-operativo",
+            category: "Sistemas a Medida",
+            title: "Desarrollo de panel de control unificado para gestión logística en tiempo real",
+            author_name: "Carlos",
+            author_role: "Arquitecto de Software",
+            author_image: ""
+        }
+    ];
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function renderCards() {
+        grid.innerHTML = '';
+        
+        // 1. Filtrar por categoría y texto
+        const filtered = solutions.filter(item => {
+            const matchCategory = currentFilter === 'all' || item.category === currentFilter;
+            const matchSearch = item.title.toLowerCase().includes(currentSearch.toLowerCase());
+            return matchCategory && matchSearch;
+        });
+
+        // 2. Mostrar estado vacío si no hay resultados
+        if (filtered.length === 0) {
+            grid.classList.add('hidden');
+            emptyState.classList.remove('hidden');
+            emptyState.classList.add('flex');
+            return;
+        }
+
+        grid.classList.remove('hidden');
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+
+        // 3. Renderizar las tarjetas
+        filtered.forEach(item => {
+            // Asignar colores según categoría (estilo premium)
+            let badgeColor = "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800/50";
+            if(item.category === 'APIs & Cloud') badgeColor = "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 border-blue-200 dark:border-blue-800/50";
+            if(item.category === 'IA & Bots') badgeColor = "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 border-purple-200 dark:border-purple-800/50";
+            if(item.category === 'Sistemas a Medida') badgeColor = "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 border-amber-200 dark:border-amber-800/50";
+
+            // Fallback para imágenes vacías (crea un avatar de colores con la inicial)
+            const imgHtml = item.author_image 
+                ? `<img src="${item.author_image}" alt="${item.author_name}" class="w-full h-full object-cover">`
+                : `<img src="https://ui-avatars.com/api/?name=${item.author_name}&background=10b981&color=fff" class="w-full h-full object-cover">`;
+
+            const cardHTML = `
+                <a href="./soluciones/${item.service_tag}.html" class="group flex flex-col justify-between p-6 sm:p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
+                    <div>
+                        <span class="inline-block px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm border mb-5 ${badgeColor}">
+                            ${item.category}
+                        </span>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-3">
+                            ${item.title}
+                        </h3>
+                    </div>
+                    <div class="flex items-center gap-3 mt-8 pt-6 border-t border-gray-100 dark:border-gray-800">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden flex-shrink-0">
+                            ${imgHtml}
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-900 dark:text-gray-100">${item.author_name}</p>
+                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">${item.author_role}</p>
+                        </div>
+                    </div>
+                </a>
+            `;
+            grid.insertAdjacentHTML('beforeend', cardHTML);
+        });
+    }
+
+    // 4. Listeners para los botones de categoría
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // Reiniciar estilos de los botones
+            filterButtons.forEach(b => {
+                b.classList.remove('bg-gray-900', 'text-white', 'dark:bg-white', 'dark:text-gray-900', 'active', 'shadow-md');
+                b.classList.add('bg-white/60', 'dark:bg-gray-900/60', 'text-gray-600', 'dark:text-gray-300');
+            });
+            
+            // Activar el botón clicado
+            const target = e.currentTarget;
+            target.classList.add('bg-gray-900', 'text-white', 'dark:bg-white', 'dark:text-gray-900', 'active', 'shadow-md');
+            target.classList.remove('bg-white/60', 'dark:bg-gray-900/60', 'text-gray-600', 'dark:text-gray-300');
+
+            currentFilter = target.getAttribute('data-filter');
+            renderCards();
+        });
+    });
+
+    // 5. Listener para el cuadro de búsqueda
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value;
+            renderCards();
+        });
+    }
+
+    // Arrancar la función pintando todo la primera vez
+    renderCards();
+}
+
+// ==========================================
+// INICIALIZACIÓN GLOBAL
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    initCalculator();
+    initWhatsAppPricingLinks();
+    initModals(); 
+    initHeroPhone(); 
+    initSolutionsCatalog(); // <-- Arrancamos el catálogo aquí
+});
