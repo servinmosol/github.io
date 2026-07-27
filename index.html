@@ -371,8 +371,10 @@
                         <p id="calc-advice" class="text-sm text-gray-400 leading-relaxed font-medium">
                             *Estimación calculada a 25€/hora. Podríamos automatizar más del 70% de este trabajo.
                         </p>
-                        <a id="btn-calc-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-gray-900 font-black text-center text-sm md:text-base transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]">
-                            Solicitar diagnóstico para mi caso →
+                        <!-- BOTÓN ANIMADO -->
+                        <a id="btn-calc-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="group relative flex items-center justify-center gap-2 w-full py-4 px-6 rounded-xl bg-emerald-500 text-gray-900 font-black text-center text-sm md:text-base transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:bg-emerald-400 hover:-translate-y-1">
+                            <span data-i18n="calc_btn">Solicitar diagnóstico para mi caso</span>
+                            <span class="transition-transform duration-300 group-hover:translate-x-1.5 font-black text-xl leading-none">→</span>
                         </a>
                     </div>
                 </div>
@@ -474,19 +476,21 @@
         <!-- Tarjeta 1: Emprendedor -->
         <div class="relative group p-6 lg:p-8 rounded-[2rem] border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm flex flex-col hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md whitespace-nowrap" data-i18n="price_1_badge">Menor Inversión</div>
-            
             <h3 data-i18n="price_1_title" class="text-2xl font-bold mt-2">Landing Page Rápida</h3>
             <p data-i18n="price_1_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para emprendedores</p>
             
-            <!-- Precio Competencia y CTA -->
             <div class="my-8 flex flex-col gap-2">
                 <div class="text-center">
                     <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Agencias: </span>
                     <span class="text-sm md:text-base text-red-500 dark:text-red-400 font-black line-through" data-i18n="price_1_comp">500 € a 900 €</span>
                 </div>
-                <a href="#" data-wa-msg="wa-price-1" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 font-bold transition-all shadow-md">
-                    <span data-i18n="price_1_cta" class="text-lg xl:text-xl tracking-tight">Desde 49 €</span>
-                    <span class="text-xl">💬</span>
+                <!-- BOTÓN WA ANIMADO -->
+                <a href="#" data-wa-msg="wa-price-1" target="_blank" rel="noopener noreferrer" class="group/btn flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-[#25D366] dark:hover:bg-[#25D366] hover:text-white dark:hover:text-white font-bold transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:-translate-y-1">
+                    <div class="flex flex-col items-end leading-none">
+                        <span class="text-[10px] uppercase tracking-widest opacity-70">Landing Page</span>
+                        <span data-i18n="price_1_cta" class="text-lg xl:text-xl tracking-tight mt-1">Desde 49 €</span>
+                    </div>
+                    <span class="text-2xl transition-transform duration-300 group-hover/btn:scale-125 group-hover/btn:rotate-6 origin-bottom-left">💬</span>
                 </a>
             </div>
 
@@ -500,19 +504,21 @@
        <!-- Tarjeta 2: Autónomo -->
         <div class="relative group p-6 lg:p-8 rounded-[2rem] border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm flex flex-col hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md whitespace-nowrap" data-i18n="price_2_badge">Más Popular</div>
-
             <h3 data-i18n="price_2_title" class="text-2xl font-bold mt-2">Bot IA para WhatsApp</h3>
             <p data-i18n="price_2_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para autónomos</p>
             
-            <!-- Precio Competencia y CTA -->
             <div class="my-8 flex flex-col gap-2">
                 <div class="text-center">
                     <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Agencias: </span>
                     <span class="text-sm md:text-base text-red-500 dark:text-red-400 font-black line-through" data-i18n="price_2_comp">800 € a 1.500 €</span>
                 </div>
-                <a href="#" data-wa-msg="wa-price-2" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 font-bold transition-all shadow-md">
-                    <span data-i18n="price_2_cta" class="text-lg xl:text-xl tracking-tight">Desde 99 €</span>
-                    <span class="text-xl">💬</span>
+                <!-- BOTÓN WA ANIMADO -->
+                <a href="#" data-wa-msg="wa-price-2" target="_blank" rel="noopener noreferrer" class="group/btn flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-[#25D366] dark:hover:bg-[#25D366] hover:text-white dark:hover:text-white font-bold transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:-translate-y-1">
+                    <div class="flex flex-col items-end leading-none">
+                        <span class="text-[10px] uppercase tracking-widest opacity-70">Bot IA entrenado</span>
+                        <span data-i18n="price_2_cta" class="text-lg xl:text-xl tracking-tight mt-1">Desde 99 €</span>
+                    </div>
+                    <span class="text-2xl transition-transform duration-300 group-hover/btn:scale-125 group-hover/btn:rotate-6 origin-bottom-left">💬</span>
                 </a>
             </div>
 
@@ -526,19 +532,21 @@
         <!-- Tarjeta 3: PYME -->
         <div class="relative group p-6 lg:p-8 rounded-[2rem] border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm flex flex-col hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md whitespace-nowrap" data-i18n="price_3_badge">Mayor Retorno</div>
-
             <h3 data-i18n="price_3_title" class="text-2xl font-bold mt-2">Generador Inteligente</h3>
             <p data-i18n="price_3_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para PYMEs</p>
             
-            <!-- Precio Competencia y CTA -->
             <div class="my-8 flex flex-col gap-2">
                 <div class="text-center">
                     <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Agencias: </span>
-                    <span class="text-sm md:text-base text-red-500 dark:text-red-400 font-black line-through" data-i18n="price_3_comp">2.000 € a 4.000 €</span>
+                    <span class="text-sm md:text-base text-red-500 dark:text-red-400 font-black line-through" data-i18n="price_3_comp">900 € a 2500 €</span>
                 </div>
-                <a href="#" data-wa-msg="wa-price-3" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 font-bold transition-all shadow-md">
-                    <span data-i18n="price_3_cta" class="text-lg xl:text-xl tracking-tight">Desde 199 €</span>
-                    <span class="text-xl">💬</span>
+                <!-- BOTÓN WA ANIMADO -->
+                <a href="#" data-wa-msg="wa-price-3" target="_blank" rel="noopener noreferrer" class="group/btn flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-[#25D366] dark:hover:bg-[#25D366] hover:text-white dark:hover:text-white font-bold transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:-translate-y-1">
+                    <div class="flex flex-col items-end leading-none">
+                        <span class="text-[10px] uppercase tracking-widest opacity-70">Prompts para IA</span>
+                        <span data-i18n="price_3_cta" class="text-lg xl:text-xl tracking-tight mt-1">Desde 199 €</span>
+                    </div>
+                    <span class="text-2xl transition-transform duration-300 group-hover/btn:scale-125 group-hover/btn:rotate-6 origin-bottom-left">💬</span>
                 </a>
             </div>
 
@@ -552,19 +560,21 @@
         <!-- Tarjeta 4: Corporaciones -->
         <div class="relative group p-6 lg:p-8 rounded-[2rem] border-2 border-emerald-500/30 dark:border-emerald-500/20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm flex flex-col hover:border-emerald-500/80 dark:hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md whitespace-nowrap" data-i18n="price_4_badge">Máxima Escala</div>
-
             <h3 data-i18n="price_4_title" class="text-2xl font-bold mt-2">Aplicación Web PWA</h3>
             <p data-i18n="price_4_target" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Para Corporaciones</p>
             
-            <!-- Precio Competencia y CTA -->
             <div class="my-8 flex flex-col gap-2">
                 <div class="text-center">
                     <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Agencias: </span>
                     <span class="text-sm md:text-base text-red-500 dark:text-red-400 font-black line-through" data-i18n="price_4_comp">+15.000 €</span>
                 </div>
-                <a href="#" data-wa-msg="wa-price-4" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 font-bold transition-all shadow-md">
-                    <span data-i18n="price_4_cta" class="text-lg xl:text-xl tracking-tight">Desde 999 €</span>
-                    <span class="text-xl">💬</span>
+                <!-- BOTÓN WA ANIMADO -->
+                <a href="#" data-wa-msg="wa-price-4" target="_blank" rel="noopener noreferrer" class="group/btn flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-[#25D366] dark:hover:bg-[#25D366] hover:text-white dark:hover:text-white font-bold transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:-translate-y-1">
+                    <div class="flex flex-col items-end leading-none">
+                        <span class="text-[10px] uppercase tracking-widest opacity-70">App Web PWA</span>
+                        <span data-i18n="price_4_cta" class="text-lg xl:text-xl tracking-tight mt-1">Desde 999 €</span>
+                    </div>
+                    <span class="text-2xl transition-transform duration-300 group-hover/btn:scale-125 group-hover/btn:rotate-6 origin-bottom-left">💬</span>
                 </a>
             </div>
 
@@ -574,7 +584,6 @@
                 <li class="flex items-start gap-3"><span class="text-emerald-500 font-black">✓</span> <span data-i18n="price_4_feat3">Automatización en la nube de tareas corporativas complejas</span></li>
             </ul>
         </div>
-
     </div>
     
     <p data-i18n="price_disclaimer" class="text-center text-xs text-gray-500 mt-8 max-w-3xl mx-auto">* Los precios incluyen el desarrollo e integración de los sistemas por parte de Lanza Estudio. Los costes externos de infraestructura (registro de dominios, hosting avanzado o consumo de APIs de IA) no están incluidos y se abonan a precio de coste directamente al proveedor.</p>
@@ -653,8 +662,10 @@
                 <h3 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight" data-i18n="exp_title">¿No encuentras cómo podemos ayudar a tu empresa?</h3>
                 <p class="text-gray-600 dark:text-gray-400 text-lg" data-i18n="exp_subtitle">Explora cientos de casos y soluciones reales documentadas por nuestros profesionales.</p>
             </div>
-            <a href="./soluciones.html" class="shrink-0 w-full md:w-auto text-center px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-gray-900 font-black transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]">
-                <span data-i18n="exp_btn">Ver todas las Soluciones</span> →
+            <!-- BOTÓN ANIMADO -->
+            <a href="./soluciones.html" class="group relative inline-flex items-center justify-center gap-2 shrink-0 w-full md:w-auto text-center px-8 py-4 rounded-2xl bg-emerald-500 text-gray-900 font-black transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:bg-emerald-400 hover:-translate-y-1">
+                <span data-i18n="exp_btn">Ver todas las Soluciones</span>
+                <span class="transition-transform duration-300 group-hover:translate-x-1.5 font-black text-xl leading-none">→</span>
             </a>
         </div>
 
