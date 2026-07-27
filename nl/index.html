@@ -52,8 +52,17 @@
             <!-- CONTROLES -->
             <div class="flex items-center gap-3 md:gap-5">
                 
+                <!-- Botón Dinámico (Casos / Soluciones) -->
+                <a href="./soluciones.html" class="relative overflow-hidden group flex items-center justify-center h-9 md:h-10 px-4 md:px-6 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-xs md:text-sm hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 transition-colors shadow-md min-w-[100px] md:min-w-[120px]">
+                    <!-- Palabra 1 -->
+                    <span id="dyn-word-1" class="absolute transition-all duration-500 transform translate-y-0 opacity-100" data-i18n="header_btn_casos">Casos</span>
+                    <!-- Palabra 2 -->
+                    <span id="dyn-word-2" class="absolute transition-all duration-500 transform translate-y-8 opacity-0" data-i18n="header_btn_sol">Soluciones</span>
+                </a>
+
                 <!-- Selector de Idioma Customizado -->
-                <div class="relative group">
+                <div class="relative group hidden sm:block">
+                    <!-- ... (Tu selector de idioma intacto aquí) ... -->
                     <select id="lang-selector" onchange="location = this.value;" class="appearance-none bg-gray-100/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 font-semibold border border-transparent hover:border-emerald-400/50 dark:hover:border-emerald-500/50 rounded-full pl-4 pr-10 py-2 text-xs md:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all cursor-pointer shadow-sm">
                         <option value="../"  class="bg-white dark:bg-gray-900">ES</option>
                         <option value="../en/"  class="bg-white dark:bg-gray-900">EN</option>
@@ -63,14 +72,13 @@
                         <option value="./" selected class="bg-white dark:bg-gray-900">NL</option>
                         <option value="../it/"  class="bg-white dark:bg-gray-900">IT</option>
                     </select>
-                    <!-- Flecha vectorizada elegante -->
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 dark:text-gray-400 group-hover:text-emerald-500 transition-colors">
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
                 </div>
 
                 <!-- Botón de Tema Oscuro/Claro -->
-                <button id="theme-toggle" class="p-2.5 rounded-full bg-gray-100/80 dark:bg-gray-800/80 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-gray-800 dark:text-gray-200 border border-transparent hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-300 shadow-sm" aria-label="Cambiar tema">
+                <button id="theme-toggle" class="p-2.5 md:p-2 rounded-full bg-gray-100/80 dark:bg-gray-800/80 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-gray-800 dark:text-gray-200 border border-transparent hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-300 shadow-sm" aria-label="Cambiar tema">
                     <span id="theme-icon" class="block transition-transform duration-300 hover:rotate-12 text-sm md:text-base">🌙</span>
                 </button>
             </div>
@@ -709,51 +717,99 @@
         <span id="wa-price-4" data-i18n="wa_msg_price_4">Cargando...</span>
     </div>
 
-    <!-- SECCIÓN CATÁLOGO DE SOLUCIONES -->
-<section class="w-full max-w-7xl mx-auto px-6 py-24 md:py-32 relative z-10">
-    <!-- Cabecera -->
-    <div class="flex flex-col items-center text-center gap-4 mb-12">
-        <span class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm border border-emerald-200 dark:border-emerald-800/50">
-            Casos de Éxito
-        </span>
-        <h1 class="text-4xl md:text-6xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
-            Soluciones reales.<br>Resultados medibles.
-        </h1>
-        <p class="text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-2xl mt-4">
-            Explora más de 300 implementaciones técnicas donde hemos resuelto cuellos de botella empresariales mediante automatización y arquitecturas a medida.
-        </p>
-    </div>
-
-    <!-- Buscador y Filtros -->
-    <div class="flex flex-col gap-6 items-center w-full max-w-4xl mx-auto mb-16">
-        <!-- Buscador de texto libre -->
-        <div class="relative w-full md:w-2/3">
-            <input type="text" id="search-input" placeholder="Buscar por problema o palabra clave..." class="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border-2 border-gray-200 dark:border-gray-800 focus:border-emerald-500 dark:focus:border-emerald-500 outline-none text-gray-900 dark:text-gray-100 placeholder-gray-400 transition-all shadow-sm font-medium">
-            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl grayscale opacity-70">🔍</span>
+<!-- SECCIÓN EXPERTOS / PRE-FOOTER -->
+    <section class="w-full max-w-7xl mx-auto px-6 py-20 border-t border-gray-200/50 dark:border-gray-800/50 relative z-10">
+        
+        <!-- Cabecera de la sección -->
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 mb-12">
+            <div class="max-w-2xl text-center md:text-left">
+                <h3 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight" data-i18n="exp_title">
+                    ¿No encuentras cómo podemos ayudar a tu empresa?
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 text-lg" data-i18n="exp_subtitle">
+                    Explora cientos de casos y soluciones reales documentadas por nuestros profesionales.
+                </p>
+            </div>
+            <a href="./soluciones.html" class="shrink-0 w-full md:w-auto text-center px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-gray-900 font-black transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]">
+                <span data-i18n="exp_btn">Ver todas las Soluciones</span> →
+            </a>
         </div>
 
-        <!-- Filtros por Categoría (Píldoras) -->
-        <div class="flex flex-wrap justify-center gap-3 w-full" id="filter-buttons">
-            <button data-filter="all" class="filter-btn active px-5 py-2 rounded-full text-sm font-bold transition-all bg-gray-900 text-white dark:bg-white dark:text-gray-900 shadow-md">Todos</button>
-            <button data-filter="SEO y Posicionamiento" class="filter-btn px-5 py-2 rounded-full text-sm font-bold transition-all bg-white/60 dark:bg-gray-900/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400">SEO y Posicionamiento</button>
-            <button data-filter="APIs & Cloud" class="filter-btn px-5 py-2 rounded-full text-sm font-bold transition-all bg-white/60 dark:bg-gray-900/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400">APIs & Cloud</button>
-            <button data-filter="IA & Bots" class="filter-btn px-5 py-2 rounded-full text-sm font-bold transition-all bg-white/60 dark:bg-gray-900/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400">IA & Bots</button>
-            <button data-filter="Sistemas a Medida" class="filter-btn px-5 py-2 rounded-full text-sm font-bold transition-all bg-white/60 dark:bg-gray-900/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400">Sistemas a Medida</button>
+        <!-- Grid de Expertos (Bento Style) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <!-- Jacinto -->
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/60 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all hover:shadow-lg hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 font-bold flex items-center justify-center text-lg shrink-0">J</div>
+                <div class="flex-1 overflow-hidden">
+                    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base leading-tight">Jacinto</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1 truncate" data-i18n="exp_role_1">CEO y Fundador</p>
+                    <span class="text-xs font-black text-emerald-600 dark:text-emerald-400" data-i18n="exp_cases_1">64 Casos</span>
+                </div>
+            </div>
+
+            <!-- Steve -->
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/60 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all hover:shadow-lg hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-bold flex items-center justify-center text-lg shrink-0">S</div>
+                <div class="flex-1 overflow-hidden">
+                    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base leading-tight">Steve</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1 truncate" data-i18n="exp_role_2">Ingeniero Senior IA</p>
+                    <span class="text-xs font-black text-emerald-600 dark:text-emerald-400" data-i18n="exp_cases_2">57 Casos</span>
+                </div>
+            </div>
+
+            <!-- Maria -->
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/60 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all hover:shadow-lg hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 font-bold flex items-center justify-center text-lg shrink-0">M</div>
+                <div class="flex-1 overflow-hidden">
+                    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base leading-tight">Maria</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1 truncate" data-i18n="exp_role_3">Ingeniera Senior IA</p>
+                    <span class="text-xs font-black text-emerald-600 dark:text-emerald-400" data-i18n="exp_cases_3">60 Casos</span>
+                </div>
+            </div>
+
+            <!-- Carmen -->
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/60 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all hover:shadow-lg hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 font-bold flex items-center justify-center text-lg shrink-0">C</div>
+                <div class="flex-1 overflow-hidden">
+                    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base leading-tight">Carmen</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1 truncate" data-i18n="exp_role_4">Especialista Cloud</p>
+                    <span class="text-xs font-black text-emerald-600 dark:text-emerald-400" data-i18n="exp_cases_4">37 Casos</span>
+                </div>
+            </div>
+
+            <!-- Antonio -->
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/60 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all hover:shadow-lg hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 font-bold flex items-center justify-center text-lg shrink-0">A</div>
+                <div class="flex-1 overflow-hidden">
+                    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base leading-tight">Antonio</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1 truncate" data-i18n="exp_role_5">Especialista Cloud</p>
+                    <span class="text-xs font-black text-emerald-600 dark:text-emerald-400" data-i18n="exp_cases_5">36 Casos</span>
+                </div>
+            </div>
+
+            <!-- Maik -->
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/60 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all hover:shadow-lg hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 font-bold flex items-center justify-center text-lg shrink-0">M</div>
+                <div class="flex-1 overflow-hidden">
+                    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base leading-tight">Maik</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1 truncate" data-i18n="exp_role_6">Arquitecto Software</p>
+                    <span class="text-xs font-black text-emerald-600 dark:text-emerald-400" data-i18n="exp_cases_6">36 Casos</span>
+                </div>
+            </div>
+
+            <!-- Sonya -->
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/60 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all hover:shadow-lg hover:-translate-y-1 sm:col-span-2 lg:col-span-2">
+                <div class="w-12 h-12 rounded-full bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400 font-bold flex items-center justify-center text-lg shrink-0">S</div>
+                <div class="flex-1 overflow-hidden">
+                    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base leading-tight">Sonya</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1 truncate" data-i18n="exp_role_7">Arquitecta Software y BBDD</p>
+                    <span class="text-xs font-black text-emerald-600 dark:text-emerald-400" data-i18n="exp_cases_7">36 Casos</span>
+                </div>
+            </div>
+
         </div>
-    </div>
-
-    <!-- Contenedor del Grid (Aquí inyecta JS las tarjetas) -->
-    <div id="solutions-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        <!-- Las tarjetas dinámicas van aquí -->
-    </div>
-
-    <!-- Estado Vacío (Si alguien busca algo que no existe) -->
-    <div id="empty-state" class="hidden flex-col items-center justify-center py-20 text-center">
-        <span class="text-6xl mb-4 grayscale opacity-50">📭</span>
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white">No hemos encontrado ningún caso exacto</h3>
-        <p class="text-gray-500 dark:text-gray-400 mt-2 font-medium">Prueba a buscar con otras palabras o quita los filtros activos.</p>
-    </div>
-</section>
+    </section>
 
     <!-- FOOTER -->
     <footer class="w-full bg-gray-950 text-gray-400 py-10 px-6 border-t border-gray-900 mt-10 relative z-10">

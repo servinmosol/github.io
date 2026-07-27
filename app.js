@@ -196,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initWhatsAppPricingLinks();
     initModals(); 
     initHeroPhone(); // <-- Arrancamos el móvil aquí
+    initHeaderDynamicButton(); // <-- Nueva función
 });
 
 // ==========================================
@@ -349,3 +350,50 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroPhone(); 
     initSolutionsCatalog(); // <-- Arrancamos el catálogo aquí
 });
+// ==========================================
+// ANIMACIÓN BOTÓN HEADER (Casos / Soluciones)
+// ==========================================
+function initHeaderDynamicButton() {
+    const word1 = document.getElementById('dyn-word-1');
+    const word2 = document.getElementById('dyn-word-2');
+    
+    if (!word1 || !word2) return;
+
+    let showFirst = true;
+
+    setInterval(() => {
+        if (showFirst) {
+            // Ocultar palabra 1 (sube y desaparece)
+            word1.classList.replace('translate-y-0', '-translate-y-8');
+            word1.classList.replace('opacity-100', 'opacity-0');
+            // Mostrar palabra 2 (entra desde abajo)
+            word2.classList.replace('translate-y-8', 'translate-y-0');
+            word2.classList.replace('opacity-0', 'opacity-100');
+        } else {
+            // Ocultar palabra 2 (sube y desaparece)
+            word2.classList.replace('translate-y-0', '-translate-y-8');
+            word2.classList.replace('opacity-100', 'opacity-0');
+            
+            // Truco: Reposicionar palabra 1 abajo sin transición antes de que suba
+            word1.classList.remove('transition-all', 'duration-500');
+            word1.classList.replace('-translate-y-8', 'translate-y-8');
+            
+            // Forzar un reflow para aplicar el cambio instantáneo
+            void word1.offsetWidth; 
+            
+            // Activar transición y mostrar palabra 1 (entra desde abajo)
+            word1.classList.add('transition-all', 'duration-500');
+            word1.classList.replace('translate-y-8', 'translate-y-0');
+            word1.classList.replace('opacity-0', 'opacity-100');
+            
+            // Truco: Reposicionar palabra 2 abajo preparándola para el siguiente ciclo
+            setTimeout(() => {
+                word2.classList.remove('transition-all', 'duration-500');
+                word2.classList.replace('-translate-y-8', 'translate-y-8');
+                void word2.offsetWidth;
+                word2.classList.add('transition-all', 'duration-500');
+            }, 500);
+        }
+        showFirst = !showFirst;
+    }, 2500); // Cambia cada 2.5 segundos
+}

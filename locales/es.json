@@ -155,7 +155,7 @@
   "hero_why_3_title": "Sistemas escalables en cualquier fase",
   "hero_why_3_desc": "Si empiezas de cero y no tienes volumen, construimos la infraestructura digital para crear y captar esa cartera de clientes desde la primera visita. Y si ya gestionas un volumen alto de negocio, desarrollamos las herramientas de gestión necesarias para atenderlos como se merecen, optimizar el servicio y convertirlos en clientes recurrentes.",
   "hero_why_3_tag": "Escalable",
-  
+
   "push_1_app": "WhatsApp",
   "push_1_time": "Ahora",
   "push_1_sender": "Pepe (Nuevo Cliente)",
@@ -171,5 +171,26 @@
   "push_3_app": "Sistema",
   "push_3_time": "Hace 5 min",
   "push_3_sender": "Sincronización Completada",
-  "push_3_msg": "He actualizado la base de datos de la empresa con dos artículos que acaban de llegar nuevos."
+  "push_3_msg": "He actualizado la base de datos de la empresa con dos artículos que acaban de llegar nuevos.",
+  "header_btn_casos": "Casos",
+  "header_btn_sol": "Soluciones",
+  
+  "exp_title": "¿No encuentras cómo podemos ayudar a tu empresa?",
+  "exp_subtitle": "Explora cientos de casos y soluciones reales documentadas por nuestros profesionales.",
+  "exp_btn": "Ver todas las Soluciones",
+  
+  "exp_role_1": "CEO y Fundador",
+  "exp_cases_1": "64 Casos",
+  "exp_role_2": "Ingeniero Senior IA",
+  "exp_cases_2": "57 Casos",
+  "exp_role_3": "Ingeniera Senior IA",
+  "exp_cases_3": "60 Casos",
+  "exp_role_4": "Especialista Cloud",
+  "exp_cases_4": "37 Casos",
+  "exp_role_5": "Especialista Cloud",
+  "exp_cases_5": "36 Casos",
+  "exp_role_6": "Arquitecto Software",
+  "exp_cases_6": "36 Casos",
+  "exp_role_7": "Arquitecta Software y BBDD",
+  "exp_cases_7": "36 Casos"
 }
