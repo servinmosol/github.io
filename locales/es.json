@@ -76,6 +76,7 @@
   "price_subtitle": "Transparencia desde el primer minuto. Sin costes ocultos ni sorpresas a final de mes.",
   
   "price_1_badge": "Menor Inversión",
+  "price_1_mini": "Landing Page",
   "price_1_comp": "500 € a 900 €",
   "price_1_title": "Landing Page Rápida",
   "price_1_target": "Para emprendedores",
@@ -85,6 +86,7 @@
   "price_1_feat3": "🎁 BONUS: Si no necesita backend, Hosting gratis!",
   
   "price_2_badge": "Más Popular",
+  "price_2_mini": "Bot IA entrenado",
   "price_2_comp": "800 € a 1.500 €",
   "price_2_title": "Bot IA para WhatsApp",
   "price_2_target": "Para autónomos",
@@ -94,6 +96,7 @@
   "price_2_feat3": "Filtrado automático de curiosos",
   
   "price_3_badge": "Mayor Retorno",
+  "price_3_mini": "Prompts para IA",
   "price_3_comp": "900 € a 2500 €",
   "price_3_title": "Generador Inteligente",
   "price_3_target": "Para PYMEs",
@@ -103,6 +106,7 @@
   "price_3_feat3": "A medida y 100% escalable. Adiós a las plantillas genéricas.",
   
   "price_4_badge": "Máxima Escala",
+  "price_4_mini": "App Web PWA",
   "price_4_comp": "+15.000 €",
   "price_4_title": "Aplicación Web PWA",
   "price_4_target": "Para Corporaciones",
