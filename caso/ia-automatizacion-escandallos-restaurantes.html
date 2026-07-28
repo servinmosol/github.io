@@ -80,7 +80,7 @@
         <div class="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 pt-4 sm:pt-6 pointer-events-none">
             <header class="w-full max-w-5xl mx-auto flex justify-between items-center px-5 py-3 md:px-6 md:py-4 rounded-2xl md:rounded-full bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-lg shadow-gray-200/20 dark:shadow-black/20 pointer-events-auto transition-all duration-300">
                 
-                <!-- LOGO -->
+                <!-- LOGO (Corregido para respetar el idioma actual) -->
                 <a href="../" class="flex items-center gap-3 font-bold text-lg md:text-xl tracking-tight focus:outline-none group">
                     <img src="../img/web/ico.png" alt="Lanza Estudio" class="h-8 md:h-9 w-auto object-contain group-hover:scale-110 transition-transform duration-300">
                     <span class="hidden md:block bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
@@ -91,16 +91,15 @@
                 <!-- CONTROLES -->
                 <div class="flex items-center gap-2 sm:gap-3 md:gap-5">
                     
-                    <!-- BOTÓN VOLVER AL CATÁLOGO (Integrado en Header) -->
+                    <!-- BOTÓN VOLVER AL CATÁLOGO (Corregido para respetar el idioma actual) -->
                     <a href="../soluciones.html" class="group flex items-center justify-center h-9 md:h-10 px-3 sm:px-4 md:px-6 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-[10px] sm:text-xs md:text-sm hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 transition-all duration-300 shadow-md min-w-[90px] sm:min-w-[100px] md:min-w-[120px]">
                         <span class="mr-1 sm:mr-2 transition-transform duration-300 group-hover:-translate-x-1 font-black">←</span>
                         <span data-i18n="nav_back_sol">Catálogo</span>
                     </a>
 
-                    <!-- SELECTOR DE IDIOMA (Maneja los hreflang dinámicos de cada caso) -->
+                    <!-- SELECTOR DE IDIOMA -->
                     <div class="relative group">
                         <select id="lang-selector" onchange="location = this.value;" class="appearance-none bg-gray-100/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 font-semibold border border-transparent hover:border-emerald-400/50 dark:hover:border-emerald-500/50 rounded-full pl-3 pr-8 sm:pl-4 sm:pr-10 py-1.5 sm:py-2 text-[10px] sm:text-xs md:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all cursor-pointer shadow-sm">
-                            <!-- Las URLs exactas del caso (es/en) se inyectarán aquí -->
                             <option value="./ia-automatizacion-escandallos-restaurantes.html" selected class="bg-white dark:bg-gray-900">ES</option>
                             <option value="../en/caso/ai-recipe-costing-automation-restaurants.html"  class="bg-white dark:bg-gray-900">EN</option>
                         </select>
