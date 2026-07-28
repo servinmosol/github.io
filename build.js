@@ -30,25 +30,23 @@ function buildPage(templateName, outputName, langsArray) {
         const isDefault = lang === defaultLang;
         const basePath = isDefault ? '.' : '..';
 
-        html = html.replace(/\{\{LANG\}\}/g, lang);
-        html = html.replace(/\{\{HREFLANG_TAGS\}\}/g, hreflangTags);
-        html = html.replace(/\{\{BASE_PATH\}\}/g, basePath);
+        html = html.replace(/\{\{LANG\}\}/g, () => lang);
+        html = html.replace(/\{\{HREFLANG_TAGS\}\}/g, () => hreflangTags);
+        html = html.replace(/\{\{BASE_PATH\}\}/g, () => basePath);
 
         // LÓGICA DE FALLBACK PARA EL CATÁLOGO DE SOLUCIONES
         let linkSoluciones = '';
-        if (lang === 'es') {
-            linkSoluciones = './soluciones.html';
-        } else if (lang === 'en') {
+        if (lang === 'es' || lang === 'en') {
             linkSoluciones = './soluciones.html';
         } else {
-            // Si el idioma es FR, DE, PT, NL o IT, los enviamos a la versión en inglés
+            // Si el idioma es FR, DE, PT, NL o IT, enviamos a la versión en inglés
             linkSoluciones = '../en/soluciones.html';
         }
-        html = html.replace(/\{\{LINK_SOLUCIONES\}\}/g, linkSoluciones);
+        html = html.replace(/\{\{LINK_SOLUCIONES\}\}/g, () => linkSoluciones);
 
         langsArray.forEach(l => {
             const selectedPlaceholder = `{{SELECTED_${l.toUpperCase()}}}`;
-            html = html.replace(selectedPlaceholder, l === lang ? 'selected' : '');
+            html = html.replace(new RegExp(selectedPlaceholder, 'g'), () => (l === lang ? 'selected' : ''));
             
             const filePart = outputName === 'index.html' ? '' : outputName;
             let optUrl = isDefault 
@@ -56,17 +54,18 @@ function buildPage(templateName, outputName, langsArray) {
                 : (l === lang ? `./${filePart}` : (l === defaultLang ? `../${filePart}` : `../${l}/${filePart}`));
             
             const optPlaceholder = `{{LANG_OPT_${l.toUpperCase()}}}`;
-            html = html.replace(optPlaceholder, optUrl);
+            html = html.replace(new RegExp(optPlaceholder, 'g'), () => optUrl);
         });
 
+        // REEMPLAZO BLINDADO (Inmune a símbolos $ en el JSON)
         Object.keys(translations).forEach(key => {
             const val = translations[key];
             if (key.includes('meta_description')) {
-                html = html.replace(new RegExp(`(data-i18n="${key}"[^>]*content=")[^"]*(")`), `$1${val}$2`);
+                html = html.replace(new RegExp(`(data-i18n="${key}"[^>]*content=")[^"]*(")`), (match, p1, p2) => p1 + val + p2);
             } else if (html.includes(`data-i18n-placeholder="${key}"`)) {
-                html = html.replace(new RegExp(`(data-i18n-placeholder="${key}"[^>]*placeholder=")[^"]*(")`), `$1${val}$2`);
+                html = html.replace(new RegExp(`(data-i18n-placeholder="${key}"[^>]*placeholder=")[^"]*(")`), (match, p1, p2) => p1 + val + p2);
             } else {
-                html = html.replace(new RegExp(`(data-i18n="${key}"[^>]*>)[\\s\\S]*?(?=<\\/)`, 'g'), `$1${val}`);
+                html = html.replace(new RegExp(`(data-i18n="${key}"[^>]*>)[\\s\\S]*?(?=<\\/)`, 'g'), (match, p1) => p1 + val);
             }
         });
 
@@ -97,12 +96,11 @@ function buildCases() {
         const files = fs.readdirSync(casosDir).filter(f => f.endsWith('.json'));
         const indexData = [];
         
-        // Cargar diccionario general (para botones del footer/header del caso)
+        // Cargar diccionario general
         const localePath = path.join(__dirname, 'locales', `${lang}.json`);
         const translations = fs.existsSync(localePath) ? JSON.parse(fs.readFileSync(localePath, 'utf-8')) : {};
 
         const isDefault = lang === defaultLang;
-        // La ruta final será /caso/ (para ES) o /en/caso/ (para EN)
         const outputBaseDir = isDefault ? path.join(__dirname, 'caso') : path.join(__dirname, lang, 'caso');
         if (!fs.existsSync(outputBaseDir)) fs.mkdirSync(outputBaseDir, { recursive: true });
 
@@ -110,42 +108,51 @@ function buildCases() {
             const caseData = JSON.parse(fs.readFileSync(path.join(casosDir, file), 'utf-8'));
             let html = template;
 
-            // Variables de SEO y Rutas
             const basePath = isDefault ? '..' : '../..';
-            const urlEs = isDefault ? `./${caseData.service_tag}.html` : `../../caso/${caseData.service_tag_hreflang}.html`;
-            const urlEn = isDefault ? `../en/caso/${caseData.service_tag_hreflang}.html` : `./${caseData.service_tag}.html`;
+            
+            // LÓGICA HREFLANG BLINDADA: Si no existe el campo _hreflang en el JSON, usa el tag actual
+            const tagEs = isDefault ? caseData.service_tag : (caseData.service_tag_hreflang || caseData.service_tag);
+            const tagEn = isDefault ? (caseData.service_tag_hreflang || caseData.service_tag) : caseData.service_tag;
+
+            const urlEs = isDefault ? `./${tagEs}.html` : `../../caso/${tagEs}.html`;
+            const urlEn = isDefault ? `../en/caso/${tagEn}.html` : `./${tagEn}.html`;
             
             const hreflangTags = `
-    <link rel="alternate" hreflang="es" href="${DOMAIN}/caso/${isDefault ? caseData.service_tag : caseData.service_tag_hreflang}.html" />
-    <link rel="alternate" hreflang="en" href="${DOMAIN}/en/caso/${isDefault ? caseData.service_tag_hreflang : caseData.service_tag}.html" />`;
+    <link rel="alternate" hreflang="es" href="${DOMAIN}/caso/${tagEs}.html" />
+    <link rel="alternate" hreflang="en" href="${DOMAIN}/en/caso/${tagEn}.html" />`;
 
             // Inyectar Rutas Base
-            html = html.replace(/\{\{LANG\}\}/g, lang);
-            html = html.replace(/\{\{BASE_PATH\}\}/g, basePath);
-            html = html.replace(/\{\{HREFLANG_TAGS\}\}/g, hreflangTags);
-            html = html.replace(/\{\{URL_ES\}\}/g, urlEs);
-            html = html.replace(/\{\{URL_EN\}\}/g, urlEn);
-            html = html.replace(/\{\{SELECTED_ES\}\}/g, isDefault ? 'selected' : '');
-            html = html.replace(/\{\{SELECTED_EN\}\}/g, !isDefault ? 'selected' : '');
-            html = html.replace(/\{\{CURRENT_DATE\}\}/g, today);
+            html = html.replace(/\{\{LANG\}\}/g, () => lang);
+            html = html.replace(/\{\{BASE_PATH\}\}/g, () => basePath);
+            html = html.replace(/\{\{HREFLANG_TAGS\}\}/g, () => hreflangTags);
+            html = html.replace(/\{\{URL_ES\}\}/g, () => urlEs);
+            html = html.replace(/\{\{URL_EN\}\}/g, () => urlEn);
+            html = html.replace(/\{\{SELECTED_ES\}\}/g, () => (isDefault ? 'selected' : ''));
+            html = html.replace(/\{\{SELECTED_EN\}\}/g, () => (!isDefault ? 'selected' : ''));
+            html = html.replace(/\{\{CURRENT_DATE\}\}/g, () => today);
 
-            // Inyectar Datos del JSON del Caso
+            // Inyectar Datos del JSON del Caso de forma segura
             const keysToReplace = ['SEO_TITLE', 'SEO_DESC', 'SERVICE_TAG', 'CATEGORY', 'TITLE', 'AUTHOR_NAME', 'AUTHOR_ROLE', 'AUTHOR_PITCH', 'AUTHOR_IMAGE', 'BODY'];
             keysToReplace.forEach(key => {
                 const val = caseData[key.toLowerCase()] || '';
-                html = html.replace(new RegExp(`\\{\\{${key}\\}\\}`, 'g'), val);
+                html = html.replace(new RegExp(`\\{\\{${key}\\}\\}`, 'g'), () => val);
             });
-
-            // Inyectar traducciones estáticas del template (Botones, Footer)
+            
+            // Generar URL de WhatsApp dinámica
+            const waTemplate = translations['wa_case_msg'] || "Hola, vengo del caso: {TITLE}. Me gustaría hablar con un experto.";
+            const waText = waTemplate.replace('{TITLE}', caseData.title);
+            html = html.replace(/\{\{WA_CASE_URL\}\}/g, () => encodeURIComponent(waText));
+            
+            // Inyectar traducciones estáticas del template de forma segura
             Object.keys(translations).forEach(key => {
                 const val = translations[key];
-                html = html.replace(new RegExp(`(data-i18n="${key}"[^>]*>)[\\s\\S]*?(?=<\\/)`, 'g'), `$1${val}`);
+                html = html.replace(new RegExp(`(data-i18n="${key}"[^>]*>)[\\s\\S]*?(?=<\\/)`, 'g'), (match, p1) => p1 + val);
             });
 
             // Guardar HTML estático
             fs.writeFileSync(path.join(outputBaseDir, `${caseData.service_tag}.html`), html);
 
-            // Alimentar el índice
+            // Alimentar el índice del catálogo
             indexData.push({
                 service_tag: caseData.service_tag,
                 category: caseData.category,
@@ -156,7 +163,7 @@ function buildCases() {
             });
         });
 
-        // Generar el archivo índice para el buscador en este idioma
+        // Generar el archivo índice
         fs.writeFileSync(path.join(__dirname, `indice-soluciones-${lang}.json`), JSON.stringify(indexData));
         console.log(`✅ Procesados ${files.length} casos en [${lang.toUpperCase()}] y generado su índice.`);
     });

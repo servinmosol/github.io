@@ -211,9 +211,11 @@
   
   "sol_empty_title": "No hemos encontrado ningún caso exacto",
   "sol_empty_desc": "Prueba a buscar con otras palabras o quita los filtros activos.",
-  
+
   "cat_seo": "SEO y Posicionamiento",
   "cat_api": "APIs & Cloud",
   "cat_ia": "IA & Bots",
-  "cat_custom": "Sistemas a Medida"
+  "cat_custom": "Sistemas a Medida",
+  
+  "wa_case_msg": "Hola, vengo del caso: {TITLE}. Me gustaría hablar con un experto."
 }
