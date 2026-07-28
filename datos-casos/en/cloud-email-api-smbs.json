@@ -1,0 +1,13 @@
+{
+    "service_tag": "cloud-email-api-smbs",
+    "service_tag_hreflang": "api-cloud-email-pymes",
+    "seo_title": "Cloud Email API for SMBs: Save on Subscriptions",
+    "seo_desc": "Tired of paying hundreds of dollars for Mailchimp? We integrate AWS SES into your small business to send thousands of emails for pennies.",
+    "category": "APIs & Cloud",
+    "author_name": "Antonio",
+    "author_role": "Senior Engineer & Cloud Specialist",
+    "author_image": "/img/avatar-antonio.webp",
+    "author_pitch": "I have seen dozens of freelancers drown paying email marketing subscriptions that grow every month. You do not need expensive software. I design clean Cloud integrations so you can send your campaigns by connecting directly to the source, paying only pennies for what you actually consume.",
+    "title": "Cloud Email API Integration: Stop Paying Abusive Fees to Send Emails",
+    "body": "<p><strong>Is your email marketing bill constantly rising even though your small business isn't profitable yet?</strong></p>\n<p>For an entrepreneur, communicating with customers is vital. As your list grows, traditional platforms punish your success by raising their rates to hundreds of dollars. You are losing profit margins just to maintain the right to send newsletters.</p>\n<h3>The trap of All-in-One platforms</h3>\n<p>They sell you complex tools that a freelancer rarely utilizes. You end up paying for a gigantic infrastructure when all you need is to deliver a message. <strong>Paying for the size of your list is an unfair tax on your growth</strong>.</p>\n<h3>Our solution: Cloud SES API Integration</h3>\n<p>At LANZAESTUDIO, we connect your store or blog directly to Cloud servers. We configure your domain to ensure maximum deliverability and provide a simple dashboard to send your campaigns.</p>\n<ol>\n<li><strong>Direct Connection:</strong> We integrate the API into your website, eliminating middlemen and monthly fees.</li>\n<li><strong>DNS Configuration:</strong> We adjust DKIM and SPF records so your emails don't end up in spam.</li>\n<li><strong>Simplified Dashboard:</strong> We create a minimalist interface to write your campaigns without distractions.</li>\n<li><strong>Automatic Management:</strong> The architecture cleans your list of invalid emails instantly.</li>\n</ol>\n<h3>The Real Impact on your Small Business</h3>\n<ul>\n<li><strong>Cost Savings:</strong> Send thousands of emails for pennies and save hundreds of dollars a year.</li>\n<li><strong>Data Ownership:</strong> Your contacts stay in your own database without relying on third parties.</li>\n<li><strong>Corporate Deliverability:</strong> Enjoy a professional infrastructure adapted to your budget.</li>\n</ul>"
+  }

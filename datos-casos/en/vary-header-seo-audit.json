@@ -1,0 +1,13 @@
+{
+    "service_tag": "vary-header-seo-audit",
+    "service_tag_hreflang": "auditoria-cabecera-vary-seo",
+    "seo_title": "Vary Header Audit: Fix Silent Mobile Deindexing Issues",
+    "seo_desc": "Eliminate silent Google deindexing. We audit the Vary: User-Agent header to recover your organic traffic and B2B conversions instantly.",
+    "category": "SEO and Search Rankings",
+    "author_name": "Jacinto",
+    "author_role": "CEO & Founder Lanza estudio",
+    "author_image": "/img/avatar-jac.webp",
+    "author_pitch": "I have seen dozens of SMEs lose 80% of their mobile traffic overnight due to an invisible error in their web server configuration. Do not let an invisible technical flaw destroy your customer acquisition.",
+    "title": "Misconfigured Vary Header: The Server Flaw Deindexing Your Mobile Site",
+    "body": "<p><strong>Did you know that Google might be indexing the desktop version of your website when crawling from a smartphone, completely destroying your search rankings?</strong></p><p>Many B2B entrepreneurs and SMEs implement dynamic responsive serving to optimize loading times based on the device, but they forget to communicate this change at the infrastructure level, losing thousands of dollars in qualified leads due to an invisible caching issue.</p><h3>The trap of an invisible dynamic design</h3><p>Standard servers usually store a single HTML version that is delivered to the first visitor without discriminating the source agent. <strong>A modern website that is blind to Google's mobile bot generates zero organic sales</strong>.</p><h3>Our solution: Core Injection of the Vary Header</h3><p>At LANZA ESTUDIO, we fix this bottleneck from the root by directly optimizing the HTTP response of your web architecture.</p><ol><li><strong>Simulated request analysis:</strong> We evaluate how your server behaves during specific crawls from Googlebot Mobile.</li><li><strong>Vary: User-Agent instruction injection:</strong> We modify the server header logic to force a clean split of the cache.</li><li><strong>Dynamic content alignment:</strong> We guarantee that view routing delivers the correct metadata instantly.</li><li><strong>Real-time monitoring:</strong> We force reindexing through Google's API to validate immediate recovery.</li></ol><h3>The Real Impact on Organic Traffic</h3><ul><li><strong>Stable ranking recovery:</strong> You will consistently reappear in search results performed from smartphones.</li><li><strong>Drastic conversion improvement:</strong> Users will always receive the optimal interface based on their screen, with no hidden errors.</li><li><strong>Total Crawl Budget efficiency:</strong> We ease Google's crawling, saving server resources and accelerating indexing times.</li></ul>"
+  }
