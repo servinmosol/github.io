@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// LÓGICA DEL CATÁLOGO DE SOLUCIONES (FETCH JSON)
+// LÓGICA DEL CATÁLOGO DE SOLUCIONES (A PRUEBA DE IDIOMAS)
 // ==========================================
 async function initSolutionsCatalog() {
     const grid = document.getElementById('solutions-grid');
@@ -208,32 +208,48 @@ async function initSolutionsCatalog() {
     const searchInput = document.getElementById('search-input');
     const filterButtons = document.querySelectorAll('.filter-btn');
 
-    if (!grid) return; // Si no estamos en el catálogo, abortamos
+    if (!grid) return; 
 
-    // Detectar el idioma actual de la web y el basePath
     const lang = document.documentElement.lang || 'es';
     const basePath = lang === 'es' ? '.' : '..'; 
     const isDefault = lang === 'es';
 
     let solutions = [];
-    let currentFilter = 'all';
+    let currentFilterId = 'all';
     let currentSearch = '';
 
-    // Cargar los 300 casos del JSON generado por build.js
+    // Extraemos las traducciones directamente de los botones renderizados
+    const categoryNames = {
+        'seo': document.querySelector('button[data-id="seo"]')?.textContent.trim() || 'SEO',
+        'api': document.querySelector('button[data-id="api"]')?.textContent.trim() || 'APIs',
+        'ia': document.querySelector('button[data-id="ia"]')?.textContent.trim() || 'IA',
+        'custom': document.querySelector('button[data-id="custom"]')?.textContent.trim() || 'Custom'
+    };
+
+    // Función inteligente que averigua qué ID interno tiene una categoría sin importar su idioma
+    function getInternalId(catString) {
+        const str = (catString || '').toLowerCase();
+        if (str.includes('api')) return 'api';
+        if (str.includes('ia') || str.includes('ai') || str.includes('bot')) return 'ia';
+        if (str.includes('medida') || str.includes('custom') || str.includes('system')) return 'custom';
+        return 'seo'; 
+    }
+
     try {
         const response = await fetch(`${basePath}/indice-soluciones-${lang}.json`);
         if (!response.ok) throw new Error('Índice no encontrado');
         solutions = await response.json();
     } catch (error) {
         console.error("Error cargando los casos:", error);
-        return; // Salimos si falla
+        return; 
     }
 
     function renderCards() {
         grid.innerHTML = '';
         
         const filtered = solutions.filter(item => {
-            const matchCategory = currentFilter === 'all' || item.category === currentFilter;
+            const itemId = getInternalId(item.category);
+            const matchCategory = currentFilterId === 'all' || itemId === currentFilterId;
             const matchSearch = item.title.toLowerCase().includes(currentSearch.toLowerCase());
             return matchCategory && matchSearch;
         });
@@ -250,23 +266,26 @@ async function initSolutionsCatalog() {
         emptyState.classList.remove('flex');
 
         filtered.forEach(item => {
+            const itemId = getInternalId(item.category);
+            
+            // Asignación de colores por ID, inmune al idioma
             let badgeColor = "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800/50";
-            if(item.category === 'APIs & Cloud') badgeColor = "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 border-blue-200 dark:border-blue-800/50";
-            if(item.category === 'IA & Bots') badgeColor = "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 border-purple-200 dark:border-purple-800/50";
-            if(item.category === 'Sistemas a Medida') badgeColor = "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 border-amber-200 dark:border-amber-800/50";
+            if(itemId === 'api') badgeColor = "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 border-blue-200 dark:border-blue-800/50";
+            else if(itemId === 'ia') badgeColor = "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 border-purple-200 dark:border-purple-800/50";
+            else if(itemId === 'custom') badgeColor = "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 border-amber-200 dark:border-amber-800/50";
 
             const imgHtml = item.author_image 
                 ? `<img src="${basePath}${item.author_image}" alt="${item.author_name}" class="w-full h-full object-cover">`
                 : `<img src="https://ui-avatars.com/api/?name=${item.author_name}&background=10b981&color=fff" class="w-full h-full object-cover">`;
 
-            // Construir ruta correcta al caso (ej: ./caso/abismo.html o ../en/caso/abyss.html)
             const caseUrl = isDefault ? `./caso/${item.service_tag}.html` : `../${lang}/caso/${item.service_tag}.html`;
-
+            
+            // El texto de la etiqueta sale directamente de categoryNames (traducido siempre)
             const cardHTML = `
                 <a href="${caseUrl}" class="group flex flex-col justify-between p-6 sm:p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300">
                     <div>
                         <span class="inline-block px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm border mb-5 ${badgeColor}">
-                            ${item.category}
+                            ${categoryNames[itemId]}
                         </span>
                         <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-3">
                             ${item.title}
@@ -297,7 +316,8 @@ async function initSolutionsCatalog() {
             target.classList.add('bg-gray-900', 'text-white', 'dark:bg-white', 'dark:text-gray-900', 'active', 'shadow-md');
             target.classList.remove('bg-white/60', 'dark:bg-gray-900/60', 'text-gray-600', 'dark:text-gray-300');
 
-            currentFilter = target.getAttribute('data-filter');
+            // Ahora filtramos usando el ID interno robusto
+            currentFilterId = target.getAttribute('data-id');
             renderCards();
         });
     });
