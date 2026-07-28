@@ -196,5 +196,19 @@
   "exp_role_6": "Arquitecto Software",
   "exp_cases_6": "36 Casos",
   "exp_role_7": "Arquitecta Software y BBDD",
-  "exp_cases_7": "36 Casos"
+  "exp_cases_7": "36 Casos",
+  "nav_home": "Inicio",
+  
+  "sol_meta_title": "Casos de Éxito y Soluciones - Lanza Estudio",
+  "sol_meta_description": "Explora cientos de implementaciones técnicas donde hemos resuelto cuellos de botella empresariales.",
+  
+  "sol_badge": "Casos de Éxito",
+  "sol_title": "Soluciones reales.<br>Resultados medibles.",
+  "sol_subtitle": "Explora más de 300 implementaciones técnicas donde hemos resuelto cuellos de botella empresariales mediante automatización y arquitecturas a medida.",
+  
+  "sol_search_ph": "Buscar por problema o palabra clave...",
+  "sol_filter_all": "Todos",
+  
+  "sol_empty_title": "No hemos encontrado ningún caso exacto",
+  "sol_empty_desc": "Prueba a buscar con otras palabras o quita los filtros activos."
 }
