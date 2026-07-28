@@ -210,5 +210,10 @@
   "sol_filter_all": "Todos",
   
   "sol_empty_title": "No hemos encontrado ningún caso exacto",
-  "sol_empty_desc": "Prueba a buscar con otras palabras o quita los filtros activos."
+  "sol_empty_desc": "Prueba a buscar con otras palabras o quita los filtros activos.",
+  
+  "cat_seo": "SEO y Posicionamiento",
+  "cat_api": "APIs & Cloud",
+  "cat_ia": "IA & Bots",
+  "cat_custom": "Sistemas a Medida"
 }

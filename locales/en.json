@@ -217,5 +217,10 @@
   "nav_back_sol": "Catalog",
   "share_title": "Share:",
   "sol_cta_title": "Does your company suffer from a similar problem?",
-  "consult_btn": "Consult with an expert now"
+  "consult_btn": "Consult with an expert now",
+
+  "cat_seo": "SEO & Positioning",
+  "cat_api": "APIs & Cloud",
+  "cat_ia": "AI & Bots",
+  "cat_custom": "Custom Systems"
 }
