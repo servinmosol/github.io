@@ -34,6 +34,18 @@ function buildPage(templateName, outputName, langsArray) {
         html = html.replace(/\{\{HREFLANG_TAGS\}\}/g, hreflangTags);
         html = html.replace(/\{\{BASE_PATH\}\}/g, basePath);
 
+        // LÓGICA DE FALLBACK PARA EL CATÁLOGO DE SOLUCIONES
+        let linkSoluciones = '';
+        if (lang === 'es') {
+            linkSoluciones = './soluciones.html';
+        } else if (lang === 'en') {
+            linkSoluciones = './soluciones.html';
+        } else {
+            // Si el idioma es FR, DE, PT, NL o IT, los enviamos a la versión en inglés
+            linkSoluciones = '../en/soluciones.html';
+        }
+        html = html.replace(/\{\{LINK_SOLUCIONES\}\}/g, linkSoluciones);
+
         langsArray.forEach(l => {
             const selectedPlaceholder = `{{SELECTED_${l.toUpperCase()}}}`;
             html = html.replace(selectedPlaceholder, l === lang ? 'selected' : '');
