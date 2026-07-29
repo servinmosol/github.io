@@ -132,6 +132,9 @@ function buildCases() {
             html = html.replace(/\{\{SELECTED_ES\}\}/g, () => (isDefault ? 'selected' : ''));
             html = html.replace(/\{\{SELECTED_EN\}\}/g, () => (!isDefault ? 'selected' : ''));
             html = html.replace(/\{\{CURRENT_DATE\}\}/g, () => today);
+            // Generar URL exacta para compartir (sin /es/ si es el idioma por defecto)
+            const shareUrl = isDefault ? `${DOMAIN}/caso/${tagEs}.html` : `${DOMAIN}/${lang}/caso/${tagEn}.html`;
+            html = html.replace(/\{\{SHARE_URL\}\}/g, () => shareUrl);
 
             // Inyectar Datos del JSON del Caso de forma segura
             const keysToReplace = ['SEO_TITLE', 'SEO_DESC', 'SERVICE_TAG', 'CATEGORY', 'TITLE', 'AUTHOR_NAME', 'AUTHOR_ROLE', 'AUTHOR_PITCH', 'AUTHOR_IMAGE', 'BODY'];
