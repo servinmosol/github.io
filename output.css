@@ -1036,6 +1036,9 @@
   .bg-\[repeating-linear-gradient\(45deg\,transparent\,transparent_8px\,\#80808015_8px\,\#80808015_9px\)\] {
     background-image: repeating-linear-gradient(45deg,transparent,transparent 8px,#80808015 8px,#80808015 9px);
   }
+  .bg-\[repeating-radial-gradient\(circle_at_center\,transparent\,transparent_30px\,\#80808015_30px\,\#80808015_31px\)\] {
+    background-image: repeating-radial-gradient(circle at center,transparent,transparent 30px,#80808015 30px,#80808015 31px);
+  }
   .from-emerald-50 {
     --tw-gradient-from: var(--color-emerald-50);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -2274,6 +2277,9 @@
   }
   .dark\:bg-\[repeating-linear-gradient\(45deg\,transparent\,transparent_8px\,\#ffffff0a_8px\,\#ffffff0a_9px\)\]:where(.dark, .dark *) {
     background-image: repeating-linear-gradient(45deg,transparent,transparent 8px,#ffffff0a 8px,#ffffff0a 9px);
+  }
+  .dark\:bg-\[repeating-radial-gradient\(circle_at_center\,transparent\,transparent_30px\,\#ffffff0a_30px\,\#ffffff0a_31px\)\]:where(.dark, .dark *) {
+    background-image: repeating-radial-gradient(circle at center,transparent,transparent 30px,#ffffff0a 30px,#ffffff0a 31px);
   }
   .dark\:from-emerald-500\/10:where(.dark, .dark *) {
     --tw-gradient-from: color-mix(in srgb, oklch(69.6% 0.17 162.48) 10%, transparent);
