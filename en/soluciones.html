@@ -30,42 +30,59 @@
 
         <!-- HEADER FLOTANTE TIPO "GLASS" -->
         <div class="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 pt-4 sm:pt-6 pointer-events-none">
-            <header class="w-full max-w-5xl mx-auto flex justify-between items-center px-5 py-3 md:px-6 md:py-4 rounded-2xl md:rounded-full bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-lg shadow-gray-200/20 dark:shadow-black/20 pointer-events-auto transition-all duration-300">
+            <header class="w-full max-w-5xl mx-auto flex flex-wrap justify-between items-center gap-y-3 px-4 py-3 md:px-6 md:py-4 rounded-2xl md:rounded-full bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-lg shadow-gray-200/20 dark:shadow-black/20 pointer-events-auto transition-all duration-300">
                 
-                <!-- LOGO -->
-                <a href="./" class="flex items-center gap-3 font-bold text-lg md:text-xl tracking-tight focus:outline-none group">
+                <!-- LOGO (Actúa como Inicio, order 1) -->
+                <a href="../" class="flex items-center gap-3 font-bold text-lg md:text-xl tracking-tight focus:outline-none group order-1">
                     <img src="../img/web/ico.png" alt="Lanza Estudio" class="h-8 md:h-9 w-auto object-contain group-hover:scale-110 transition-transform duration-300">
                     <span class="hidden md:block bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
                         Lanza Estudio
                     </span>
                 </a>
                 
-                <!-- CONTROLES -->
-                <div class="flex items-center gap-2 sm:gap-3 md:gap-5">
-                    
-                    <!-- Botón Volver al Inicio -->
-                    <a href="./" class="group flex items-center justify-center h-9 md:h-10 px-3 sm:px-4 md:px-6 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-[10px] sm:text-xs md:text-sm hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 transition-all duration-300 shadow-md min-w-[90px] sm:min-w-[100px] md:min-w-[120px]">
-                        <span class="mr-1 sm:mr-2 transition-transform duration-300 group-hover:-translate-x-1 font-black">←</span>
-                        <span data-i18n="nav_home">Home</span>
-                    </a>
-
-                    <!-- Selector Idioma (SOLO ES y EN) -->
+                <!-- CONTROLES IDIOMA/TEMA (Order 2 en móvil, Order 3 en PC) -->
+                <div class="flex items-center gap-2 sm:gap-3 order-2 md:order-3">
+                    <!-- Selector Idioma -->
                     <div class="relative group">
                         <select id="lang-selector" onchange="location = this.value;" class="appearance-none bg-gray-100/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 font-semibold border border-transparent hover:border-emerald-400/50 dark:hover:border-emerald-500/50 rounded-full pl-3 pr-8 sm:pl-4 sm:pr-10 py-1.5 sm:py-2 text-[10px] sm:text-xs md:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all cursor-pointer shadow-sm">
                             <option value="../soluciones.html"  class="bg-white dark:bg-gray-900">ES</option>
                             <option value="./soluciones.html" selected class="bg-white dark:bg-gray-900">EN</option>
                         </select>
-                        <!-- Flecha -->
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 sm:px-3 text-gray-500 dark:text-gray-400 group-hover:text-emerald-500 transition-colors">
                             <svg class="fill-current h-3 w-3 sm:h-4 sm:w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                         </div>
                     </div>
-
                     <!-- Botón de Tema -->
                     <button id="theme-toggle" class="p-2 md:p-2.5 rounded-full bg-gray-100/80 dark:bg-gray-800/80 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-gray-800 dark:text-gray-200 border border-transparent hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-300 shadow-sm" aria-label="Cambiar tema">
                         <span id="theme-icon" class="block transition-transform duration-300 hover:rotate-12 text-xs sm:text-sm md:text-base">🌙</span>
                     </button>
                 </div>
+
+                <!-- BUSCADOR CON BOTÓN DE FILTROS (Order 3 en móvil, Order 2 en PC) -->
+                <div class="w-full md:w-auto md:flex-1 order-3 md:order-2 relative flex items-center md:mx-6 group">
+                    <span class="absolute left-3.5 text-gray-400 text-base grayscale opacity-70 group-focus-within:opacity-100 group-focus-within:grayscale-0 transition-all">🔍</span>
+                    
+                    <input type="text" id="search-input" data-i18n-placeholder="sol_search_ph" placeholder="Search by problem or keyword..." class="w-full pl-10 pr-12 py-2.5 md:py-2 text-sm rounded-full bg-white/80 dark:bg-gray-900/80 border border-gray-200 dark:border-gray-700 focus:border-emerald-500 dark:focus:border-emerald-500 outline-none text-gray-900 dark:text-gray-100 placeholder-gray-400 transition-all shadow-inner font-medium">
+                    
+                    <!-- Botón Toggle de Filtros (dentro del input) -->
+                    <button id="filter-toggle" class="absolute right-1.5 p-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-emerald-100 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all" aria-label="Abrir filtros">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h8a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h4a1 1 0 110 2H4a1 1 0 01-1-1z"/></svg>
+                    </button>
+
+                    <!-- Menú Desplegable de Filtros -->
+                    <div id="filter-menu" class="hidden absolute top-full right-0 mt-3 p-4 w-[280px] sm:w-[320px] bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 z-[100]">
+                        <h4 class="text-xs font-black uppercase tracking-widest text-gray-400 mb-3" data-i18n="filter_title">Categories</h4>
+                        <div class="flex flex-wrap gap-2" id="filter-buttons">
+                            <!-- Botones más pequeños para el menú -->
+                            <button data-id="all" data-i18n="sol_filter_all" class="filter-btn active px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-gray-900 text-white dark:bg-white dark:text-gray-900 shadow-md">All</button>
+                            <button data-id="seo" data-i18n="cat_seo" class="filter-btn px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">SEO & Positioning</button>
+                            <button data-id="api" data-i18n="cat_api" class="filter-btn px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">APIs & Cloud</button>
+                            <button data-id="ia" data-i18n="cat_ia" class="filter-btn px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">AI & Bots</button>
+                            <button data-id="custom" data-i18n="cat_custom" class="filter-btn px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">Custom Systems</button>
+                        </div>
+                    </div>
+                </div>
+
             </header>
         </div>
 
@@ -73,30 +90,12 @@
         <main class="w-full max-w-7xl mx-auto px-6 pt-32 pb-24 md:pt-40 md:pb-32 relative z-10 flex-grow">
             
             <!-- Cabecera del Catálogo -->
-            <div class="flex flex-col items-center text-center gap-4 mb-12">
+            <div class="flex flex-col items-center text-center gap-4 mb-16">
                 <span data-i18n="sol_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm border border-emerald-200 dark:border-emerald-800/50">Success Stories</span>
                 <h1 data-i18n="sol_title" class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white leading-[1.15] mb-12">Real solutions.<br>Measurable results.</h1>
                 <p data-i18n="sol_subtitle" class="text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-2xl mt-4">Explore hundreds of technical implementations where we have solved corporate bottlenecks through automation and custom architectures.</p>
             </div>
 
-            <!-- Buscador y Filtros -->
-            <div class="flex flex-col gap-6 items-center w-full max-w-4xl mx-auto mb-16">
-                
-                <!-- Buscador de texto libre -->
-                <div class="relative w-full md:w-2/3 group">
-                    <input type="text" id="search-input" data-i18n-placeholder="sol_search_ph" placeholder="Search by problem or keyword..." class="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border-2 border-gray-200 dark:border-gray-800 focus:border-emerald-500 dark:focus:border-emerald-500 outline-none text-gray-900 dark:text-gray-100 placeholder-gray-400 transition-all shadow-sm font-medium">
-                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl grayscale opacity-70 group-focus-within:opacity-100 group-focus-within:grayscale-0 transition-all">🔍</span>
-                </div>
-
-                <!-- Filtros por Categoría (Píldoras) -->
-                <div class="flex flex-wrap justify-center gap-3 w-full" id="filter-buttons">
-                    <button data-id="all" data-i18n="sol_filter_all" class="filter-btn active px-5 py-2 rounded-full text-sm font-bold transition-all bg-gray-900 text-white dark:bg-white dark:text-gray-900 shadow-md hover:-translate-y-0.5">All</button>
-                    <button data-id="seo" data-i18n="cat_seo" class="filter-btn px-5 py-2 rounded-full text-sm font-bold transition-all bg-white/60 dark:bg-gray-900/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:-translate-y-0.5 shadow-sm">SEO & Positioning</button>
-                    <button data-id="api" data-i18n="cat_api" class="filter-btn px-5 py-2 rounded-full text-sm font-bold transition-all bg-white/60 dark:bg-gray-900/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:-translate-y-0.5 shadow-sm">APIs & Cloud</button>
-                    <button data-id="ia" data-i18n="cat_ia" class="filter-btn px-5 py-2 rounded-full text-sm font-bold transition-all bg-white/60 dark:bg-gray-900/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:-translate-y-0.5 shadow-sm">AI & Bots</button>
-                    <button data-id="custom" data-i18n="cat_custom" class="filter-btn px-5 py-2 rounded-full text-sm font-bold transition-all bg-white/60 dark:bg-gray-900/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:-translate-y-0.5 shadow-sm">Custom Systems</button>
-                </div>
-            </div>
 
             <!-- Contenedor del Grid (Aquí inyecta JS las tarjetas) -->
             <div id="solutions-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

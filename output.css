@@ -313,6 +313,9 @@
   .top-\[-20\%\] {
     top: -20%;
   }
+  .top-full {
+    top: 100%;
+  }
   .-right-10 {
     right: calc(var(--spacing) * -10);
   }
@@ -321,6 +324,9 @@
   }
   .right-0 {
     right: 0px;
+  }
+  .right-1\.5 {
+    right: calc(var(--spacing) * 1.5);
   }
   .right-5 {
     right: calc(var(--spacing) * 5);
@@ -331,8 +337,8 @@
   .left-1\/2 {
     left: calc(1 / 2 * 100%);
   }
-  .left-4 {
-    left: calc(var(--spacing) * 4);
+  .left-3\.5 {
+    left: calc(var(--spacing) * 3.5);
   }
   .left-8 {
     left: calc(var(--spacing) * 8);
@@ -360,6 +366,15 @@
   }
   .z-\[100\] {
     z-index: 100;
+  }
+  .order-1 {
+    order: 1;
+  }
+  .order-2 {
+    order: 2;
+  }
+  .order-3 {
+    order: 3;
   }
   .container {
     width: 100%;
@@ -393,6 +408,9 @@
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
   }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
@@ -586,6 +604,9 @@
   .w-\[260px\] {
     width: 260px;
   }
+  .w-\[280px\] {
+    width: 280px;
+  }
   .w-\[300px\] {
     width: 300px;
   }
@@ -750,6 +771,9 @@
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  .gap-y-3 {
+    row-gap: calc(var(--spacing) * 3);
   }
   :where(.divide-y > :not(:last-child)) {
     --tw-divide-y-reverse: 0;
@@ -1087,6 +1111,9 @@
   .object-cover {
     object-fit: cover;
   }
+  .p-1\.5 {
+    padding: calc(var(--spacing) * 1.5);
+  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -1126,8 +1153,8 @@
   .py-1\.5 {
     padding-block: calc(var(--spacing) * 1.5);
   }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
@@ -1159,11 +1186,11 @@
   .pr-2 {
     padding-right: calc(var(--spacing) * 2);
   }
-  .pr-4 {
-    padding-right: calc(var(--spacing) * 4);
-  }
   .pr-8 {
     padding-right: calc(var(--spacing) * 8);
+  }
+  .pr-12 {
+    padding-right: calc(var(--spacing) * 12);
   }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
@@ -1186,8 +1213,8 @@
   .pl-3 {
     padding-left: calc(var(--spacing) * 3);
   }
-  .pl-12 {
-    padding-left: calc(var(--spacing) * 12);
+  .pl-10 {
+    padding-left: calc(var(--spacing) * 10);
   }
   .text-center {
     text-align: center;
@@ -1588,10 +1615,6 @@
     .group-hover\/btn\:rotate-6:is(:where(.group\/btn):hover *) {
       rotate: 6deg;
     }
-    .hover\:-translate-y-0\.5:hover {
-      --tw-translate-y: calc(var(--spacing) * -0.5);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
     .hover\:-translate-y-1:hover {
       --tw-translate-y: calc(var(--spacing) * -1);
       translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -1622,9 +1645,6 @@
       .hover\:border-emerald-400\/50:hover {
         border-color: color-mix(in oklab, var(--color-emerald-400) 50%, transparent);
       }
-    }
-    .hover\:border-emerald-500:hover {
-      border-color: var(--color-emerald-500);
     }
     .hover\:border-emerald-500\/30:hover {
       border-color: color-mix(in srgb, oklch(69.6% 0.17 162.48) 30%, transparent);
@@ -1847,8 +1867,17 @@
     .md\:left-10 {
       left: calc(var(--spacing) * 10);
     }
+    .md\:order-2 {
+      order: 2;
+    }
+    .md\:order-3 {
+      order: 3;
+    }
     .md\:col-span-2 {
       grid-column: span 2 / span 2;
+    }
+    .md\:mx-6 {
+      margin-inline: calc(var(--spacing) * 6);
     }
     .md\:mt-0 {
       margin-top: 0px;
@@ -1874,14 +1903,14 @@
     .md\:w-1\/2 {
       width: calc(1 / 2 * 100%);
     }
-    .md\:w-2\/3 {
-      width: calc(2 / 3 * 100%);
-    }
     .md\:w-auto {
       width: auto;
     }
     .md\:min-w-\[120px\] {
       min-width: 120px;
+    }
+    .md\:flex-1 {
+      flex: 1;
     }
     .md\:rotate-x-6 {
       --tw-rotate-x: rotateX(6deg);
@@ -1931,6 +1960,9 @@
     }
     .md\:px-6 {
       padding-inline: calc(var(--spacing) * 6);
+    }
+    .md\:py-2 {
+      padding-block: calc(var(--spacing) * 2);
     }
     .md\:py-4 {
       padding-block: calc(var(--spacing) * 4);

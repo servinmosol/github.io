@@ -224,5 +224,7 @@
   "cat_ia": "AI & Bots",
   "cat_custom": "Custom Systems",
 
-  "wa_case_msg": "Hi, I am coming from the case: {TITLE}. I would like to speak with an expert."
+  "wa_case_msg": "Hi, I am coming from the case: {TITLE}. I would like to speak with an expert.",
+  
+  "filter_title": "Categories"
 }

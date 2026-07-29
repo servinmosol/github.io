@@ -217,5 +217,7 @@
   "cat_ia": "IA & Bots",
   "cat_custom": "Sistemas a Medida",
   
-  "wa_case_msg": "Hola, vengo del caso: {TITLE}. Me gustaría hablar con un experto."
+  "wa_case_msg": "Hola, vengo del caso: {TITLE}. Me gustaría hablar con un experto.",
+  
+  "filter_title": "Categorías"
 }
