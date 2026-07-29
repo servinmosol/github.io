@@ -95,6 +95,7 @@
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --blur-sm: 8px;
     --blur-md: 12px;
     --blur-3xl: 64px;
@@ -537,6 +538,9 @@
   }
   .h-48 {
     height: calc(var(--spacing) * 48);
+  }
+  .h-\[1\.25em\] {
+    height: 1.25em;
   }
   .h-\[50vh\] {
     height: 50vh;
@@ -1558,6 +1562,10 @@
     --tw-duration: 700ms;
     transition-duration: 700ms;
   }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+  }
   .ease-out {
     --tw-ease: var(--ease-out);
     transition-timing-function: var(--ease-out);
@@ -1587,6 +1595,10 @@
     }
     .group-hover\:translate-x-1\.5:is(:where(.group):hover *) {
       --tw-translate-x: calc(var(--spacing) * 1.5);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+    .group-hover\:-translate-y-full:is(:where(.group):hover *) {
+      --tw-translate-y: -100%;
       translate: var(--tw-translate-x) var(--tw-translate-y);
     }
     .group-hover\:scale-110:is(:where(.group):hover *) {
