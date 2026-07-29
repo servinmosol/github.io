@@ -556,9 +556,6 @@
   .h-\[520px\] {
     height: 520px;
   }
-  .h-\[800px\] {
-    height: 800px;
-  }
   .h-full {
     height: 100%;
   }
@@ -612,9 +609,6 @@
   }
   .w-\[600px\] {
     width: 600px;
-  }
-  .w-\[800px\] {
-    width: 800px;
   }
   .w-auto {
     width: auto;
@@ -841,10 +835,6 @@
     border-style: var(--tw-border-style);
     border-width: 8px;
   }
-  .border-y {
-    border-block-style: var(--tw-border-style);
-    border-block-width: 1px;
-  }
   .border-t {
     border-top-style: var(--tw-border-style);
     border-top-width: 1px;
@@ -936,12 +926,6 @@
   }
   .bg-emerald-500 {
     background-color: var(--color-emerald-500);
-  }
-  .bg-emerald-500\/5 {
-    background-color: color-mix(in srgb, oklch(69.6% 0.17 162.48) 5%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-emerald-500) 5%, transparent);
-    }
   }
   .bg-emerald-500\/10 {
     background-color: color-mix(in srgb, oklch(69.6% 0.17 162.48) 10%, transparent);
@@ -1049,6 +1033,9 @@
   .bg-\[linear-gradient\(to_right\,\#80808015_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#80808015_1px\,transparent_1px\)\] {
     background-image: linear-gradient(to right,#80808015 1px,transparent 1px),linear-gradient(to bottom,#80808015 1px,transparent 1px);
   }
+  .bg-\[radial-gradient\(\#80808040_1px\,transparent_1px\)\] {
+    background-image: radial-gradient(#80808040 1px,transparent 1px);
+  }
   .from-emerald-50 {
     --tw-gradient-from: var(--color-emerald-50);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -1114,6 +1101,9 @@
   }
   .\[mask-image\:linear-gradient\(to_bottom\,transparent\,black_10\%\,black_90\%\,transparent\)\] {
     mask-image: linear-gradient(to bottom,transparent,black 10%,black 90%,transparent);
+  }
+  .bg-\[size\:24px_24px\] {
+    background-size: 24px 24px;
   }
   .bg-\[size\:32px_32px\] {
     background-size: 32px 32px;
@@ -1527,10 +1517,6 @@
   }
   .blur-\[100px\] {
     --tw-blur: blur(100px);
-    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
-  .blur-\[120px\] {
-    --tw-blur: blur(120px);
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .grayscale {
@@ -2285,6 +2271,9 @@
   }
   .dark\:bg-\[linear-gradient\(to_right\,\#ffffff08_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#ffffff08_1px\,transparent_1px\)\]:where(.dark, .dark *) {
     background-image: linear-gradient(to right,#ffffff08 1px,transparent 1px),linear-gradient(to bottom,#ffffff08 1px,transparent 1px);
+  }
+  .dark\:bg-\[radial-gradient\(\#ffffff30_1px\,transparent_1px\)\]:where(.dark, .dark *) {
+    background-image: radial-gradient(#ffffff30 1px,transparent 1px);
   }
   .dark\:from-emerald-500\/10:where(.dark, .dark *) {
     --tw-gradient-from: color-mix(in srgb, oklch(69.6% 0.17 162.48) 10%, transparent);
