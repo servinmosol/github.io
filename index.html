@@ -338,7 +338,7 @@
         </div>
 
         <!-- CONTENEDOR PRINCIPAL -->
-        <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="flex flex-col items-center text-center gap-4 mb-16">
             <span data-i18n="calc_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm">Diagnóstico Rápido</span>
             <h2 data-i18n="calc_title" class="text-3xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white">Calcula cuánto tiempo y dinero estás perdiendo.</h2>
@@ -399,8 +399,24 @@
         </div>
     </section>
 
-    <!-- SECCIÓN METODOLOGÍA / PROCESO -->
-    <section class="w-full max-w-7xl mx-auto px-6 py-20 border-t border-gray-200/50 dark:border-gray-800/50">
+    <!-- SECCIÓN METODOLOGÍA (LOS 4 PASOS) -->
+    <section id="metodologia" class="relative w-full py-24 md:py-32">
+        
+        <!-- FONDO: Patrón de Cruces (Plano Arquitectónico) difuminado -->
+        <div class="absolute inset-0 pointer-events-none -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+            <svg class="absolute inset-0 w-full h-full opacity-30 dark:opacity-20" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="crosses" width="60" height="60" patternUnits="userSpaceOnUse">
+                        <!-- Dibujo de la cruz exacta -->
+                        <path d="M30 26v8M26 30h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="text-gray-400 dark:text-gray-600"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#crosses)"/>
+            </svg>
+        </div>
+
+        <!-- CONTENEDOR PRINCIPAL -->
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="flex flex-col items-center text-center gap-4 mb-16">
             <span data-i18n="step_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm">Metodología</span>
             <h2 data-i18n="step_title" class="text-3xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white">De la idea al sistema funcionando en 4 pasos.</h2>
@@ -432,6 +448,7 @@
                 <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100" data-i18n="step_4_title">Puesta en Marcha</h3>
                 <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="step_4_desc">Desplegamos el sistema, realizamos pruebas reales y formamos a tu equipo.</p>
             </div>
+        </div>
         </div>
     </section>
 
