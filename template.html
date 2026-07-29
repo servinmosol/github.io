@@ -357,8 +357,16 @@
     </div>
 </section>
 
-    <!-- SECCIÓN CALCULADORA DE AHORRO -->
-    <section class="w-full max-w-7xl mx-auto px-6 py-20 border-t border-gray-200/50 dark:border-gray-800/50">
+    <!-- SECCIÓN DIAGNÓSTICO RÁPIDO (CALCULADORA) -->
+    <section id="calculadora" class="relative w-full py-24 md:py-32">
+        
+        <!-- FONDO: Líneas Diagonales (Scanlines) difuminadas -->
+        <div class="absolute inset-0 pointer-events-none -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+            <div class="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_8px,#80808015_8px,#80808015_9px)] dark:bg-[repeating-linear-gradient(45deg,transparent,transparent_8px,#ffffff0a_8px,#ffffff0a_9px)]"></div>
+        </div>
+
+        <!-- CONTENEDOR PRINCIPAL -->
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
         <div class="flex flex-col items-center text-center gap-4 mb-16">
             <span data-i18n="calc_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm">
                 Diagnóstico Rápido
@@ -421,6 +429,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
