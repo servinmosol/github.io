@@ -1183,6 +1183,9 @@
   .pt-32 {
     padding-top: calc(var(--spacing) * 32);
   }
+  .pt-48 {
+    padding-top: calc(var(--spacing) * 48);
+  }
   .pr-2 {
     padding-right: calc(var(--spacing) * 2);
   }
