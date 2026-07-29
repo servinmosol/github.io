@@ -33,6 +33,7 @@ function buildPage(templateName, outputName, langsArray) {
         html = html.replace(/\{\{LANG\}\}/g, () => lang);
         html = html.replace(/\{\{HREFLANG_TAGS\}\}/g, () => hreflangTags);
         html = html.replace(/\{\{BASE_PATH\}\}/g, () => basePath);
+        html = html.replace(/\{\{HOME_URL\}\}/g, () => isDefault ? './' : `../${lang}/`);
 
         // LÓGICA DE FALLBACK PARA EL CATÁLOGO DE SOLUCIONES
         let linkSoluciones = '';
@@ -124,6 +125,7 @@ function buildCases() {
             // Inyectar Rutas Base
             html = html.replace(/\{\{LANG\}\}/g, () => lang);
             html = html.replace(/\{\{BASE_PATH\}\}/g, () => basePath);
+            html = html.replace(/\{\{HOME_URL\}\}/g, () => isDefault ? '../' : `../../${lang}/`);
             html = html.replace(/\{\{HREFLANG_TAGS\}\}/g, () => hreflangTags);
             html = html.replace(/\{\{URL_ES\}\}/g, () => urlEs);
             html = html.replace(/\{\{URL_EN\}\}/g, () => urlEn);
