@@ -230,7 +230,7 @@
     </main>
 
 <!-- SECCIÓN SERVICIOS -->
-    <section id="servicios" class="relative w-full py-24 md:py-32 border-t border-gray-200 dark:border-gray-800">
+    <section id="servicios" class="relative w-full py-24 md:py-32 border-t border-gray-200/50 dark:border-gray-800/50">
         
         <!-- FONDO: Malla de Puntos (Dotted Grid) difuminada -->
         <div class="absolute inset-0 pointer-events-none -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
@@ -330,7 +330,7 @@
 </section>
 
     <!-- SECCIÓN DIAGNÓSTICO RÁPIDO (CALCULADORA) -->
-    <section id="calculadora" class="relative w-full py-24 md:py-32 border-t border-gray-200 dark:border-gray-800">
+    <section id="calculadora" class="relative w-full py-24 md:py-32 border-t border-gray-200/50 dark:border-gray-800/50">
         
         <!-- FONDO: Líneas Diagonales (Scanlines) difuminadas -->
         <div class="absolute inset-0 pointer-events-none -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
@@ -400,7 +400,7 @@
     </section>
 
     <!-- SECCIÓN METODOLOGÍA (LOS 4 PASOS) -->
-    <section id="metodologia" class="relative w-full py-24 md:py-32 border-t border-gray-200 dark:border-gray-800">
+    <section id="metodologia" class="relative w-full py-24 md:py-32 border-t border-gray-200/50 dark:border-gray-800/50">
         
         <!-- FONDO: Patrón de Cruces (Plano Arquitectónico) difuminado -->
         <div class="absolute inset-0 pointer-events-none -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
@@ -453,7 +453,7 @@
     </section>
 
     <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
-    <section id="faq" class="relative w-full py-24 md:py-32 border-t border-gray-200 dark:border-gray-800">
+    <section id="faq" class="relative w-full py-24 md:py-32 border-t border-gray-200/50 dark:border-gray-800/50">
         
         <!-- FONDO: Ondas concéntricas (Efecto Radar/Señal) difuminadas -->
         <div class="absolute inset-0 pointer-events-none -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] overflow-hidden">
@@ -505,8 +505,24 @@
         </div>
     </section>
 
-<!-- SECCIÓN DE PRECIOS -->
-<section class="w-full max-w-7xl mx-auto px-6 py-20 border-t border-gray-200/50 dark:border-gray-800/50">
+<!-- SECCIÓN INVERSIÓN / PRECIOS -->
+    <section id="inversion" class="relative w-full py-24 md:py-32 border-t border-t border-gray-200/50 dark:border-gray-800/50">
+        
+        <!-- FONDO: Rombos / Diamantes difuminados (Sensación de estructura y valor) -->
+        <div class="absolute inset-0 pointer-events-none -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+            <svg class="absolute inset-0 w-full h-full opacity-30 dark:opacity-20" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="diamonds" width="60" height="60" patternUnits="userSpaceOnUse">
+                        <!-- Dibujo de un rombo exacto -->
+                        <path d="M30 0 L60 30 L30 60 L0 30 Z" fill="none" stroke="currentColor" stroke-width="1.2" class="text-gray-400 dark:text-gray-600"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#diamonds)"/>
+            </svg>
+        </div>
+
+        <!-- CONTENEDOR PRINCIPAL -->
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
     <div class="flex flex-col items-center text-center gap-4 mb-16">
         <span data-i18n="price_badge" class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm border border-emerald-200 dark:border-emerald-800/50">Investimento</span>
         <h2 data-i18n="price_title" class="text-3xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white">Preços pensados para que não tenha desculpas.</h2>
@@ -681,6 +697,7 @@
     <span data-i18n="api_note">* Os preços apresentados são estimativas de 07/26 com base nas tarifas públicas dos fornecedores de IA. *Estimativa baseada nos preços do Google Gemini 3.1 Flash e gemini-3.1-flash-image. Precisaria de automatizar milhares de operações por mês para gastar 1 euro.</span>
 </div>
         </div>
+        </div>
     </section>
 
 <!-- TEXTOS OCULTOS PARA WHATSAPP DINÁMICO -->
@@ -696,8 +713,16 @@
         <span id="wa-price-4" data-i18n="wa_msg_price_4">Olá, estou interessado na Aplicação Web PWA para Grandes Empresas. Gostaria de receber mais informações.</span>
     </div>
 
-<!-- SECCIÓN EXPERTOS / PRE-FOOTER -->
-    <section class="w-full max-w-7xl mx-auto px-6 py-20 border-t border-gray-200/50 dark:border-gray-800/50 relative z-10">
+<!-- SECCIÓN CASOS Y SOLUCIONES (EXPERTOS) -->
+    <section id="casos" class="relative w-full py-24 md:py-32 border-t border-gray-200/50 dark:border-gray-800/50">
+        
+        <!-- FONDO: Columnas Verticales de Galería difuminadas -->
+        <div class="absolute inset-0 pointer-events-none -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808018_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff0c_1px,transparent_1px)] bg-[size:100px_100%]"></div>
+        </div>
+
+        <!-- CONTENEDOR PRINCIPAL -->
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
         
         <!-- Cabecera de la sección -->
         <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 mb-12">
@@ -785,6 +810,7 @@
                 </div>
             </div>
 
+        </div>
         </div>
     </section>
 

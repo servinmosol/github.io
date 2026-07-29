@@ -1030,6 +1030,9 @@
   .bg-\[linear-gradient\(to_right\,\#80808015_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#80808015_1px\,transparent_1px\)\] {
     background-image: linear-gradient(to right,#80808015 1px,transparent 1px),linear-gradient(to bottom,#80808015 1px,transparent 1px);
   }
+  .bg-\[linear-gradient\(to_right\,\#80808018_1px\,transparent_1px\)\] {
+    background-image: linear-gradient(to right,#80808018 1px,transparent 1px);
+  }
   .bg-\[radial-gradient\(\#80808040_1px\,transparent_1px\)\] {
     background-image: radial-gradient(#80808040 1px,transparent 1px);
   }
@@ -1110,6 +1113,9 @@
   }
   .bg-\[size\:32px_32px\] {
     background-size: 32px 32px;
+  }
+  .bg-\[size\:100px_100\%\] {
+    background-size: 100px 100%;
   }
   .bg-clip-text {
     background-clip: text;
@@ -2271,6 +2277,9 @@
   }
   .dark\:bg-\[linear-gradient\(to_right\,\#ffffff0a_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#ffffff0a_1px\,transparent_1px\)\]:where(.dark, .dark *) {
     background-image: linear-gradient(to right,#ffffff0a 1px,transparent 1px),linear-gradient(to bottom,#ffffff0a 1px,transparent 1px);
+  }
+  .dark\:bg-\[linear-gradient\(to_right\,\#ffffff0c_1px\,transparent_1px\)\]:where(.dark, .dark *) {
+    background-image: linear-gradient(to right,#ffffff0c 1px,transparent 1px);
   }
   .dark\:bg-\[radial-gradient\(\#ffffff30_1px\,transparent_1px\)\]:where(.dark, .dark *) {
     background-image: radial-gradient(#ffffff30 1px,transparent 1px);
