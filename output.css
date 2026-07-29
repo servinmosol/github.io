@@ -95,7 +95,6 @@
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
-    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --blur-sm: 8px;
     --blur-md: 12px;
     --blur-3xl: 64px;
@@ -1044,6 +1043,9 @@
     --tw-gradient-position: to top in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
+  .bg-\[linear-gradient\(to_right\,\#80808012_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#80808012_1px\,transparent_1px\)\] {
+    background-image: linear-gradient(to right,#80808012 1px,transparent 1px),linear-gradient(to bottom,#80808012 1px,transparent 1px);
+  }
   .bg-\[linear-gradient\(to_right\,\#80808015_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#80808015_1px\,transparent_1px\)\] {
     background-image: linear-gradient(to right,#80808015 1px,transparent 1px),linear-gradient(to bottom,#80808015 1px,transparent 1px);
   }
@@ -1110,8 +1112,14 @@
     --tw-gradient-to: transparent;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
+  .\[mask-image\:linear-gradient\(to_bottom\,transparent\,black_10\%\,black_90\%\,transparent\)\] {
+    mask-image: linear-gradient(to bottom,transparent,black 10%,black 90%,transparent);
+  }
   .bg-\[size\:32px_32px\] {
     background-size: 32px 32px;
+  }
+  .bg-\[size\:40px_40px\] {
+    background-size: 40px 40px;
   }
   .bg-clip-text {
     background-clip: text;
@@ -2274,6 +2282,9 @@
   }
   .dark\:bg-\[linear-gradient\(to_right\,\#ffffff0a_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#ffffff0a_1px\,transparent_1px\)\]:where(.dark, .dark *) {
     background-image: linear-gradient(to right,#ffffff0a 1px,transparent 1px),linear-gradient(to bottom,#ffffff0a 1px,transparent 1px);
+  }
+  .dark\:bg-\[linear-gradient\(to_right\,\#ffffff08_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#ffffff08_1px\,transparent_1px\)\]:where(.dark, .dark *) {
+    background-image: linear-gradient(to right,#ffffff08 1px,transparent 1px),linear-gradient(to bottom,#ffffff08 1px,transparent 1px);
   }
   .dark\:from-emerald-500\/10:where(.dark, .dark *) {
     --tw-gradient-from: color-mix(in srgb, oklch(69.6% 0.17 162.48) 10%, transparent);
