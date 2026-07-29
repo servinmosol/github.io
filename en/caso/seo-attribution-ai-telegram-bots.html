@@ -91,12 +91,12 @@
                 <!-- CONTROLES -->
                 <div class="flex items-center gap-2 sm:gap-3 md:gap-5">
                     
-                    <!-- BOTÓN DINÁMICO CASOS / SOLUCIONES (Enlaza a su propio idioma) -->
+                    <!-- Botón Dinámico Automático (Casos / Soluciones) -->
                     <a href="../soluciones.html" class="relative overflow-hidden group flex items-center justify-center h-9 md:h-10 px-3 sm:px-4 md:px-6 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-[10px] sm:text-xs md:text-sm hover:bg-emerald-500 dark:hover:bg-emerald-400 hover:text-white dark:hover:text-gray-900 transition-colors shadow-md min-w-[90px] sm:min-w-[100px] md:min-w-[120px]">
-                        <div class="relative h-[1.25em] w-full overflow-hidden flex justify-center">
-                            <span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full" data-i18n="header_btn_casos">Cases</span>
-                            <span class="absolute top-full left-0 w-full text-center transition-transform duration-300 ease-in-out group-hover:-translate-y-full" data-i18n="header_btn_sol">Solutions</span>
-                        </div>
+                        <!-- Palabra 1 -->
+                        <span id="dyn-word-1" class="absolute transition-all duration-500 transform translate-y-0 opacity-100" data-i18n="header_btn_casos">Cases</span>
+                        <!-- Palabra 2 -->
+                        <span id="dyn-word-2" class="absolute transition-all duration-500 transform translate-y-8 opacity-0" data-i18n="header_btn_sol">Solutions</span>
                     </a>
 
                     <!-- SELECTOR DE IDIOMA -->
