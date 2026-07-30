@@ -35,6 +35,20 @@ function buildPage(templateName, outputName, langsArray) {
         html = html.replace(/\{\{BASE_PATH\}\}/g, () => basePath);
         html = html.replace(/\{\{HOME_URL\}\}/g, () => isDefault ? './' : `../${lang}/`);
 
+        // Generar Canonical absoluto y Locale exacto para el <head>
+        const filePart = outputName === 'index.html' ? '' : outputName;
+        const canonicalUrl = isDefault ? `${DOMAIN}/${filePart}` : `${DOMAIN}/${lang}/${filePart}`;
+        // Limpiamos la barra final si está vacío para evitar "lanzaestudio.com/"
+        html = html.replace(/\{\{CANONICAL_URL\}\}/g, () => canonicalUrl.replace(/\/$/, ''));
+        
+        // Reemplazo de variables SEO directas para Redes Sociales y Schema
+        html = html.replace(/\{\{META_TITLE\}\}/g, () => translations['meta_title'] || 'Lanza Estudio');
+        html = html.replace(/\{\{META_DESC\}\}/g, () => translations['meta_description'] || '');
+        
+        // Mapeo automático de región (og:locale)
+        const locales = { es: 'es_ES', en: 'en_US', fr: 'fr_FR', de: 'de_DE', pt: 'pt_PT', nl: 'nl_NL', it: 'it_IT' };
+        html = html.replace(/\{\{OG_LOCALE\}\}/g, () => locales[lang] || 'es_ES');
+
         // LÓGICA DE FALLBACK PARA EL CATÁLOGO DE SOLUCIONES
         let linkSoluciones = '';
         if (lang === 'es' || lang === 'en') {
