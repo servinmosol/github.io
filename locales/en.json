@@ -226,5 +226,6 @@
 
   "wa_case_msg": "Hi, I am coming from the case: {TITLE}. I would like to speak with an expert.",
   
-  "filter_title": "Categories"
+  "filter_title": "Categories",
+  "calc_advice": "*Estimate calculated at €25/hour. We could automate more than 70% of this work."
 }
