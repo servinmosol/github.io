@@ -154,6 +154,10 @@ function buildCases() {
             const shareUrl = isDefault ? `${DOMAIN}/caso/${tagEs}.html` : `${DOMAIN}/${lang}/caso/${tagEn}.html`;
             html = html.replace(/\{\{SHARE_URL\}\}/g, () => shareUrl);
 
+            // Inyectar el mapeo de región (og:locale) para los casos
+            const locales = { es: 'es_ES', en: 'en_US', fr: 'fr_FR', de: 'de_DE', pt: 'pt_PT', nl: 'nl_NL', it: 'it_IT' };
+            html = html.replace(/\{\{OG_LOCALE\}\}/g, () => locales[lang] || 'es_ES');
+
             // Inyectar Datos del JSON del Caso de forma segura
             const keysToReplace = ['SEO_TITLE', 'SEO_DESC', 'SERVICE_TAG', 'CATEGORY', 'TITLE', 'AUTHOR_NAME', 'AUTHOR_ROLE', 'AUTHOR_PITCH', 'AUTHOR_IMAGE', 'BODY'];
             keysToReplace.forEach(key => {

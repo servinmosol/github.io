@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Metaetiquetas Básicas (Desde JSON) -->
+    <!-- Metaetiquetas Básicas (Desde JSON del caso) -->
     <title>{{SEO_TITLE}} - Lanza Estudio</title>
     <meta name="description" content="{{SEO_DESC}}">
     
-    <!-- Metaetiquetas Redes Sociales (Open Graph / X) -->
+    <!-- CANONICAL URL (Usa la URL exacta de compartir que creamos antes) -->
+    <link rel="canonical" href="{{SHARE_URL}}">
+    
+    <!-- OPEN GRAPH / REDES SOCIALES -->
     <meta property="og:type" content="article">
+    <meta property="og:url" content="{{SHARE_URL}}">
     <meta property="og:title" content="{{SEO_TITLE}}">
     <meta property="og:description" content="{{SEO_DESC}}">
     <meta property="og:image" content="https://lanzaestudio.com{{AUTHOR_IMAGE}}">
-    <meta property="og:url" content="{{SHARE_URL}}">
+    <meta property="og:site_name" content="Lanza Estudio">
+    <meta property="og:locale" content="{{OG_LOCALE}}">
+    
+    <!-- TWITTER CARDS -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{SHARE_URL}}">
+    <meta name="twitter:title" content="{{SEO_TITLE}}">
+    <meta name="twitter:description" content="{{SEO_DESC}}">
+    <meta name="twitter:image" content="https://lanzaestudio.com{{AUTHOR_IMAGE}}">
 
-    <!-- Schema JSON-LD de Artículo Técnico -->
+    <!-- SCHEMA.ORG (JSON-LD de Artículo Técnico) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "TechArticle",
-                "@id": "https://lanzaestudio.com/{{LANG}}/caso/{{SERVICE_TAG}}#article",
-                "url": "https://lanzaestudio.com/{{LANG}}/caso/{{SERVICE_TAG}}",
+                "@id": "{{SHARE_URL}}#article",
+                "url": "{{SHARE_URL}}",
                 "headline": "{{SEO_TITLE}}",
                 "description": "{{SEO_DESC}}",
                 "image": "https://lanzaestudio.com{{AUTHOR_IMAGE}}",

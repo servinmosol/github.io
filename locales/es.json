@@ -220,5 +220,8 @@
   "wa_case_msg": "Hola, vengo del caso: {TITLE}. Me gustaría hablar con un experto.",
   
   "filter_title": "Categorías",
-  "calc_advice": "*Estimación calculada a 25€/hora. Podríamos automatizar más del 70% de este trabajo."
+  "calc_advice": "*Estimación calculada a 25€/hora. Podríamos automatizar más del 70% de este trabajo.",
+  "share_title": "Compartir:",
+  "sol_cta_title": "¿Tu empresa sufre un problema similar?",
+  "consult_btn": "Consulta ahora con un experto"
 }
