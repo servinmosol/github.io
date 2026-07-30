@@ -44,6 +44,10 @@ function buildPage(templateName, outputName, langsArray) {
         // Reemplazo de variables SEO directas para Redes Sociales y Schema
         html = html.replace(/\{\{META_TITLE\}\}/g, () => translations['meta_title'] || 'Lanza Estudio');
         html = html.replace(/\{\{META_DESC\}\}/g, () => translations['meta_description'] || '');
+
+        // AÑADE ESTAS DOS LÍNEAS NUEVAS:
+        html = html.replace(/\{\{SOL_META_TITLE\}\}/g, () => translations['sol_meta_title'] || 'Casos de Éxito - Lanza Estudio');
+        html = html.replace(/\{\{SOL_META_DESC\}\}/g, () => translations['sol_meta_description'] || '');
         
         // Mapeo automático de región (og:locale)
         const locales = { es: 'es_ES', en: 'en_US', fr: 'fr_FR', de: 'de_DE', pt: 'pt_PT', nl: 'nl_NL', it: 'it_IT' };
