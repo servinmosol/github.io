@@ -195,9 +195,52 @@ function buildCases() {
         console.log(`✅ Procesados ${files.length} casos en [${lang.toUpperCase()}] y generado su índice.`);
     });
 }
+// Función para generar el sitemap.xml automáticamente
+function buildSitemap() {
+    const today = new Date().toISOString().split('T')[0];
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
+    const addUrl = (url) => {
+        xml += `  <url>\n    <loc>${url}</loc>\n    <lastmod>${today}</lastmod>\n  </url>\n`;
+    };
+
+    // 1. Portadas (Todos los idiomas)
+    langsFull.forEach(lang => {
+        const url = lang === defaultLang ? `${DOMAIN}/` : `${DOMAIN}/${lang}/`;
+        addUrl(url);
+    });
+
+    // 2. Páginas de Soluciones
+    langsSoluciones.forEach(lang => {
+        const url = lang === defaultLang ? `${DOMAIN}/soluciones.html` : `${DOMAIN}/${lang}/soluciones.html`;
+        addUrl(url);
+    });
+
+    // 3. Casos de Éxito dinámicos
+    langsSoluciones.forEach(lang => {
+        const casosDir = path.join(__dirname, 'datos-casos', lang);
+        if (fs.existsSync(casosDir)) {
+            const files = fs.readdirSync(casosDir).filter(f => f.endsWith('.json'));
+            files.forEach(file => {
+                const caseData = JSON.parse(fs.readFileSync(path.join(casosDir, file), 'utf-8'));
+                // Si estamos en la versión por defecto o la traducida
+                const tag = lang === defaultLang ? caseData.service_tag : (caseData.service_tag_hreflang || caseData.service_tag);
+                const url = lang === defaultLang ? `${DOMAIN}/caso/${tag}.html` : `${DOMAIN}/${lang}/caso/${tag}.html`;
+                addUrl(url);
+            });
+        }
+    });
+
+    xml += `</urlset>`;
+    
+    // Guardar en la raíz
+    fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), xml);
+    console.log('✅ sitemap.xml generado con éxito.');
+}
 console.log('🚀 Iniciando compilación de Lanza Estudio...');
 buildPage('template.html', 'index.html', langsFull);
 buildPage('template-soluciones.html', 'soluciones.html', langsSoluciones);
 buildCases();
+buildSitemap(); 
 console.log('✨ Compilación completada con éxito.');
