@@ -5,7 +5,7 @@ const DOMAIN = 'https://lanzaestudio.com';
 
 // Idiomas de la web
 const langsFull = ['es', 'en', 'fr', 'de', 'pt', 'nl', 'it'];
-const langsSoluciones = ['es', 'en']; 
+const langsSoluciones = ['es', 'en', 'fr', 'de', 'pt', 'nl', 'it']; // AHORA ACTIVO PARA LOS 7 IDIOMAS
 const defaultLang = 'es';
 
 // Función para páginas normales (Portada y Catálogo)
@@ -45,7 +45,6 @@ function buildPage(templateName, outputName, langsArray) {
         html = html.replace(/\{\{META_TITLE\}\}/g, () => translations['meta_title'] || 'Lanza Estudio');
         html = html.replace(/\{\{META_DESC\}\}/g, () => translations['meta_description'] || '');
 
-        // AÑADE ESTAS DOS LÍNEAS NUEVAS:
         html = html.replace(/\{\{SOL_META_TITLE\}\}/g, () => translations['sol_meta_title'] || 'Casos de Éxito - Lanza Estudio');
         html = html.replace(/\{\{SOL_META_DESC\}\}/g, () => translations['sol_meta_description'] || '');
         
@@ -105,6 +104,22 @@ function buildCases() {
     const template = fs.readFileSync(templateCasoPath, 'utf-8');
     const today = new Date().toISOString().split('T')[0];
 
+    // --- NUEVA LÓGICA: MATRIZ DE LLAVES MAESTRAS PARA 7 IDIOMAS ---
+    console.log('🔄 Construyendo matriz cruzada de idiomas para los Casos...');
+    const mapaCasos = {};
+    langsSoluciones.forEach(l => {
+        const casosDir = path.join(__dirname, 'datos-casos', l);
+        if (!fs.existsSync(casosDir)) return;
+        fs.readdirSync(casosDir).forEach(file => {
+            if (!file.endsWith('.json')) return;
+            const data = JSON.parse(fs.readFileSync(path.join(casosDir, file), 'utf-8'));
+            const llaveMaestra = l === defaultLang ? data.service_tag : (data.service_tag_hreflang || data.service_tag);
+            if (!mapaCasos[llaveMaestra]) mapaCasos[llaveMaestra] = {};
+            mapaCasos[llaveMaestra][l] = data.service_tag; 
+        });
+    });
+    // -------------------------------------------------------------
+
     langsSoluciones.forEach(lang => {
         const casosDir = path.join(__dirname, 'datos-casos', lang);
         if (!fs.existsSync(casosDir)) {
@@ -129,16 +144,24 @@ function buildCases() {
 
             const basePath = isDefault ? '..' : '../..';
             
-            // LÓGICA HREFLANG BLINDADA: Si no existe el campo _hreflang en el JSON, usa el tag actual
-            const tagEs = isDefault ? caseData.service_tag : (caseData.service_tag_hreflang || caseData.service_tag);
-            const tagEn = isDefault ? (caseData.service_tag_hreflang || caseData.service_tag) : caseData.service_tag;
+            // CONSTRUCCIÓN HREFLANG Y URLS BASADAS EN LA MATRIZ
+            const llaveMaestra = isDefault ? caseData.service_tag : (caseData.service_tag_hreflang || caseData.service_tag);
+            const versionesDisponibles = mapaCasos[llaveMaestra] || {};
 
+            let hreflangTags = '';
+            for (const [idioma, slug] of Object.entries(versionesDisponibles)) {
+                const urlFinal = idioma === defaultLang ? `${DOMAIN}/caso/${slug}.html` : `${DOMAIN}/${idioma}/caso/${slug}.html`;
+                hreflangTags += `<link rel="alternate" hreflang="${idioma}" href="${urlFinal}" />\n    `;
+            }
+            if (versionesDisponibles[defaultLang]) {
+                hreflangTags += `<link rel="alternate" hreflang="x-default" href="${DOMAIN}/caso/${versionesDisponibles[defaultLang]}.html" />`;
+            }
+
+            // Mantenemos URL_ES y URL_EN intactas por si tu HTML las usa específicamente
+            const tagEs = versionesDisponibles['es'] || llaveMaestra;
+            const tagEn = versionesDisponibles['en'] || llaveMaestra;
             const urlEs = isDefault ? `./${tagEs}.html` : `../../caso/${tagEs}.html`;
-            const urlEn = isDefault ? `../en/caso/${tagEn}.html` : `./${tagEn}.html`;
-            
-            const hreflangTags = `
-    <link rel="alternate" hreflang="es" href="${DOMAIN}/caso/${tagEs}.html" />
-    <link rel="alternate" hreflang="en" href="${DOMAIN}/en/caso/${tagEn}.html" />`;
+            const urlEn = isDefault ? `../en/caso/${tagEn}.html` : (lang === 'en' ? `./${tagEn}.html` : `../../en/caso/${tagEn}.html`);
 
             // Inyectar Rutas Base
             html = html.replace(/\{\{LANG\}\}/g, () => lang);
@@ -147,11 +170,27 @@ function buildCases() {
             html = html.replace(/\{\{HREFLANG_TAGS\}\}/g, () => hreflangTags);
             html = html.replace(/\{\{URL_ES\}\}/g, () => urlEs);
             html = html.replace(/\{\{URL_EN\}\}/g, () => urlEn);
-            html = html.replace(/\{\{SELECTED_ES\}\}/g, () => (isDefault ? 'selected' : ''));
-            html = html.replace(/\{\{SELECTED_EN\}\}/g, () => (!isDefault ? 'selected' : ''));
+            
+            // Selector Visual de Idiomas (Automático para los 7)
+            langsFull.forEach(l => {
+                const selectedPlaceholder = `{{SELECTED_${l.toUpperCase()}}}`;
+                html = html.replace(new RegExp(selectedPlaceholder, 'g'), () => (l === lang ? 'selected' : ''));
+                
+                const slug = versionesDisponibles[l] || llaveMaestra;
+                let optUrl = '';
+                if (isDefault) {
+                    optUrl = (l === defaultLang) ? `./${slug}.html` : `../${l}/caso/${slug}.html`;
+                } else {
+                    optUrl = (l === defaultLang) ? `../../caso/${slug}.html` : (l === lang ? `./${slug}.html` : `../../${l}/caso/${slug}.html`);
+                }
+                const optPlaceholder = `{{LANG_OPT_${l.toUpperCase()}}}`;
+                html = html.replace(new RegExp(optPlaceholder, 'g'), () => optUrl);
+            });
+
             html = html.replace(/\{\{CURRENT_DATE\}\}/g, () => today);
-            // Generar URL exacta para compartir (sin /es/ si es el idioma por defecto)
-            const shareUrl = isDefault ? `${DOMAIN}/caso/${tagEs}.html` : `${DOMAIN}/${lang}/caso/${tagEn}.html`;
+            
+            // Generar URL exacta para compartir
+            const shareUrl = isDefault ? `${DOMAIN}/caso/${caseData.service_tag}.html` : `${DOMAIN}/${lang}/caso/${caseData.service_tag}.html`;
             html = html.replace(/\{\{SHARE_URL\}\}/g, () => shareUrl);
 
             // Inyectar el mapeo de región (og:locale) para los casos
@@ -195,6 +234,7 @@ function buildCases() {
         console.log(`✅ Procesados ${files.length} casos en [${lang.toUpperCase()}] y generado su índice.`);
     });
 }
+
 // Función para generar el sitemap.xml automáticamente
 function buildSitemap() {
     const today = new Date().toISOString().split('T')[0];
@@ -238,6 +278,7 @@ function buildSitemap() {
     fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), xml);
     console.log('✅ sitemap.xml generado con éxito.');
 }
+
 console.log('🚀 Iniciando compilación de Lanza Estudio...');
 buildPage('template.html', 'index.html', langsFull);
 buildPage('template-soluciones.html', 'soluciones.html', langsSoluciones);
