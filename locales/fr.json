@@ -139,7 +139,7 @@
   "wa_msg_price_2": "Bonjour, je suis intéressé par le Bot IA pour WhatsApp. J'aimerais recevoir plus d'informations.",
   "wa_msg_price_3": "Bonjour, je suis intéressé par le Générateur Intelligent de Prompts. J'aimerais recevoir plus d'informations.",
   "wa_msg_price_4": "Bonjour, je suis intéressé par l'Application Web PWA pour les Entreprises. J'aimerais recevoir plus d'informations.",
-
+  "wa_case_msg": "Bonjour, je viens de voir le cas : {TITLE}. J'aimerais parler avec un expert.",
   "footer_copy": "© 2025-2026 Lanza Estudio. Tous droits réservés.",
   "footer_legal": "Légal",
   "footer_privacy": "Confidentialité",

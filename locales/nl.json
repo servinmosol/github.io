@@ -139,7 +139,8 @@
   "wa_msg_price_2": "Hallo, ik ben geïnteresseerd in de AI-Bot voor WhatsApp. Ik ontvang graag meer informatie.",
   "wa_msg_price_3": "Hallo, ik ben geïnteresseerd in de Slimme Prompt Generator. Ik ontvang graag meer informatie.",
   "wa_msg_price_4": "Hallo, ik ben geïnteresseerd in de PWA Webapplicatie voor Grote Ondernemingen. Ik ontvang graag meer informatie.",
-
+  "wa_case_msg": "Hallo, ik kom via de case: {TITLE}. Ik wil graag met een expert spreken.",
+  
   "footer_copy": "© 2025-2026 Lanza Estudio. Alle rechten voorbehouden.",
   "footer_legal": "Juridisch",
   "footer_privacy": "Privacy",
