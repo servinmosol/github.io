@@ -53,14 +53,8 @@ function buildPage(templateName, outputName, langsArray) {
         html = html.replace(/\{\{OG_LOCALE\}\}/g, () => locales[lang] || 'es_ES');
 
         // LÓGICA DE FALLBACK PARA EL CATÁLOGO DE SOLUCIONES
-        let linkSoluciones = '';
-        if (lang === 'es' || lang === 'en') {
-            linkSoluciones = './soluciones.html';
-        } else {
-            // Si el idioma es FR, DE, PT, NL o IT, enviamos a la versión en inglés
-            linkSoluciones = '../en/soluciones.html';
-        }
-        html = html.replace(/\{\{LINK_SOLUCIONES\}\}/g, () => linkSoluciones);
+        // ENLACE DIRECTO A SOLUCIONES (Ya todos los idiomas tienen su página)
+        html = html.replace(/\{\{LINK_SOLUCIONES\}\}/g, () => './soluciones.html');
 
         langsArray.forEach(l => {
             const selectedPlaceholder = `{{SELECTED_${l.toUpperCase()}}}`;
