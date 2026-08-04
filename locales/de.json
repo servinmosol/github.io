@@ -140,6 +140,8 @@
   "wa_msg_price_3": "Hallo, ich interessiere mich für den Smart Prompt Generator. Ich hätte gerne weitere Informationen.",
   "wa_msg_price_4": "Hallo, ich interessiere mich für die PWA Web-Anwendung für Konzerne. Ich hätte gerne weitere Informationen.",
 
+  "wa_case_msg": "Hallo, ich melde mich wegen des Falles: {TITLE}. Ich möchte mit einem Experten sprechen.",
+  
   "footer_copy": "© 2025-2026 Lanza Estudio. Alle Rechte vorbehalten.",
   "footer_legal": "Impressum",
   "footer_privacy": "Datenschutz",
