@@ -211,6 +211,10 @@
   
   "sol_search_ph": "Zoek op probleem of trefwoord...",
   "sol_filter_all": "Alle",
+"cat_seo": "SEO & Positionering",
+"cat_api": "APIs & Cloud",
+"cat_ia": "AI & Bots",
+"cat_custom": "Maatwerk Systemen",
   
   "sol_empty_title": "We hebben geen exacte match gevonden",
   "sol_empty_desc": "Probeer met andere woorden te zoeken of verwijder de actieve filters.",

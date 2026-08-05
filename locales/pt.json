@@ -211,6 +211,10 @@
   
   "sol_search_ph": "Pesquisar por problema ou palavra-chave...",
   "sol_filter_all": "Todos",
+"cat_seo": "SEO & Posicionamento",
+"cat_api": "APIs & Cloud",
+"cat_ia": "IA & Bots",
+"cat_custom": "Sistemas à Medida",
   
   "sol_empty_title": "Não encontrámos nenhum caso exato",
   "sol_empty_desc": "Tente pesquisar com outras palavras ou remova os filtros ativos.",

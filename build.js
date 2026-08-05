@@ -191,8 +191,26 @@ function buildCases() {
             const locales = { es: 'es_ES', en: 'en_US', fr: 'fr_FR', de: 'de_DE', pt: 'pt_PT', nl: 'nl_NL', it: 'it_IT' };
             html = html.replace(/\{\{OG_LOCALE\}\}/g, () => locales[lang] || 'es_ES');
 
-            // Inyectar Datos del JSON del Caso de forma segura
-            const keysToReplace = ['SEO_TITLE', 'SEO_DESC', 'SERVICE_TAG', 'CATEGORY', 'TITLE', 'AUTHOR_NAME', 'AUTHOR_ROLE', 'AUTHOR_PITCH', 'AUTHOR_IMAGE', 'BODY'];
+            // --- NUEVO: ESTANDARIZAR LA CATEGORÍA PARA EL FILTRO ---
+            let catText = (caseData.category || '').toLowerCase();
+            let catKey = 'cat_custom'; // Fallback por defecto
+            if (catText.includes('seo')) {
+                catKey = 'cat_seo';
+            } else if (catText.includes('api') || catText.includes('cloud')) {
+                catKey = 'cat_api';
+            } else if (catText.includes('ia') || catText.includes('bot') || catText.includes('ai') || catText.includes('ki')) {
+                catKey = 'cat_ia';
+            }
+            
+            // Obtenemos la traducción oficial del archivo locales
+            let translatedCategory = translations[catKey] || caseData.category;
+            // --------------------------------------------------------
+
+            // Inyectar CATEGORY estandarizada manualmente
+            html = html.replace(/\{\{CATEGORY\}\}/g, () => translatedCategory);
+
+            // Inyectar el resto de Datos (quitamos CATEGORY del array)
+            const keysToReplace = ['SEO_TITLE', 'SEO_DESC', 'SERVICE_TAG', 'TITLE', 'AUTHOR_NAME', 'AUTHOR_ROLE', 'AUTHOR_PITCH', 'AUTHOR_IMAGE', 'BODY'];
             keysToReplace.forEach(key => {
                 const val = caseData[key.toLowerCase()] || '';
                 html = html.replace(new RegExp(`\\{\\{${key}\\}\\}`, 'g'), () => val);
@@ -212,10 +230,10 @@ function buildCases() {
             // Guardar HTML estático
             fs.writeFileSync(path.join(outputBaseDir, `${caseData.service_tag}.html`), html);
 
-            // Alimentar el índice del catálogo
+            // Alimentar el índice del catálogo con la categoría perfecta
             indexData.push({
                 service_tag: caseData.service_tag,
-                category: caseData.category,
+                category: translatedCategory, // <-- ¡ESTO ARREGLA EL FILTRO MÁGICAMENTE!
                 title: caseData.title,
                 author_name: caseData.author_name,
                 author_role: caseData.author_role,

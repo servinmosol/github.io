@@ -210,6 +210,10 @@
   
   "sol_search_ph": "Rechercher par problème ou mot-clé...",
   "sol_filter_all": "Tous",
+"cat_seo": "SEO & Positionnement",
+"cat_api": "APIs & Cloud",
+"cat_ia": "IA & Bots",
+"cat_custom": "Systèmes sur Mesure",
   
   "sol_empty_title": "Nous n'avons pas trouvé de cas exact",
   "sol_empty_desc": "Essayez de chercher avec d'autres mots ou supprimez les filtres actifs.",
