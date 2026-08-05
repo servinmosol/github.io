@@ -246,9 +246,19 @@ async function initSolutionsCatalog() {
 
     function getInternalId(catString) {
         const str = (catString || '').toLowerCase();
-        if (str.includes('api')) return 'api';
-        if (str.includes('ia') || str.includes('ai') || str.includes('bot')) return 'ia';
-        if (str.includes('medida') || str.includes('custom') || str.includes('system')) return 'custom';
+        
+        if (str.includes('api') || str.includes('cloud')) return 'api';
+        
+        // Añadido 'ki' para el alemán
+        if (str.includes('ia') || str.includes('ai') || str.includes('bot') || str.includes('ki')) return 'ia';
+        
+        // Añadidos los términos en IT, FR, PT y NL
+        if (str.includes('medida') || str.includes('custom') || str.includes('system') || 
+            str.includes('sistem') || str.includes('misura') || str.includes('mesure') || 
+            str.includes('maatwerk')) {
+            return 'custom';
+        }
+        
         return 'seo'; 
     }
 
