@@ -249,10 +249,10 @@ async function initSolutionsCatalog() {
         
         if (str.includes('api') || str.includes('cloud')) return 'api';
         
-        // Añadido 'ki' para el alemán
+        // IA en todos los idiomas (incluyendo 'ki' alemán)
         if (str.includes('ia') || str.includes('ai') || str.includes('bot') || str.includes('ki')) return 'ia';
         
-        // Añadidos los términos en IT, FR, PT y NL
+        // Sistemas a medida en los 7 idiomas (blindado)
         if (str.includes('medida') || str.includes('custom') || str.includes('system') || 
             str.includes('sistem') || str.includes('misura') || str.includes('mesure') || 
             str.includes('maatwerk')) {
