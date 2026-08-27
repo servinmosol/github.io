@@ -276,8 +276,9 @@ function buildSitemap() {
             const files = fs.readdirSync(casosDir).filter(f => f.endsWith('.json'));
             files.forEach(file => {
                 const caseData = JSON.parse(fs.readFileSync(path.join(casosDir, file), 'utf-8'));
-                // Si estamos en la versión por defecto o la traducida
-                const tag = lang === defaultLang ? caseData.service_tag : (caseData.service_tag_hreflang || caseData.service_tag);
+                
+                // LA SOLUCIÓN: Usamos SIEMPRE el slug nativo de cada idioma
+                const tag = caseData.service_tag;
                 const url = lang === defaultLang ? `${DOMAIN}/caso/${tag}.html` : `${DOMAIN}/${lang}/caso/${tag}.html`;
                 addUrl(url);
             });
@@ -288,7 +289,7 @@ function buildSitemap() {
     
     // Guardar en la raíz
     fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), xml);
-    console.log('✅ sitemap.xml generado con éxito.');
+    console.log('✅ sitemap.xml generado con éxito (y sin enlaces rotos).');
 }
 
 console.log('🚀 Iniciando compilación de Lanza Estudio...');
